@@ -14,7 +14,7 @@ Apuntamos al público dueño de una mascota brindándoles una forma de comprar s
 
 ## Sus integrantes son:
 
--Angee Vilchez: soy angee tengo 25 años hace un tiempo me empecé a interesar por el mundo de la programación y mediante youtube pude ir aprendiendo algo, actualmente estoy haciendo un curso full stack con el equipo Formar para en un futuro cercano trabajar de esto.
+-Angee Vilchez: soy angee tengo 25 años hace un tiempo me empecé a interesar por el mundo de la programación, actualmente cursando el curso de programador full stack con Digital-House para asi en un futuro cercano trabajar de programadora.
 
 -Daniel Mamani: Hola! Me llamo, Daniel Mamani, tengo 21 años desde muy chico en la primaria mis sueños siempre fue aprender cosas de la computación y programar, y estoy aprendiendo con los videos de youtube que siempre están y me ayudan a mejorar, y tambien estoy con Digital House con el equipo Formar que me dio la oportunidad de poder hacer el curso Full-Stack y aprender muchas cosas más.
 
