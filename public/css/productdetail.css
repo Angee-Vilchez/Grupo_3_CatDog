@@ -1,0 +1,745 @@
+/*Imagenes*/
+.imagenes img {
+    width: 30rem;
+    margin-left: 0;
+    margin-top: 6rem;
+}
+
+/*Nombre Producto*/
+
+.Nombre_producto {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: -50rem;
+    margin-left: 27rem;
+    font-size: 25px;
+    color: black;
+}
+
+/*Cod Producto*/
+
+.Cod_Producto {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: -23rem;
+    margin-left: 27rem;
+    font-size: 20px;
+    color: black;
+}
+
+/*Estrella Reseña*/
+
+.producto_reseña_estrellas {
+    width: auto;
+    height: auto;
+    position: relative;
+    top: -23rem;
+    margin-left: 27rem;
+    font-size: 20px;
+    color: black;
+    display: inline-block;
+}
+/* RESEÑA ESTRELLA */
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+
+  /* CLASIFICACION */
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }
+
+  /*Precios*/
+
+   .columna_derecha_pb  {
+      position: relative;
+      top: -3rem;
+  }
+
+  .precio {
+      position: relative;
+      top: -48rem;
+      margin-left: 97.5rem;
+      font-size: 30px;
+      color: black;
+      z-index: 10;
+  }
+
+  .conjunto_campo_atributo {
+    margin-left: 86rem;
+    position: relative;
+    top: -51rem;
+    background-color: white;
+    
+  }
+
+  .columna_derecha_pb .etiqueta_atributo {
+    margin-left: 3rem;
+    font-size: 20px;
+    top: 5rem;
+    position: relative;
+ }
+
+ .columna_derecha_pb .control_de_forma1 {
+     margin-left: 3rem;
+     width: 220px;
+     position: relative;
+     top: 6rem;
+ }
+
+ .columna_derecha_pb .etiqueta_atributo2 {
+    margin-left: 3rem;
+    font-size: 20px;
+    position: relative;
+    top: 11rem;
+ }
+
+ .columna_derecha_pb .control_de_forma2 {
+    margin-left: 3rem;
+    width: 220px;
+    top: 12rem;
+    position: relative;
+}
+
+.columna_derecha_pb .etiqueta_atributo3 {
+    margin-left: 3rem;
+    font-size: 20px;
+    position: relative;
+     top: 17rem;
+ }
+
+ .columna_derecha_pb .control_de_forma3 {
+    margin-left: 3rem;
+    width: 220px;
+    position: relative;
+    top: 18rem;
+}
+
+div .fondo_carro_de_caja .exclusivo{
+    height: 80px;
+    width: 250px;
+    margin-left: 93rem;
+    position: relative;
+    top: -88rem;
+    font-size: 20px;
+    background-color: gainsboro;
+}
+
+div .cantidad {
+    height: 160px;
+    width: 350px;
+    margin-left: 92rem;
+    position: relative;
+    top: -83rem;
+    font-size: 15px;
+}
+
+#metodo_de_pago_logo {
+    height: 160px;
+    width: 350px;
+    margin-left: 93.5rem;
+    position: relative;
+    top: -84rem;
+}
+
+section .pagina-de-producto-encabezado {
+    position: relative;
+    top: -77rem;
+    color: black;
+    font-size: 40px;
+}
+
+section .pagina-de-producto-encabezado2 {
+    position: relative;
+    top: -77rem;
+    margin-left: 1rem;
+    color: black;
+    font-size: 40px;
+}
+
+div .Descripcion {
+    position: relative;
+    top: -74rem;
+    color: black;
+    margin-left: 1rem;
+    font-size: 25px;
+}
+
+div .Envios .Opciones_envios .titulo {
+    position: relative;
+    top: -20rem;
+    margin-left: 27rem;
+    font-size: 20px;
+    color: rgb(91, 205, 205);
+}
+
+div .Envios .titulo_domicilio {
+    position: relative;
+    top: -23rem;
+    margin-left: 33rem;
+    font-size: 18px;
+    color: black;
+    text-decoration: underline;
+}
+
+.icono-camion img {
+    width: 90px;
+    height: 80px;
+    position: relative;
+    top: -18rem;
+    margin-left: 27rem;
+}
+
+div .texto-1 {
+    position: relative;
+    top: -22rem;
+    margin-left: 33rem;
+    font-size: 1.1rem;
+}
+
+div .msg-barra-cargadora-ss {
+    position: relative;
+    top: -13rem;
+    margin-left: 33rem;
+    font-size: 1.1rem;
+}
+
+#miProgreso {
+    width: 30%;
+    height: 15px;
+    background-color: lightgray;
+    top: -12.5rem;
+    margin-left: 33rem;
+    position: relative;
+}
+
+#barra_de_carga {
+    width: 1%;
+    height: 15px;
+    background-color: limegreen;
+}
+
+div .dato_carga_de_barra .Cantidad-inicial {
+    position: relative;
+    top: -11.5rem;
+    margin-left: 33rem;
+    font-size: 1.1rem;
+}
+
+div .dato_carga_de_barra .Cantidad-total {
+    position: relative;
+    top: -11.5rem;
+    margin-left: 31rem;
+    font-size: 1.1rem;
+}
+
+.titulo_sucursal {
+    position: relative;
+    top: -4rem;
+    margin-left: 33rem;
+    font-size: 20px;
+    text-decoration: underline;
+    color: black;
+  }
+
+  .icono-sucursal img {
+    width: 80px;
+    height: 50px;
+    position: relative;
+    top: -7rem;
+    margin-left: 27rem;
+  }
+
+  div .texto_3 {
+    position: relative;
+    top: -3rem;
+    margin-left: 33rem;
+    font-size: 1.1rem;
+  }
+
+  .sucursales {
+    position: relative;
+    top: -1rem;
+    margin-left: 33rem;
+    color: rgb(34, 239, 239);
+  }
+  
+
+/* div .item_barra_carga {
+    width: 100%;
+    padding: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    background: #6fc597;
+    width: 1rem;
+} */
+/* .Cantidad_total {
+    margin-left: 6rem;
+} */
+
+
+/* Media Queries */
+
+@media  screen and (max-width: 500px){
+    
+    /* HEADER */
+
+    header{
+          width: auto;
+      }
+      header #buscador{
+          margin: 0px;
+          width: 23%;
+      }
+      header p{
+          padding: 0;
+          margin: 0;
+          width: 40%;
+          font-size: 12px;
+          text-align: right;
+      }
+      
+      header nav {
+          margin-top: 20px;
+          font-size: 12px;
+          width: 100%;
+          display: inline-flex;
+          padding: 5px;
+      }
+      header nav ul li i{
+          margin: 0 10px 0 0;
+      }
+      header nav ul li{
+          font-size: 11px;
+          margin-right: 10px;
+      }    
+      .burger-menu{
+          display: none;
+      }
+      header nav ul{
+          list-style: none;
+          display: flex;
+      }
+      #nav{
+          display: flex;
+          justify-content: space-between;
+      }
+
+      /* END HEADER */
+
+
+      /* PRODUCT DETAIL */
+
+    .tamaño span {
+        height: 100%;
+        width: 0.2rem;
+        margin-left: 0rem;
+        top: 8rem;
+    }
+    
+    .imagen-2 {
+        height: 160px;
+        width: 160px;
+        margin-left: 4rem;
+        position: relative;
+        top: 1rem;
+    }
+     .imagen-3 {
+        height: 160px;
+        width: 160px;
+        margin-left: 12.5rem;
+        position: relative;
+        top: -9.5rem;
+    }
+
+    .Nombre_producto {
+        width: auto;
+        height: auto;
+        position: relative;
+        top: -7.5rem;
+        margin-left: 1rem;
+        font-size: 25px;
+        color: black;
+    } 
+
+    .Cod_Producto {
+    margin-left: 1rem;
+    position: relative;
+    top: -6rem;
+    }
+
+    .producto_reseña_estrellas {
+        width: auto;
+        height: auto;
+        position: relative;
+        top: -45rem;
+        margin-left: 6.1rem;
+        font-size: 20px;
+        color: black;
+        display: inline-block;
+    }
+
+/* RESEÑA ESTRELLA */
+    #form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+    }
+  
+    #form p {
+    text-align: center;
+    }
+  
+    #form label {
+    font-size: 20px;
+    }
+  
+    input[type="radio"] {
+    display: none;
+    }
+  
+    label {
+    color: grey;
+    }
+
+  /* CLASIFICACION */
+  
+    .clasificacion {
+    margin-left: -6rem;
+    position: relative;
+    top: 40rem;
+    }
+  
+    label:hover,
+    label:hover ~ label {
+    color: orange;
+    }
+  
+    input[type="radio"]:checked ~ label {
+    color: orange;
+    }
+/* OPCIONES DE ENVIO */
+
+    div .Envios .Opciones_envios .titulo {
+        position: relative;
+        top: 1rem;
+        margin-left: 8.5rem;
+        font-size: 25px;
+        color: rgb(91, 205, 205);
+    }
+
+    /* TITULO DE ENVIO */
+
+    div .Envios .titulo_domicilio {
+        position: relative;
+        top: -2rem;
+        margin-left: 10rem;
+        font-size: 18px;
+        color: black;
+        text-decoration: underline;
+    }
+
+    /* ICONO DE CAMION DE ENVIOS */
+
+    .icono-camion img {
+        width: 90px;
+        height: 80px;
+        position: relative;
+        top: 3rem;
+        margin-left: 3rem;
+    }
+
+
+
+    .columna_derecha_pb  {
+        position: relative;
+        top: -3rem;
+    }
+  
+    /* PRECIO */
+
+    .precio {
+        position: relative;
+        top: 15rem;
+        margin-left: 12rem;
+        font-size: 30px;
+        color: black;
+        z-index: 10;
+    }
+  
+    .conjunto_campo_atributo {
+      margin-left: 0.6rem;
+      position: relative;
+      top: 12rem;
+      background-color: white;
+      
+    }
+  
+    .columna_derecha_pb .etiqueta_atributo {
+      margin-left: 3rem;
+      font-size: 20px;
+      top: 5rem;
+      position: relative;
+   }
+  
+   .columna_derecha_pb .control_de_forma1 {
+       margin-left: 3rem;
+       width: 220px;
+       position: relative;
+       top: 6rem;
+   }
+  
+   .columna_derecha_pb .etiqueta_atributo2 {
+      margin-left: 3rem;
+      font-size: 20px;
+      position: relative;
+      top: 11rem;
+   }
+  
+   .columna_derecha_pb .control_de_forma2 {
+      margin-left: 3rem;
+      width: 220px;
+      top: 12rem;
+      position: relative;
+  }
+  
+  .columna_derecha_pb .etiqueta_atributo3 {
+      margin-left: 3rem;
+      font-size: 20px;
+      position: relative;
+       top: 17rem;
+   }
+  
+   .columna_derecha_pb .control_de_forma3 {
+      margin-left: 3rem;
+      width: 220px;
+      position: relative;
+      top: 18rem;
+  }
+  
+  div .fondo_carro_de_caja .exclusivo{
+      height: 80px;
+      width: 250px;
+      margin-left: 7.5rem;
+      position: relative;
+      top: -25rem;
+      font-size: 20px;
+      background-color: gainsboro;
+  }
+  
+  div .cantidad {
+      height: 160px;
+      width: 350px;
+      margin-left: 8rem;
+      position: relative;
+      top: -21rem;
+      font-size: 15px;
+  }
+  
+  #metodo_de_pago_logo {
+      height: 160px;
+      width: 350px;
+      margin-left: 7.5rem;
+      position: relative;
+      top: -23rem;
+  }
+  
+  section .pagina-de-producto-encabezado {
+      position: relative;
+      top: -4rem;
+      color: black;
+      margin-left: -11rem;
+  }
+  
+  section .pagina-de-producto-encabezado2 {
+      position: relative;
+      top: -4rem;
+      margin-left: -20rem;
+      color: black;
+  }
+  
+  div .Descripcion {
+      position: relative;
+      top: -4rem;
+      color: black;
+      margin-left: 0.5rem;
+      font-size: 15px;
+  }
+  
+  div .texto-1 {
+      position: relative;
+      top: -1rem;
+      margin-left: 10rem;
+      font-size: 1.1rem;
+  }
+  
+  div .msg-barra-cargadora-ss {
+      position: relative;
+      top: 5rem;
+      margin-left: 5rem;
+      font-size: 1.1rem;
+  }
+  
+  #miProgreso {
+      width: 70%;
+      height: 15px;
+      background-color: lightgray;
+      top: 6rem;
+      margin-left: 5rem;
+      position: relative;
+  }
+  
+  #barra_de_carga {
+      width: 1%;
+      height: 15px;
+      background-color: limegreen;
+  }
+  
+  div .dato_carga_de_barra .Cantidad-inicial {
+      position: relative;
+      top: 7rem;
+      margin-left: 5rem;
+      font-size: 1.1rem;
+  }
+  
+  div .dato_carga_de_barra .Cantidad-total {
+      position: relative;
+      top: 7rem;
+      margin-left: 17.4rem;
+      font-size: 1.1rem;
+  }
+  
+  .titulo_sucursal {
+      position: relative;
+      top: 7.7rem;
+      margin-left: 10rem;
+      font-size: 20px;
+      text-decoration: underline;
+      color: black;
+    }
+  
+    .icono-sucursal img {
+      width: 80px;
+      height: 50px;
+      position: relative;
+      top: 5.5rem;
+      margin-left: 3rem;
+    }
+  
+    div .texto_3 {
+      position: relative;
+      top: 8.8rem;
+      margin-left: 10rem;
+      font-size: 1.1rem;
+    }
+  
+    .sucursales {
+      position: relative;
+      top: 6.6rem;
+      margin-left: 10rem;
+      color: rgb(34, 239, 239);
+    }
+
+        } 
+
+      /* END PRODUCT DETAIL */
+
+
+
+      /* FOOTER */
+
+      footer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    footer.main_footer .footer_socialMedia-container {
+        width: 40%;
+        max-width: 40%;
+    }
+    
+
+    /* END FOOTER */
+    
+    @media (min-width: 1080px){
+      
+    
+      header nav ul li{
+          font-size: 35px;
+       margin-right: 15px; 
+        max-width: 100%;
+      }
+      
+      main h2{
+          margin-left: 45px;
+      }
+      header p{
+          font-size: 20px;
+      }
+    
+      .burger-menu {
+        display: none;
+      }
+      #nav{
+        display: flex;
+        padding: 0;
+        justify-content: center;
+      }
+    
+      .opciones{
+        display: flex;
+        width: 80%;
+        justify-content: space-evenly;
+       
+      }
+    
+      .opciones li a{
+        font-size: 25px;
+    
+      }
+      .usuario {
+        display: flex;
+        width: 400px;
+        justify-content: space-evenly;
+      }
+    
+      /*
+      .usuario:focus {
+    
+    
+      } */
+    }

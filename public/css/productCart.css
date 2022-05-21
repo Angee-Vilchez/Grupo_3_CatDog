@@ -1,0 +1,281 @@
+:root {
+  --font-roboto: 'Roboto', sans-serif;
+  --celeste-claro: #1AAFD0;
+  --azul-claro: #524F9E;
+  --azul-oscuro: #041562;
+}
+
+
+*{
+  padding: 0;
+  margin: 0;
+  font-family: var(--fuente-roboto);
+  box-sizing: border-box;
+}
+
+
+.main h2 {
+  font-size: 24px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 0 0.5rem;
+  padding: 0.2rem;
+  background-color: var(--celeste-claro);
+}
+
+.main_producto {
+  margin: 1rem;
+  display: flex;
+  padding: 0;
+  
+}
+hr {
+  position: relative;
+  width: 100%;
+  margin: 0.2rem 0 0.4rem;
+  font-size: 16px;
+  color: black;
+}
+
+.main_boton_eliminar{
+  border: none;
+  width: 1rem;
+  max-height: 25vh;
+  border-radius: 4px;
+  font-size: 1rem;
+  }
+
+.mi{
+  display: flex;
+  width: 100%;
+  height: 8.5rem;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.1rem;
+  margin: 0.3rem 0;
+}
+
+.main_foto img{
+  
+  justify-content: center;
+  width: 85px;
+  height: 75px;
+  padding: 0;
+  margin: 0;
+}
+
+.main_detalle{
+    position: relative;
+    display: flex;
+    text-align: right;
+    font-size: 0.7rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 25vh;
+
+}
+
+.mi2 {
+  display: flex;
+  width: 100%;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.1rem;
+  margin: 0.3rem 0;
+}
+
+.main_boton_cantidad .boton{
+    border: none;
+    border-radius: 1rem;
+    height: 2rem;
+    width: 2rem;
+    align-items: flex-end;
+    cursor: pointer;
+    margin: 0.2rem auto 0;
+    display: inline;
+    background-color: white;
+}
+
+ul p{ 
+    width: 100%;
+    align-items: flex-end;
+    font-size: 1rem;
+    justify-content: center;
+}
+
+
+.main_códigoPostal{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 6rem;
+  background-color: rgb(214, 231, 236);
+}
+
+.main_códigoPostal .input-text{
+  border: hidden;
+  border-radius: 0.5rem;
+  height: 2.5rem;
+  width: 8rem;
+  padding: 0.5rem;
+  margin-bottom: 0.2rem;
+  background-color:rgb(194, 201, 243);
+}
+.main_códigoPostal .button{
+  height: 2rem;
+  width: 3rem;
+  font-size: 12px;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+h3{
+  font-size: 24px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 0 0.5rem;
+  padding: 0.2rem;
+}
+.main_totalCarrito{
+  background-color: rgb(214, 231, 236);
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+  line-height: 25px;
+  font-size: 18px;
+}
+
+.main_boton_finalizar{
+  border: none;
+  border-radius: 1rem;
+  height: 2.5rem;
+  width: 10rem;
+  margin: 0.2rem auto 0;
+  background-color: white;
+  text-align: center;
+}
+
+@media  (min-width: 950px){
+  .mi{
+    display: flex;
+    width: 100%;
+    height: 12rem;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0.1rem;
+    margin: 0.3rem 0;
+  }
+  .main_boton_eliminar{
+    border: none;
+    width: 80px;
+    max-height: 50px;
+    border-radius: 4px;
+    font-size: 1rem;
+    }
+  
+  .main_detalle{
+    position: relative;
+    display: flex;
+    text-align: right;
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-height: 25vh;
+
+}
+.main_foto img{
+  
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  padding: 0;
+  margin: 0;
+}
+
+.mi2 {
+  display: flex;
+  width: 50%;
+  position: relative;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  padding: 3rem;
+  margin: 0.3rem 0;
+}
+.main_boton_cantidad .boton{
+  border: none;
+  border-radius: 1rem;
+  height: 2.5rem;
+  width: 4rem;
+  align-items: flex-end;
+  cursor: pointer;
+  margin: 0.2rem auto 0;
+  display: inline;
+  background-color: white;
+}
+ul p{ 
+  width: 100%;
+  align-items: flex-end;
+  font-size: 2rem;
+  justify-content: center;
+}
+
+
+
+.main_códigoPostal .input-text{
+  font-size: 30px;
+  border: hidden;
+  border-radius: 1rem;
+  height: 4rem;
+  width: 15rem;
+  padding: 0.5rem;
+  margin-bottom: 0.2rem;
+  background-color:rgb(194, 201, 243);
+}
+.main_códigoPostal .button{
+  height: 3rem;
+  width: 8rem;
+  font-size: 25px;
+  background-color: white;
+  border-radius: 0.5rem;
+}
+
+h3{
+  font-size: 30px;
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 0 0.5rem;
+  padding: 0.2rem;
+}
+.main_totalCarrito{
+  background-color: rgb(214, 231, 236);
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+  line-height: 40px;
+  font-size: 30px;
+  height: 16rem;
+}
+
+.main_boton_finalizar{
+  border: none;
+  border-radius: 1rem;
+  height: 3rem;
+  width: 25rem;
+  margin: 0.2rem auto 0;
+  background-color: white;
+  text-align: center;
+}
+}

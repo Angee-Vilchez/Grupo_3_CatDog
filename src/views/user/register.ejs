@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+
+    <body>
+
+        <%- include("../partials/header") %>
+        
+<main class="registro">
+    <section class="container">
+        
+        <form action="/user/register" method="post">
+            <h2>Registro</h2>
+            <div class="input-container">
+                <label for="name">Nombre</label>
+                <input type="text"  name="name" placeholder="ingrese su nombre" id="name">
+                <% if (locals.errors && errors.name) { %>
+                    <small class="text-danger"><%= errors.name.msg %></small>
+                <% } %>
+            </div>
+            <div class="input-container">
+                <label for="name">Apellido</label>
+                <input type="text" name="surname" placeholder="ingrese su apellido" id="surname ">
+                <% if (locals.errors && errors.surname) { %>
+                    <small class="text-danger"><%= errors.surname.msg %></small>
+                <% } %>
+            </div>
+            <div class="input-container">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="ingrese su mail" id="email">
+                <% if (locals.errors && errors.email) { %>
+                    <small class="text-danger"><%= errors.email.msg %></small>
+                <% } %>
+            </div>
+            <div class="input-container">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" placeholder="ingrese una contraseña" id="password">
+                <% if (locals.errors && errors.password) { %>
+                    <small class="text-danger"><%= errors.password.msg %></small>
+                <% } %>
+            </div>
+            <div class="input-container">
+                <label for="password2">Repita su contraseña</label>
+                <input type="password" name="password2" placeholder="Reingrese su contraseña" id="password2">
+                <% if (locals.errors && errors.password2) { %>
+                    <small class="text-danger"><%= errors.password2.msg %></small>
+                <% } %>
+            </div>
+            <div class="input-container">
+                <label for="avatar">Avatar</label>
+                <input type="file" name="avatar" placeholder="seleccione su avatar" id="avatar">
+            </div>
+            <div class="input-check-container">
+                <label for="recordar">Acepto los <a href=" ">términos y condiciones</a></label>
+                <input type="checkbox" name="terms" id="terms">
+            </div>
+            <div class="btn-container">
+                <button type="submit" class="btn btn-submit">Registrarme</button>
+            </div>
+            <span><a href="/user/login">Ya tengo cuenta</a></span>
+        </form>
+    </section>
+</main> 
+
+<%- include("../partials/footer") %>
+
+<%- include("../partials/script") %>
+</body>
+
+</html>
+
+
+
+
+
+
+

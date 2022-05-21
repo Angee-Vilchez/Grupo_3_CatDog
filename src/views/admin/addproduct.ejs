@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %> 
+<body>
+  <%- include('../partials/header') %> 
+
+  
+    <main class="container min-vh-100">
+      <fieldset class="creation_product">
+        <legend class="agregar">AGREGAR PRODUCTO</legend>
+        <form class="row " action="/admin/productos" method="POST">
+          <div class="mb-3 col-md-6">
+            <label for="name" class="nombre_product">Nombre del producto</label>
+            <input type="text" name="name" class="form-control" id="name" placeholder="Nombre de producto">
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="price" class="prices">Precio</label>
+            <input type="number" name="price" class="form-control" id="price" placeholder="Precio">
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="discount" class="discount">Descuento</label>
+            <input type="number" name="discount" class="form-control" id="discount" placeholder="Descuento">
+          </div>
+          <div class="mb-3 col-md-6">
+            <label for="category" class="form-label">Categorias</label>
+            <select name="categoryId" class="form-select" id="category" aria-label="Default select example">
+              <option selected hidden>...</option>
+              <option value="1">Perros</option>
+              <option value="2">Gatos</option>
+              <option value="3">Accesorios</option>
+            </select>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" name="stock" type="checkbox" role="switch" id="stock">
+            <label class="form-check-label" for="stock">Stock disponible</label>
+          </div>
+          <div class="mb-3 ">
+            <label for="description" class="form-label">Descripción</label>
+            <textarea name="description" class="form-control" id="description" rows="3"></textarea>
+          </div>
+          <div class="buttom-crear">
+            <button class="btn btn-primary" type="submit">Crear</button>
+            <button class="btn btn-secundary" type="reset">Borrar</button>
+          </div>
+         </form>
+      </fieldset>
+  
+    </main>
+  
+  
+
+      <%- include('../partials/footer') %> 
+      
+      <%- include('../partials/scripts') %> 
+
+</body>
+</html>

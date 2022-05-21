@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<%-include('partials/head') %> 
+<body>
+  <%-include('partials/header') %> 
+
+      <main class="container min-vh-100" style="min-height: 73vh;">
+        <h1 style="position: relative; top: -20rem; margin-left: -10rem;">ADMIN</h1>
+        <!-- Register -->
+        <div class="register_form">
+            <h2>Listar o Agregar Producto</h2>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+            <a href="/admin/listproduct" class="btn-cancel-admin">LISTAR</a>
+            <a href="/admin/addproduct" class="btn-cancel-admin">AGREGAR</a>
+            <a href="/admin/editproduct" class="btn-cancel-admin">EDITAR</a>
+            </div>
+        </div>
+      </main>
+
+      <%-include('partials/footer') %> 
+      
+      <%-include('partials/script') %> 
+
+</body>
+</html>

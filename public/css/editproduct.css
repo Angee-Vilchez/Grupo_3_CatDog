@@ -1,0 +1,22 @@
+.editor_product {
+    border-style: dotted;
+    border-width: 5px;
+    margin: 50rem 40rem;
+  }
+  
+  .agregar {
+    text-align: center;
+  }
+  
+  input[type=text]{
+    width: 50%;
+  }
+  
+  input[type=number] {
+    width: 50%;
+  }
+  
+  .description {
+    position: relative;
+    top: 0.5rem;
+  }

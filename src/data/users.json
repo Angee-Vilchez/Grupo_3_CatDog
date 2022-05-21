@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "name": "angee",
+        "surname": "vilchez",
+        "email": "mail@mail.com",
+        "password": "$2a$10$3vy7HC3JxjiX48dUvcgAmeMG3ZmiXWh9MtQf6VcW3lpIV5ehJTP0u",
+        "avatar": "default.jpg",
+        "rol": "USER"
+    }
+]

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("../partials/head") %>
+
+    <body> 
+
+        <%- include("../partials/header") %>
+        
+    <main>
+        <section class="container">
+        
+            <form method="post" action="/user/login"  >  
+                <h2>Login</h2>
+                <div class="input-container">
+                    <input type="email" class="input-style" name="email" placeholder="Ingrese su email">
+                    <% if (locals.errors && errors.email) { %>
+                        <small class="text-danger"><%= errors.email.msg %></small>
+                    <% } %>
+                </div>
+                <div class="input-container">
+                    <input type="password" class="input-style" name="password" placeholder="Ingrese una contraseña">
+                    <% if (locals.errors && errors.password) { %>
+                        <small class="text-danger"><%= errors.password.msg %></small>
+                    <% } %>
+                </div>
+                <div class="input_check-container">
+                    <label for="remember">Recordar 
+                    <input type="checkbox" name="remember" id="remember"></label>
+                </div>
+                <% if (locals.errors && errors.custom) { %>
+                    <small class="text-danger"><%= errors.custom.msg %></small>
+                <% } %>
+                <div class="btn-container">
+                    <button type="submit" class="btn btn-outline-primary">Iniciar sesión</button>
+                </div>
+                <span><a href="/user/register">No tengo cuenta</a></span>
+            </form>
+    
+        </section>
+    </main> 
+
+    <%- include("../partials/footer") %>
+
+    <%- include("../partials/script") %>
+</body>
+
+</html>
+
+

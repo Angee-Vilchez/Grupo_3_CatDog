@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head') %> 
+<body>
+  <%- include('../partials/header') %> 
+  
+      <main class="container min-vh-100 pt-5">
+        <h1 class="edit">LISTADO DE PRODUCTOS</h1>
+        <table class="list">
+            <thead>
+              <tr>
+                <th class="id">id</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoría</th>
+                <th>Stock</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% productos.forEach(producto => { %>
+                <tr>
+                  <th class="productInfo"></th>
+                  <td><strong><%- producto.id %></strong></td>
+                  <td><%- producto.name %></td>
+                  <td><%- producto.price %></td>
+                  <td><%- producto.categoryId %></td>
+                  <td><%- producto.stock %></td>
+                  <td>
+                    <a href="/admin/list/editar/<%- producto.id %>" class="btn btn-success">
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </a>
+                    <form action="/admin/list/eliminar/<%- producto.id %>?_method=DELETE" method="post">
+                      <button class="btn btn-danger" type="submit">
+                        <i class="fa-solid fa-trash-can"></i>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              <% }) %>  
+            </tbody>
+          </table>
+      </main>
+
+      <%- include('../partials/footer') %> 
+      
+      <%- include('../partials/scripts') %> 
+
+</body>
+</html>
