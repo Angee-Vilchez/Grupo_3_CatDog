@@ -1,7 +1,7 @@
 <header>
     <div>
         <div class="section-top">
-            <a href="/"></a>
+            <a href="/">
             <img src="../img/LogoNombre.png " alt="LogoCatDog">
             </a>
             <div class="conteiner-buscador">
@@ -18,11 +18,11 @@
                         <% session.user.name %>
                             <li><a href="/user/Perfil">Mi Perfil</a></li>
                             <li><a href="/user/logout">Cerrar Sesión</a></li>
-                            <% } else { %>
-                                <li><a href="/user/register">Creá tu cuenta</a></li>
-                                <li><a href="/user/login">Ingresá</a></li>
-                                <% } %>
-                                    <li><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <% } else { %>
+                            <li><a href="/user/register">Creá tu cuenta</a></li>
+                            <li><a href="/user/login">Ingresá</a></li>
+                    <% } %>
+                        <li><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -30,14 +30,12 @@
     <div>
         <nav id="nav">
             <ul class="opciones">
-                <li><a href="">Perros</a>
-                </li>
+                <li><a href="">Perros</a></li>
                 <li><a href="">Gatos</a></li>
                 <li><a href="">Otros</a></li>
                 <li><a href="">Accesorios</a></li>
                 <li><a href="">Servicios</a></li>
             </ul>
-    </div>
-
         </nav>
+    </div>
 </header>

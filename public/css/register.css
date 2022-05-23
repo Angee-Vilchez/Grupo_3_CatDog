@@ -1,12 +1,3 @@
-:root {
-    --azul-oscuro: #041562;
-    --azul-claro: #524F9E;
-    --celeste-claro: #1AAFD0;
-    --rojo: #da1212;
-    --font-roboto: "Roboto", sans-serif;
-  }
-
-
 *{
     box-sizing: border-box;
     margin: 0;

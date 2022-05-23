@@ -315,51 +315,6 @@ div .dato_carga_de_barra .Cantidad-total {
 /* Media Queries */
 
 @media  screen and (max-width: 500px){
-    
-    /* HEADER */
-
-    header{
-          width: auto;
-      }
-      header #buscador{
-          margin: 0px;
-          width: 23%;
-      }
-      header p{
-          padding: 0;
-          margin: 0;
-          width: 40%;
-          font-size: 12px;
-          text-align: right;
-      }
-      
-      header nav {
-          margin-top: 20px;
-          font-size: 12px;
-          width: 100%;
-          display: inline-flex;
-          padding: 5px;
-      }
-      header nav ul li i{
-          margin: 0 10px 0 0;
-      }
-      header nav ul li{
-          font-size: 11px;
-          margin-right: 10px;
-      }    
-      .burger-menu{
-          display: none;
-      }
-      header nav ul{
-          list-style: none;
-          display: flex;
-      }
-      #nav{
-          display: flex;
-          justify-content: space-between;
-      }
-
-      /* END HEADER */
 
 
       /* PRODUCT DETAIL */
@@ -677,23 +632,6 @@ div .dato_carga_de_barra .Cantidad-total {
         } 
 
       /* END PRODUCT DETAIL */
-
-
-
-      /* FOOTER */
-
-      footer {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    footer.main_footer .footer_socialMedia-container {
-        width: 40%;
-        max-width: 40%;
-    }
-    
-
-    /* END FOOTER */
     
     @media (min-width: 1080px){
       
@@ -706,9 +644,6 @@ div .dato_carga_de_barra .Cantidad-total {
       
       main h2{
           margin-left: 45px;
-      }
-      header p{
-          font-size: 20px;
       }
     
       .burger-menu {
