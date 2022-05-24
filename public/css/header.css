@@ -6,8 +6,10 @@
 
 header {
   background-color: #1fa9e7;
-  align-items: center;
+  
   justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding: 5px;
   margin: 0px;
 }
