@@ -4,39 +4,69 @@
     padding: 0;
 }
 
-
 /* main */
-
-
-h2 {
-    text-align: center;
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+.formulario_logo img{
+    width: 7rem;
+    height: 7rem;
+    object-fit: cover;
 }
 
-.container {
+h2 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    font-size: 35px;
+    color: #3BC4B0
+}
+
+.registro {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    min-height: 300px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 1rem;
-    background: linear-gradient(white, white)
+    padding: 3rem 1rem;
+    background: #f4f4f4
+}
+
+.registro .container {
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1rem 2rem;
+    max-width: 400px;
+    border:solid 1px #3BC4B0; 
+}
+
+.registro .container .input-container label {
+    margin-bottom: 0.5rem;
+    color: black;
+    font-style: lighter;
+    text-transform: uppercase;
+}
+
+.registro .container .input-check-container label {
+    margin: 0 auto;
+    color: black;
+    font-style: lighter;
 }
 
 .input-container,
 .btn-container {
     display: flex;
-    flex-direction: column;
     width: 100%;
     margin-bottom: 1rem;
 }
 
-
 label {
-    color: rgb(135, 71, 255);
     font-size: 15px;
     margin: 0 auto;
+    color: black;
 }
 
 input{
@@ -48,18 +78,26 @@ input{
     background-color:rgb(217, 221, 243);
 }
 
-.placeholder {
-    color: lightgray;
-}
-
 /* estilo de botones */
 
-button.btn {
-    border: none;
-    border-radius: 1rem;
+div.btn-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+button.btn-register{
+    margin: 1rem;
+    padding: 0;
+    width: 59%;
     height: 2.5rem;
-    text-transform: uppercase;
-    width: 8rem;
-    cursor: pointer;
-    margin: 0.2rem auto 0;
+    border-color: #0d6efd;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 17px;
+}
+
+button.btn-register:hover{
+    background-color: #0d6efd;
+    color: white;;
 }

@@ -3,13 +3,15 @@
 
 <%- include("../partials/head") %>
 
-    <body>
+<body>
 
-        <%- include("../partials/header") %>
+<%- include("../partials/header") %>
         
 <main class="registro">
-    <section class="container">
-        
+    <div class="container">
+        <div class="formulario_logo">
+            <img src="/img/logo.png">
+        </div>
         <form action="/user/register" method="post">
             <h2>Registro</h2>
             <div class="input-container">
@@ -56,11 +58,12 @@
                 <input type="checkbox" name="terms" id="terms">
             </div>
             <div class="btn-container">
-                <button type="submit" class="btn btn-submit">Registrarme</button>
+                <button type="submit" class="btn-register">Registrarme</button>
             </div>
             <span><a href="/user/login">Ya tengo cuenta</a></span>
+
         </form>
-    </section>
+    </div>
 </main> 
 
 <%- include("../partials/footer") %>
