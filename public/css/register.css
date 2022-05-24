@@ -11,7 +11,7 @@
     object-fit: cover;
 }
 
-h2 {
+.registro .container h2 {
     display: flex;
     justify-content: center;
     text-align: center;
@@ -28,7 +28,7 @@ h2 {
     justify-content: center;
     align-items: center;
     padding: 3rem 1rem;
-    background: #f4f4f4
+    background: #f4f4f4;
 }
 
 .registro .container {
@@ -39,15 +39,22 @@ h2 {
     flex-direction: column;
     width: 100%;
     padding: 0 1rem 2rem;
-    max-width: 400px;
-    border:solid 1px #3BC4B0; 
+    max-width: 450px;
+    border:solid 1px #3BC4B0;
+    background-color: white;
 }
 
 .registro .container .input-container label {
     margin-bottom: 0.5rem;
     color: black;
-    font-style: lighter;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.registro .container .input-container{
+    width: 350px;
 }
 
 .registro .container .input-check-container label {
@@ -63,13 +70,7 @@ h2 {
     margin-bottom: 1rem;
 }
 
-label {
-    font-size: 15px;
-    margin: 0 auto;
-    color: black;
-}
-
-input{
+.registro .container .input-container input{
     border: none;
     border-radius: 1rem;
     height: 2.5rem;
