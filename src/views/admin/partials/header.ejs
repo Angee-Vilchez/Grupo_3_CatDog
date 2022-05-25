@@ -1,19 +1,62 @@
-<header>
-    <div>
-        <div class="section-top">
-            <a href="/"></a>
-            <img src="../img/LogoNombre.png " alt="LogoCatDog">
-            </a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/admin"><img src="/img/LogoNombre.png" style="width: 15rem;"
+                alt="logo formar"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Homepage</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Productos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/admin/productos">Listado</a></li>
+                        <li><a class="dropdown-item" href="/admin/productos/agregar">Agregar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Emprendimientos
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/admin/emprendimientos">Listado</a></li>
+                        <li><a class="dropdown-item" href="/admin/emprendimientos/agregar">Agregar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorias
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/admin/categorias">Listado</a></li>
+                        <li><a class="dropdown-item" href="/admin/categorias/agregar">Agregar</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="/usuarios/logout">Cerrar sesión</a>
+                </li>
+            </ul>
+            <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form> -->
         </div>
     </div>
-    <div class="navbar-collapse" id="navbarSupportedContent">
-        <nav class="navbar-nav me-auto mb-2 mb-lg-0">
-            <ul class="opciones">
-                <li><a href="">listado</a></li>
-                <li><a href="">agregar</a></li>
-                <li><a href="">productos</a></li>
-            </ul>
-    </div>
-
-        </nav>
-</header>
+</nav>

@@ -4,181 +4,84 @@
     <%- include("../partials/header") %> 
 <body>
     <%- include("../partials/head") %> 
-    <main>
-        <!-- header -->
-    <div class="Producto">
-    <div id="pagina">
-            <!-- Informacion Centro -->
-            <div class="columna_centro_pb col-xs-12 col-sm-4">
-                <!-- Imagen Pagina -->
-        <div class="imagenes">
-            <span class="tamaño">
-                <img src="../img/productos/img-comida.png" alt="">
-            </span>
+    <main class="container-everything">
+        <div class="slide-inner">
+          <input class="slide-open" type="radio" id="slide-1" 
+                name="slide" aria-hidden="true" hidden="" checked="checked">
+          <div class="slide-item">
+            <img src="/img/productos/img-comida.png">
+          </div>
+          <input class="slide-open" type="radio" id="slide-2" 
+                name="slide" aria-hidden="true" hidden="">
+          <div class="slide-item">
+            <img src="/img/productos/img-comida2.png">
+          </div>
+          <input class="slide-open" type="radio" id="slide-3" 
+                name="slide" aria-hidden="true" hidden="">
+          <div class="slide-item">
+            <img src="/img/productos/img-comida3.png">
+          </div>
+          <label for="slide-3" class="slide-control prev control-1">‹</label>
+          <label for="slide-2" class="slide-control next control-1">›</label>
+          <label for="slide-1" class="slide-control prev control-2">‹</label>
+          <label for="slide-3" class="slide-control next control-2">›</label>
+          <label for="slide-2" class="slide-control prev control-3">‹</label>
+          <label for="slide-1" class="slide-control next control-3">›</label>
+          <ol class="slide-indicador">
+            <li>
+              <label for="slide-1" class="slide-circulo">•</label>
+            </li>
+            <li>
+              <label for="slide-2" class="slide-circulo">•</label>
+            </li>
+            <li>
+              <label for="slide-3" class="slide-circulo">•</label>
+            </li>
+          </ol>
         </div>
+    
+      <main class="container">
+        <div class="creation_product">
+          <div class="container-product"><h1 id="product">Producto</h1>
+            <div class="price"><h4>$2123</h4></div>
+            <div class="btn-compra">
+                <button type="submit" class="btn">COMPRAR</button>
             </div>
-            <!-- Codigo de Producto -->
-            <!-- Stars Opinion -->
-            <div class="Nombre_producto"> PRODUCTO </div>
-            <div class="Cod_Producto"> xxxx-12312 </div>
-                <div class="producto_reseña_estrellas">
-                    <span id="spnRatingProductoTop" class="rating-producto"></span>
-                    <form>
-                        <p class="clasificacion">
-                          <input id="radio1" type="radio" name="estrellas" value="5"><!--
-                          --><label for="radio1">★</label><!--
-                          --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-                          --><label for="radio2">★</label><!--
-                          --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-                          --><label for="radio3">★</label><!--
-                          --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-                          --><label for="radio4">★</label><!--
-                          --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-                          --><label for="radio5">★</label>
-                        </p>
-                      </form>
-                </div>
-
-            <!-- Fin codigo de producto -->
-            <!-- Fin Stars Opinion -->
-            <!-- envio -->
-            <div class="Envios">
-                <div class="Opciones_envios">
-                    <div class="titulo">Opciones de Envio:</div>
-                    <div class="item">
-                        <div class="icon">
-                            <div class="icono_radio_activo" style="display: none;"></div>
-                            <div class="icono-camion">
-                                <img src="../img/productos/icono-camion.png" alt="icono-camion">
-                            </div>
-                        </div>
-                        <div class="text">
-                            <div class="titulo_domicilio">ENVIO A DOMICILIO</div>
-                            <div class="texto-1">Envio gratis +$3000 en CABA y zonas de GBA.
-                                <p>
-                                    No aplica para Envios al interior
-                                </p>
-                            </div>
-                        </div>
-                        <div class="Barra_cargadora !important;">
-                            <div class="msg-barra-cargadora">
-                                <span class="icn checkout"></span>
-                                <div class="msg-barra-cargadora-ss">Te faltan
-                                    <b>$3000</b>
-                                    para que tu envio sea gratis
-                                </div>
-                            </div>
-                            <div class="barra-de-carga">
-                                <div id="miProgreso">
-                                    <div id="barra_de_carga"></div>
-                                </div>
-                                <div class="dato_carga_de_barra">
-                                    <span class="Cantidad-inicial">$0</span>
-                                    <span class="Cantidad-total">$3000</span>
-                                </div>
-                            </div>
-                        </div>
-                      <div class="titulo_sucursal">Retiro en Sucursal</div>
-                      <div class="texto_3">Retira sin cargo por tu sucursal preferida</div>
-                      <div class="icono-sucursal">
-                          <img src="../img/productos/icono-sucursal.png" alt="sucursal">
-                      </div>
-                      <div class="sucursales">
-                          <a href="#">Ver sucursales</a>
-                      </div>
-                    </div>
-                </div>
+            <div class="Envio">
+              <h3 class="option-envio">Opciones de Envio:</h3>
+              <h4 class="domicilio-title">Envio a Domicilio:</h4>
+              <div class="text-1">Envio gratis +$xxxx en CABA y zonas de GBA
+                <p>
+                  No aplica para Envios al interior
+                </p>
+              </div>
+              <div class="Sucursal-title"><h3>Retiro a Sucursal</h3>
+                <h4 class="branch">Retiro en Sucursal:</h4>
+                <p>
+                  Retira sin cargo por tu sucursal preferida
+                </p>
+              </div>
+              <div class="Sucursal">
+                <a href="#">Ver sucursales</a>
+              </div>
             </div>
-                <!-- Precio Columna Derecha -->
-            <div class="columna_derecha_pb">
-                <div class="caja-info-producto">
-                    <div class="precios_de_contenido">
-                        <!-- precios -->
-                        <div class="precio">
-                            <span> $2121 </span>
-                            <meta itemprop="Precio_actual" content="ARS">
-                        </div>
-                    </div>
-                </div>
-            <!-- end Precio Columna Derecha -->
-
-                <fieldset class="conjunto_campo_atributo" style="height: 65rem; width: 30rem;">
-                    <label class="etiqueta_atributo">EDAD</label>
-                    <div class="lista_atributo">
-                        <div class="seleccion" id="grupo_1_uniforme">
-                            <select name="grupo_1" id="grupo_1" class="control_de_forma1">
-                                <option value="1" title="">1AÑO</option>
-                                <option value="2" title="">2AÑO</option>
-                                <option value="3" title="">3AÑO</option>
-                                <option value="4" title="">4AÑO</option>
-                            </select>
-                        </div>
-                        <div class="conjunto_campo_atributo3">
-                            <label class="etiqueta_atributo2" for="grupo_3">RAZA</label>
-                            <div class="lista_atributo">
-                                <div class="seleccion2" id="grupo_3_uniforme">
-                                    <select name="grupo_3" id="grupo_3" class="control_de_forma2">
-                                        <option value="3" title="">Todas las razas</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="conjunto_campo_atributo5">
-                            <label class="etiqueta_atributo3" for="grupo_5">TAMAÑO</label>
-                            <div class="lista_atributo">
-                                <div class="seleccion3" id="grupo_5_uniforme">
-                                    <select name="grupo_5" id="grupo_5" class="control_de_forma3">
-                                        <option value="5" title="">Adulto</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </fieldset>
-            </div>
-                <div class="fondo_carro_de_caja">
-                    <div>
-                        <p id="Añadir al carrito" class="Botones_parte_inferior">
-                            <button type="enviar" name="enviar" class="exclusivo">
-                                <span>Añadir al Carrito</span>
-                            </button>
-                        </p>
-                    </div>
-                </div>
-                <!-- Cantidad deseada -->
-                <div class="cantidad" id="cantidad_deseada">
-                    <label for="cantidad_deseada">Cantidad</label>
-                    <input type="numero" min="1" name="num" id="cantidad_deseada" class="texto" value="1">
-                    <a href="#" data-field-num="num" class="btn btn-default button-plus producto_cantidad_down">
-                        <span>
-                            <i class="icono-menus">
-                            </i>
-                        </span>
-                    </a>
-                    <a href="#" data-field-num="num" class="btn btn-default button-plus producto_cantidad_up">
-                        <span>
-                            <i class="icono-plus"></i>
-                        </span>
-                    </a>
-                    <span class="clearfix">
-                    </span>
-                </div>
-                <!-- metodo de pago -->
-                <div id="metodo_de_pago_logo">
-                    <div class="caja_de_seguridad">
-                        <a href="" title="metodo_pago">
-                            <img src="../img/img-metodo_de_pago.png" alt="" class="img-sensible">
-                        </a>
-                    </div>
-                </div>
-        <section class="página-de-descripción-del-producto">
-            <button class="pagina-de-producto-encabezado">descripción</button> 
-            <button class="pagina-de-producto-encabezado2">opciones</button>
-        </section>
-        <div class="Descripcion"> comida </div>
+          </div>
         </div>
-    </div>
-
+      </main>
+    
+      <div class="payment-method">
+        <form method="POST" action="../productCart">
+            <div class="payment_method">
+                <h3 class="payment">Metodo de Pago</h3>
+            </div>
+          <input type="hidden" name="parametre1" value="valeur1" />
+          <input type="hidden" name="parametre2" value="valeur2" />
+          <input type="hidden" name="parametre3" value="valeur3" />
+          <input type="hidden" name="signature" value="signature"/>
+          <input type="submit" name="payer" value="Payer"/>
+          </form>
+      </div>
+    
     </main>
 
     <%- include("../partials/footer") %>
