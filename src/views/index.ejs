@@ -18,19 +18,26 @@
 
                 <section class="contenedor">
                     <div class="producto">
-                        <a href="/producto">
+                        <% products.forEach( product => { %>
+                        <a href="/producto/<%- product.id %>">
                             <article>
                                 <div class="imagen">
-                                    <img src="../img/productos/carrito1.png" alt="">
+                                    <img src="../img/productos/<%= product.image  %>" alt="">
                                 </div>
-                                <strong>ROYAL CANIN</strong>
-                                <strong>Mini Puppy (Mini Junior</strong>
-                                <strong>$ 3.475</strong>
-                                <p class="oferta">13% OFF</p>
+                                <strong><%= product.marca  %>"></strong>
+                                <strong><%= product.name  %>"></strong>
+                                <% if (product.discount > 0) { %>
+                                <strong><%= product.price %></strong>
+                                <strong><%= product.price - product.discount * product.price / 100 %></strong>
+                                <p class="oferta"><%= product.discount + '% 0FF' %></p>
+                                <% } else { %>$ 
+                                <%= product.price %>
+                                <% } %>
                             </article>
                         </a>
                         <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
                     </div>
+                        <% }) %>
                     <div class="producto">
                         <a href="/producto">
                             <article>

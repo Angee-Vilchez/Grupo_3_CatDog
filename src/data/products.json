@@ -2,14 +2,15 @@
     {
         "id": 1,
         "name": "Purina Excellent Puppy",
-        "codigo": 32439,
-        "marca": "Purina",
+        "price": 8425,
         "description": "Razas medianas y grandes, contiene pollo y arroz",
-        "image": "1.jpg",
         "category": "perros",
         "discount": 22,
-        "price": 8425,
-        "stock": true
+        "image": "1.jpg",
+        "stock": true,
+
+        "codigo": 32439,
+        "marca": "Purina"
     },
     {
         "id": 2,
