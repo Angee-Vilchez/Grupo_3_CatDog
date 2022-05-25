@@ -98,6 +98,14 @@ header #lupa {
   border: black;
 }
 
+.section-top .section-bottom .usuario .avatar_session img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
 .usuario {
   display: none;
 }
