@@ -17,97 +17,34 @@
                 <h2> Ofertas del mes</h2>
 
                 <section class="contenedor">
+                    <% products.forEach( product=> { %>
                     <div class="producto">
-                        <% products.forEach( product => { %>
-                        <a href="/producto/<%- product.id %>">
-                            <article>
-                                <div class="imagen">
-                                    <img src="../img/productos/<%= product.image  %>" alt="">
-                                </div>
-                                <strong><%= product.marca  %>"></strong>
-                                <strong><%= product.name  %>"></strong>
-                                <% if (product.discount > 0) { %>
-                                <strong><%= product.price %></strong>
-                                <strong><%= product.price - product.discount * product.price / 100 %></strong>
-                                <p class="oferta"><%= product.discount + '% 0FF' %></p>
-                                <% } else { %>$ 
-                                <%= product.price %>
-                                <% } %>
-                            </article>
-                        </a>
-                        <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
+                            <a href="/producto/<%- product.id %>">
+                                <article>
+                                    <div class="imagen">
+                                        <img src="../img/productos/<%= product.image  %>" alt="">
+                                    </div>
+                                    <strong>
+                                        <%= product.marca %>">
+                                    </strong>
+                                    <strong>
+                                        <%= product.name %>">
+                                    </strong>
+                                    <% if (product.discount> 0) { %>
+                                    <strong>
+                                        <%= product.price - product.discount * product.price / 100 %>
+                                    </strong>
+                                    <p class="oferta">
+                                        <%= product.discount + '% 0FF' %>
+                                    </p>
+                                    <% } else { %>$
+                                    <%= product.price %>
+                                    <% } %>
+                                </article>
+                            </a>
+                            <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
                     </div>
-                        <% }) %>
-                    <div class="producto">
-                        <a href="/producto">
-                            <article>
-                                <div class="imagen">
-                                    <img src="../img/productos/12.jpg" alt="">
-                                </div>
-                                <strong>EUKANUBA</strong>
-                                <strong>Weight Control Medium</strong>
-                                <strong>$ 4.865</strong>
-                                <p class="oferta">11% OFF</p>
-                            </article>
-                        </a>
-                        <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
-                    </div>
-                    <div class="producto">
-                        <a href="/producto">
-                            <article>
-                                <div class="imagen">
-                                    <img src="../img/productos/14.jpg" alt="">
-                                </div>
-                                <strong>DOG CHOW</strong>
-                                <strong>Cachorros Minis</strong>
-                                <strong>$ 6.255</strong>
-                                <p class="oferta">11% OFF</p>
-                            </article>
-                        </a>
-                        <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
-                    </div>
-                    <div class="producto">
-                        <a href="/producto">
-                            <article>
-                                <div class="imagen">
-                                    <img src="../img/productos/10.jpg" alt="">
-                                </div>
-                                <strong>ROYAL CANIN</strong>
-                                <strong>Bulldog 24 Adult</strong>
-                                <strong>$ 9.309</strong>
-                                <p class="oferta">21% OFF</p>
-                            </article>
-                        </a>
-                        <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
-                    </div>
-                    <div class="producto">
-                        <a href="/producto">
-                            <article>
-                                <div class="imagen">
-                                    <img src="../img/productos/11.jpg" alt="">
-                                </div>
-                                <strong>EUKANUBA</strong>
-                                <strong>Puppy Small Breed</strong>
-                                <strong>$ 2.605</strong>
-                                <p class="oferta">15% OFF</p>
-                            </article>
-                        </a>
-                        <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
-                    </div>
-                    <div class="producto">
-                        <a href="/producto">
-                            <article>
-                                <div class="imagen">
-                                    <img src="../img/productos/6.jpg" alt="">
-                                </div>
-                                <strong>PURINA EXCELLENT</strong>
-                                <strong>Kitten Chicken & Rice</strong>
-                                <strong>$ 5.729</strong>
-                                <p class="oferta">24% OFF</p>
-                            </article>
-                        </a>
-                        <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
-                    </div>
+                    <% }) %>
                 </section>
 
 

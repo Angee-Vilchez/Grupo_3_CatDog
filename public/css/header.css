@@ -55,7 +55,7 @@ header img {
 
 .conteiner-buscador {
   position: relative;
-  width: 15rem;
+  width: 12rem;
 
 }
 
@@ -66,7 +66,7 @@ header #buscador {
   border: none;
   width: 93%;
   height: 40px;
-  font-size: 18px;
+  font-size: 14px;
   display: inline;
   margin-right: 0px;
   max-width: 500px;
@@ -116,7 +116,7 @@ header #lupa {
   border: black;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 950px) {
   /*
   header img{
       margin: 0;
@@ -212,4 +212,24 @@ header #lupa {
 
 
   } */
+  
+.conteiner-buscador {
+  position: relative;
+  width: 18rem;
+
+}
+  header #buscador {
+    background-color: white;
+    padding-left: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 93%;
+    height: 40px;
+    font-size: 20px;
+    display: inline;
+    margin-right: 0px;
+    max-width: 500px;
+  
+  }
+
 }

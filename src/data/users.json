@@ -7,5 +7,14 @@
         "password": "$2a$10$3vy7HC3JxjiX48dUvcgAmeMG3ZmiXWh9MtQf6VcW3lpIV5ehJTP0u",
         "avatar": "default.jpg",
         "rol": "USER"
+    },
+    {
+        "id": 2,
+        "name": "Javier",
+        "surname": "Escobar",
+        "email": "abc@mail.com",
+        "password": "$2a$10$wSXcDmizfXuTwH3rzgkVteAilHRhSXisWKgUtYoo7vcuS08slmdim",
+        "avatar": "default.jpg",
+        "rol": "Admin"
     }
 ]

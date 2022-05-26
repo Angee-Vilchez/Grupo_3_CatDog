@@ -38,12 +38,7 @@ const carritoRouter = require('./routes/carritoRouter')
 const productosRouter = require('./routes/productosRouter');
 const userRouter = require('./routes/userRouter');
 const adminRouter = require('./routes/adminRouter');
-
-/* Middlewares de Rutas */
-app.use('/', indexRouter);
-app.use('/productos', productosRouter);
-app.use('/usuarios', userRouter);
-app.use('/admin', adminRouter);
+ 
 
 /*Rutas*/
 app.use('/', indexRouter);
