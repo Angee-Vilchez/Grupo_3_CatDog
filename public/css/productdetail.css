@@ -3,7 +3,7 @@
     overflow: hidden;
     width: 40%;
     height: calc( 300px + 3em);
-    margin-left: 10rem;
+    right: 1rem;
     top: 10rem;
   }
   
@@ -37,6 +37,7 @@
     line-height: 35px;
     position: absolute;
     top: 50%;
+    left: 550px;
     -webkit-transform: translate(0, -50%);
     cursor: pointer;
     -ms-transform: translate(0, -50%);
@@ -61,7 +62,8 @@
   
   #slide-1:checked ~ .control-1,
   #slide-2:checked ~ .control-2,
-  #slide-3:checked ~ .control-3 {
+  #slide-3:checked ~ .control-3,
+  #slide-4:checked ~ .control-4 {
     display: block;
   }
   
@@ -98,7 +100,9 @@
   #slide-2:checked ~ .control-2 ~ .slide-indicador 
       li:nth-child(2) .slide-circulo,
   #slide-3:checked ~ .control-3 ~ .slide-indicador 
-      li:nth-child(3) .slide-circulo {
+      li:nth-child(3) .slide-circulo,
+  #slide-4:checked ~ .control-4 ~ .slide-indicador 
+      li:nth-child(4) .slide-circulo {
     color: #428bca;
   }
   
@@ -116,8 +120,20 @@
          -1px 0px 2px rgba(255, 255, 255, 0);
   }
   
+.container-product { 
+    width: 49%;
+    height: 700px;
+    padding: auto;
+    margin: 1px;
+    position: relative;
+    left: 50rem;
+    bottom: 12rem;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    
+}
 
-  .container #product {
+.container #product {
       text-align: center;
   }
   
