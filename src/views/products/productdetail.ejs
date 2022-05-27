@@ -8,62 +8,24 @@
     <%- include("../partials/header") %>
 
       <main class="container-everything">
-        <div class="slide-inner">
-          <input class="slide-open" type="radio" id="slide-1" name="slide" aria-hidden="true" hidden=""
-            checked="checked">
-          <div class="slide-item">
-            <img src="/img/productos/img-comida.png">
-          </div>
-          <input class="slide-open" type="radio" id="slide-2" name="slide" aria-hidden="true" hidden="">
-          <div class="slide-item">
-            <img src="/img/productos/img-comida2.png">
-          </div>
-          <input class="slide-open" type="radio" id="slide-3" name="slide" aria-hidden="true" hidden="">
-          <div class="slide-item">
-            <img src="/img/productos/img-comida3.png">
-          </div>
-          <input class="slide-open" type="radio" id="slide-4" name="slide" aria-hidden="true" hidden="">
-          <div class="slide-item">
-            <img src="/img/productos/forma-de-pago.jpg">
-          </div>
-          <label for="slide-3" class="slide-control prev control-1">‹</label>
-          <label for="slide-2" class="slide-control next control-1">›</label>
-          <label for="slide-1" class="slide-control prev control-2">‹</label>
-          <label for="slide-3" class="slide-control next control-2">›</label>
-          <label for="slide-2" class="slide-control prev control-3">‹</label>
-          <label for="slide-1" class="slide-control next control-3">›</label>
-          <label for="slide-4" class="slide-control prev control-4">‹</label>
-          <label for="slide-3" class="slide-control next control-4">›</label>
-          <ol class="slide-indicador">
-            <li>
-              <label for="slide-1" class="slide-circulo">•</label>
-            </li>
-            <li>
-              <label for="slide-2" class="slide-circulo">•</label>
-            </li>
-            <li>
-              <label for="slide-3" class="slide-circulo">•</label>
-            </li>
-            <li>
-              <label for="slide-4" class="slide-circulo">•</label>
-            </li>
-          </ol>
+        <div class="container-img">
+          <img src="/img/productos/img-comida.png" alt="">
         </div>
 
         <div class="container">
           <div class="creation_product">
             <div class="container-product">
               <h1 id="product">ALIMENTO PURINA PRO PLAN ADULT 3KG</h1>
-              <div class="price">
-                <h3>$1000</h3>
+              <div class="container-price">
+                <h2><span class="dashicons dashicons-cart"></span>$1000</h2>
               </div>
-              <div class="btn-compra">
-                <button type="submit" class="btn">COMPRAR</button>
+              <div class="container-btn-compra">
+                <button>COMPRAR</button>
               </div>
-              <div class="codigo">SKU: XXXXXXX</div>
+              <div class="container-codigo">SKU: XXXXXXX</div>
               <div class="Envio">
-                <h3 class="option-envio">Opciones de Envio:</h3>
-                <h4 class="domicilio-title">Envio a Domicilio:</h4>
+                <h3>Opciones de Envio:</h3>
+                <h4>Envio a Domicilio:</h4>
                 <div class="text-1">Envio gratis +$xxxx en CABA y zonas de GBA
                   <p>
                     No aplica para Envios al interior
@@ -71,12 +33,10 @@
                 </div>
                 <div class="Sucursal-title">
                   <h3>Retiro a Sucursal</h3>
-                  <h4 class="branch">Retiro en Sucursal:</h4>
+                  <h4>Retiro en Sucursal:</h4>
                   <p>
                     Retira sin cargo por tu sucursal preferida
                   </p>
-                </div>
-                <div class="Sucursal">
                   <a href="#">Ver sucursales</a>
                 </div>
               </div>
