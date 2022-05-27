@@ -1,23 +1,26 @@
 const fs = require('fs');
 const path = require('path');
 
-const productsFilePath = path.join(__dirname, '../../data/products.json');
+/* const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const writeProducts = (data) => fs.writeFileSync(productsFilePath, JSON.stringify(data), 'utf-8')
-/* const { products, writeProducts, getProducts } = require('../../data');
-const { validationResult } = require('express-validator');  */
+const writeProducts = (data) => fs.writeFileSync(productsFilePath, JSON.stringify(data), 'utf-8') */
+const { products, writeProducts, getProducts } = require('../data');
+const { validationResult } = require('express-validator');  
 
 module.exports = {
 
     //Muestra la lista de productos
     list: (req, res) => {
         res.render('admin/listproduct', {
-            productos: products
+            productos: products,
+            session: req.session
         })
     },
     //Envia la vista de formulario de la creacion de producto
     productAdd: (req, res) => {
-        res.render('admin/addproduct')
+        res.render('admin/addproduct', {
+            session: req.session
+        })
     },
     //Recibe los datos del form de la creacion y lo guarda en la DB
     productCreate: (req, res) => {
@@ -68,6 +71,7 @@ module.exports = {
         res.render('admin/editproduct', {
             titulo: "Edición",
             producto,
+            session: req.session
         })
     },
     //Recibe datos actualizados del form de edicion

@@ -43,8 +43,8 @@ const adminRouter = require('./routes/adminRouter');
 /*Rutas*/
 app.use('/', indexRouter);
 app.use('/carrito', carritoRouter);
-app.use('/producto', productosRouter);
-app.use('/user', userRouter);
+app.use('/productos', productosRouter);
+app.use('/usuarios', userRouter);
 app.use('/admin', adminRouter);
 
 app.listen(PORT, () => console.log(`

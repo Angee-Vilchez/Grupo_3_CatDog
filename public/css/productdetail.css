@@ -97,17 +97,6 @@
 
   /* MEDIAQUERIES */
 
-@media only screen and (min-width: 570px) {
+@media screen and (min-width: 570px) {
   
-  .container-img img {
-    position: relative;
-    left: 1rem;
-    top: 4rem;
-  }
-
-  .container-product {
-    position: relative;
-    left: 5rem;
-  }
-
 }

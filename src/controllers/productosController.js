@@ -10,4 +10,14 @@ module.exports = {
         titulo: "Detalle de Producto",
         session: req.session
     }),
+    detail: (req, res) => {
+        let productId = +req.params.id;
+        let product = products.find(product => product.id === productId);
+        res.render("products/productdetail", {
+            css: "productdetail.css",
+            titulo:"Detalle de producto",
+            session: req.session,
+            products
+        })
+       },
 }

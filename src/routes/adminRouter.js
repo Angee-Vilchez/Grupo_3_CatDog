@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const adminController = require('../controllers/admin/adminController')
-const adminProductsController = require('../controllers/admin/adminProductsController');
-const userProductsController = require('../controllers/userProductsController');
+const adminProductsController = require('../controllers/adminProductsController');
 const adminCheck = require('../middlewares/adminCheck')
+const userSessionCheck = require('../middlewares/userInSessionCheck')
 
 /* Session */
 router.get('/', adminController.index);
