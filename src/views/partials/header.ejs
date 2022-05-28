@@ -13,14 +13,14 @@
                 <ul class="usuario">
                     <% if(typeof session.user !="undefined" ) { %>
                         <% session.user.name %>
-                            <li><a href="/user/Perfil">Mi Perfil</a></li>
-                            <li><a href="/user/logout">Cerrar Sesión</a></li>
+                            <li><a href="/usuarios/Perfil">Mi Perfil</a></li>
+                            <li><a href="/usuarios/logout">Cerrar Sesión</a></li>
                             <div class="avatar_session">
                             <img src="img/avatar/<%= session.user.avatar %> " alt="">
                             </div>
                     <% } else { %>
-                            <li><a href="/user/register">Creá tu cuenta</a></li>
-                            <li><a href="/user/login">Ingresá</a></li>
+                            <li><a href="/usuarios/register">Creá tu cuenta</a></li>
+                            <li><a href="/usuarios/login">Ingresá</a></li>
                     <% } %>
                         <li><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 </ul>
