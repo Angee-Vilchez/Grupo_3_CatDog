@@ -4,52 +4,46 @@
 <%- include("../partials/head") %>
 
   <body>
-
     <%- include("../partials/header") %>
-
       <main class="container-everything">
-        <div class="container-img">
+        <div class="container-imgagen">
           <img src="/img/productos/img-comida.png" alt="">
         </div>
-
-        <div class="container">
-          <div class="creation_product">
-            <div class="container-product">
-              <h1 id="product">ALIMENTO PURINA PRO PLAN ADULT 3KG</h1>
-              <div class="container-price">
-                <h2><span class="dashicons dashicons-cart"></span>$1000</h2>
-              </div>
-              <div class="container-btn-compra">
-                <button>COMPRAR</button>
-              </div>
-              <div class="container-codigo">SKU: XXXXXXX</div>
-              <div class="Envio">
-                <h3>Opciones de Envio:</h3>
-                <h4>Envio a Domicilio:</h4>
-                <div class="text-1">Envio gratis +$xxxx en CABA y zonas de GBA
-                  <p>
-                    No aplica para Envios al interior
-                  </p>
-                </div>
-                <div class="Sucursal-title">
-                  <h3>Retiro a Sucursal</h3>
-                  <h4>Retiro en Sucursal:</h4>
-                  <p>
-                    Retira sin cargo por tu sucursal preferida
-                  </p>
-                  <a href="#">Ver sucursales</a>
-                </div>
-              </div>
+        <strong class="agregar">15%OFF</strong>
+        <div class="creation_product">
+          
+          <div class="container-product">
+            <h1>Alimento Para Perro Purina Pro Plan Adulto Raza Mediana x 3 Kg</h1>
+            <div class="container-precio">
+              <span class="precio">$ 9.311</span>
+              <span class="precio_descuento">$ 7.914</span>
+            </div>
+            <div class="cantidad">
+              <button type="button" class="boton_cantidad">-</button>
+              <span id="">1</span>
+              <button type="button" class="boton_cantidad">+</button>
+              <button class="agregar"><i class="fa-solid fa-cart-plus"></i>AGREGAR</button>
             </div>
           </div>
+          <hr>
+          <div class="container-descripcion">
+            <h2>DESCRIPCIÓN</h2>
+            SKU: 568921 
+            <p>
+              Purina Pro Plan provee nutrición de avanzada que ayuda a los perros de razas grandes a mantenerse fuertes y llenos de vitalidad. A su vez, también ayuda a otras cosas claves en el cuidado de la mascota, tales como reforzar el sistema inmune, fortalecer la microflora intestinal y reforzar la barrera cutánea.Utilizando como ingrediente principal carne fresca de pollo, esta fórmula ofrece, a través de croquetas más grandes, una nutrición con alto contenido de proteínas (26%) de calidad y menos calorías provenientes de la grasa (12%).
+            </p>
+          </div>
+          <div class="envio">
+            <p>ENVIO GRATIS CABA y zonas de GBA</p>
+            <p>Retira sin cargo por tu sucursal preferida</p>
+            <p><a href="">Ver sucursales</a></p>
+          </div>
         </div>
-
       </main>
 
       <%- include("../partials/footer") %>
 
         <%- include("../partials/script") %>
-
   </body>
 
 </html>
