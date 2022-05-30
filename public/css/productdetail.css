@@ -2,62 +2,66 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 68rem;
+  height: 74rem;
 }
 
-.container-everything .container-imgagen img {
+.container-everything .escritorio {
+  width: 100%;
+}
+
+.container-everything .escritorio .container-imagen img {
   margin-top: 1rem;
-  width: 400px;
+  width: 300px;
   height: 350px;
 }
 
-.container-everything .agregar {
+.container-everything .escritorio .container-imagen .agregar {
   background: #f129a3;
   color: var(--blanco);
   font-size: 15px;
   border-radius: 15px;
   width: 100px;
-  margin-bottom: 1rem;
 }
 
-.container-everything .creation_product{
+.container-everything .escritorio .creation_product{
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 8.5rem;
+  height: 14rem;
 }
 
-.container-everything .creation_product .container-product h1{
+.container-everything .escritorio .creation_product .container-product h1{
 font-size: 23px;
 color: rgb(51, 49, 49);
 margin: 00.5rem;
 }
 
-.container-everything .creation_product .container-product .container-precio{
+.container-everything .escritorio .creation_product .container-product .container-precio{
   display: flex;
   margin-top: 2rem;
   margin-left: 00.5rem;
   color: rgb(68, 66, 66);
 }
 
-.container-everything .creation_product .container-product .container-precio .precio{
+.container-everything .escritorio .creation_product .container-product .container-precio .precio{
  text-decoration: line-through;
 }
 
-.container-everything .creation_product .container-product .container-precio .precio_descuento{
+.container-everything .escritorio .creation_product .container-product .container-precio .precio_descuento{
 color: rgb(51, 49, 49);
 font-size: 23px;
 margin-left: 1rem;
 font-weight: bold;
 }
 
-.container-everything .creation_product .container-product .cantidad {
+.container-everything .escritorio .creation_product .container-product .cantidad {
   display: flex;
   flex-direction:row;
   margin-top: 1rem; 
 }
 
-.container-everything .creation_product .container-product .cantidad .agregar{
+.container-everything .escritorio .creation_product .container-product .cantidad .agregar{
   margin-left: 1rem;
   background-color: #8480ef;
   color: white;
@@ -67,6 +71,10 @@ font-weight: bold;
   font-size: 13px;
   display: flex;
   align-items: center;
+}
+
+.container-everything .escritorio .creation_product .container-product .cantidad .agregar:hover {
+  background-color: #535097;
 }
 
 .boton_cantidad{
@@ -81,28 +89,29 @@ font-weight: bold;
   font-size: 20px;
 }
 
-.container-everything .creation_product .container-descripcion h2{
-  color: #45B1CE;
-  font-weight: bolder;
-  font-size: 20px;
-  text-align: left;
-  margin-left: 0.5rem;
-  margin-bottom: 0.5rem;
+.container-everything .container-descripcion{
+  margin: 0.5rem;
 }
 
-.container-everything .creation_product .container-descripcion p{
+.container-everything .container-descripcion h2{
+  color: #45B1CE;
+  font-weight: bolder;
+  font-size: 23px;
+  text-align: left;
+  margin-left: 0.5rem;
+  margin: 1rem;
+}
+
+.container-everything .container-descripcion p{
 margin: 1rem;
 color: rgb(109, 105, 105);
 line-height: 20px;
 }
 
 .container-everything .envio{
-  margin: 0.5rem;
-/*   border: solid 1px #45B1CE; */
   color: white;
-  background-color: #45B1CE;
+  background-color: #8480ef;
   width: 100%;
-  padding: 0.5rem;
   font-size: 15px;
   line-height: 20px;
   display: flex;
@@ -112,103 +121,123 @@ line-height: 20px;
   border-radius: 5px;
 }
 
-.container-everything.envio p{
+.container-everything .envio p{
   margin: 0.5rem;
 }
 
-
-  
-/* .container-product { 
-    width: 49%;
-    height: 700px;
-    padding: auto;
-    margin: 1px;
-    position: relative;
-    left: 50rem;
-    bottom: 25rem;
-    text-align: center;
-}
-
-.container #product {
-      text-align: center;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 40px;
-  }
-
-  .container-price {
-    position: relative;
-    right: 25rem;
-    top: 2rem;
-  }
-
-  .container-btn-compra button{
-    position: relative;
-    right: 23rem;
-    width: 5rem;
-    height: 3rem;
-    top: 4rem;
-    color: white;
-    background-color: #428bca;
-    border-style: none;
-    border-radius: 10px;
-  }
-
-  .Envio h3 {
-    position: relative;
-    right: 17rem;
-    top: 8rem;
-  }
-
-  .Envio h4 {
-    position: relative;
-    right: 21rem;
-    top: 8rem;
-    text-decoration: underline;
-  }
-
-  .Sucursal-title h3 {
-    position: relative;
-    right: 18rem;
-    top: 11rem;
-  }
-
-  .Sucursal-title h4 {
-    position: relative;
-    right: 21rem;
-    top: 11rem;
-    text-decoration: underline;
-  }
-
-  .text-1 {
-    position: relative;
-    right: 12rem;
-    top: 10rem;
-    font-size: 20px;
-  }
-
-  .Sucursal-title p {
-    position: relative;
-    right: 14rem;
-    top: 13rem;
-    font-size: 20px;
-  }
-
-  .Sucursal-title a {
-    position: relative;
-    font-size: 20px;
-    color:blue;
-    top: 17rem;
-    opacity: 0.5;
-  }
-
-  .container-codigo {
-    position: relative;
-    right: 22rem;
-    top: 6rem;
-  } */
-
   /* MEDIAQUERIES */
 
-@media screen and (min-width: 570px) {
+@media screen and (min-width: 950px) {
+
+  .container-everything{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 52rem;
+  }
   
+  .container-everything .escritorio {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    height: 28rem;
+    
+  }
+
+  .container-everything .escritorio .container-imagen img {
+    margin-top: 2rem;
+    width: 360px;
+    height: 360px;
+    margin-left: 80px;
+    margin-right: 10px;
+  }
+
+  .container-everything .escritorio .container-imagen .agregar {
+    background: #f129a3;
+    color: var(--blanco);
+    font-size: 20px;
+    border-radius: 15px;
+    width: 157px;
+    height: 4rem;
+    margin-left:120px;
+  }
+
+  .container-everything .escritorio .creation_product{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 14rem;
+  }
+  
+  .container-everything .escritorio .creation_product .container-product h1{
+  font-size: 25px;
+  color: rgb(51, 49, 49);
+  margin-top: 4rem;
+  margin-left: 1.5rem;
+  }
+  
+  .container-everything .escritorio .creation_product .container-product .container-precio{
+    display: flex;
+    color: rgb(68, 66, 66);
+    margin: 2.5rem;
+    font-size: 23px;
+  }
+  
+  .container-everything .escritorio .creation_product .container-product .cantidad {
+    display: flex;
+    flex-direction:row;
+    margin-top: 6rem; 
+    margin-left: 2rem;
+  }
+  
+  .container-everything .escritorio .creation_product .container-product .cantidad .agregar{
+    margin-left: 1rem;
+    background-color: #8480ef;
+    color: white;
+    height: 3rem;
+    width: 8rem;
+    border-radius: 0.5rem;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .container-everything .escritorio .creation_product .container-product .cantidad .agregar:hover {
+    background-color: #535097;
+  }
+  
+  .boton_cantidad{
+    margin: 0 0.5rem;
+    height: 3rem;
+    width: 2rem;
+    background-color: none;
+    color: #8480ef;
+    border-radius: 0.5rem;
+    border: solid 1px black;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .container-everything .container-descripcion{
+    margin-left: 4rem;
+    margin-top: 1rem;
+  }
+  
+  .container-everything .container-descripcion h2{
+    color: #45B1CE;
+    font-weight: bolder;
+    font-size: 30px;
+    text-align: left;
+    margin-left: 1.5rem;
+    margin: 1rem;
+  }
+  
+  .container-everything .container-descripcion p{
+  margin-left: 2rem;
+  margin-right: 6rem;
+  color: rgb(109, 105, 105);
+  line-height: 28px;
+  }
+
 }
