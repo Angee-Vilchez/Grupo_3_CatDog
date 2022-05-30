@@ -90,6 +90,7 @@ header #lupa {
   display: flex;
   justify-content: space-between;
   margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .opciones a:hover {
@@ -123,7 +124,7 @@ header #lupa {
   
 .conteiner-buscador {
   position: relative;
-  width: 18rem;
+  width: 28rem;
 
 }
   header #buscador {
