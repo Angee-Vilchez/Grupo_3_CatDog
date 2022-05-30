@@ -1,9 +1,4 @@
-const fs = require('fs');
-const path = require('path');
-
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-const writeProducts = (data) =>  fs.writeFileSync(productsFilePath, JSON.stringify(data), "utf-8");
+const { products } = require('../data');
 
 module.exports = {
     mostrar: (req, res) => res.render('products/productdetail', {
@@ -16,8 +11,9 @@ module.exports = {
         res.render("products/productdetail", {
             css: "productdetail.css",
             titulo:"Detalle de producto",
-            session: req.session,
-            products
+            product,
+            session: req.session
+            
         })
        },
        edit: (req, res) => {

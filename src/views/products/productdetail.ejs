@@ -8,14 +8,14 @@
       <main class="container-everything">
         <div class="escritorio">
           <div class="container-imagen">
-            <img src="/img/productos/img-comida.png" alt="">
-            <strong class="agregar">15%OFF</strong>
+            <img src="/img/productos/<%= product.image %> " alt="">
+            <strong class="agregar"><%= product.discount %>%OFF</strong>
           </div>
           <div class="creation_product"> 
             <div class="container-product">
-               <h1>Alimento Para Perro Purina Pro Plan Adulto Raza Mediana x 3 Kg</h1>
+               <h1><%= product.name %> </h1>
                <div class="container-precio">
-                 <span class="precio">$ 9.311</span>
+                 <span class="precio">$<%= product.price %> </span>
                  <span class="precio_descuento">$ 7.914</span>
                </div>
                <div class="cantidad">
@@ -31,9 +31,9 @@
           <div class="container-descripcion">
             <h2>DESCRIPCIÓN</h2> 
             <p>
-              Purina Pro Plan provee nutrición de avanzada que ayuda a los perros de razas grandes a mantenerse fuertes y llenos de vitalidad. A su vez, también ayuda a otras cosas claves en el cuidado de la mascota, tales como reforzar el sistema inmune, fortalecer la microflora intestinal y reforzar la barrera cutánea.Utilizando como ingrediente principal carne fresca de pollo, esta fórmula ofrece, a través de croquetas más grandes, una nutrición con alto contenido de proteínas (26%) de calidad y menos calorías provenientes de la grasa (12%).
+              <%= product.description %> 
             </p>
-            SKU: 568921
+            SKU: <%= product.codigo %> 
           </div>
           <div class="envio">
             <p>ENVIO GRATIS CABA y zonas de GBA</p>

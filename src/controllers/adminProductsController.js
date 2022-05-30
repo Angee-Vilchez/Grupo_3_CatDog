@@ -4,7 +4,7 @@ const path = require('path');
 /* const productsFilePath = path.join(__dirname, '../../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 const writeProducts = (data) => fs.writeFileSync(productsFilePath, JSON.stringify(data), 'utf-8') */
-const { products, writeProducts, getProducts } = require('../data');
+const { products, writeProducts } = require('../data');
 const { validationResult } = require('express-validator');  
 
 module.exports = {
