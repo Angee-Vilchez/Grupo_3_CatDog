@@ -6,15 +6,15 @@
         "email": "mail@mail.com",
         "password": "$2a$10$3vy7HC3JxjiX48dUvcgAmeMG3ZmiXWh9MtQf6VcW3lpIV5ehJTP0u",
         "avatar": "default.jpg",
-        "rol": "USER"
+        "rol": "ADMIN"
     },
     {
         "id": 2,
-        "name": "Javier",
-        "surname": "Escobar",
-        "email": "abc@mail.com",
-        "password": "$2a$10$wSXcDmizfXuTwH3rzgkVteAilHRhSXisWKgUtYoo7vcuS08slmdim",
+        "name": "dani",
+        "surname": "mamani",
+        "email": "abcd@mail.com",
+        "password": "$2a$10$k1YkrPU9UrwmXOhFMJzLC.iNhpZGoZ/WXQMllisjq/ChUx.L8kgPC",
         "avatar": "default.jpg",
-        "rol": "Admin"
+        "rol": "USER"
     }
 ]

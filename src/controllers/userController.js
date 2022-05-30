@@ -51,11 +51,11 @@ module.exports = {
 
             // Paso 4 - Devolver respuesta (redirección)
 
-            res.redirect("/user/login")
+            res.redirect("/usuarios/login")
 
         } else {
             //codigo que muestra en caso de que encontro errores
-            res.render('user/register', {
+            res.render('usuarios/register', {
                 titulo: "Register ",
                 errors: errors.mapped(),
                 session: req.session
@@ -93,7 +93,7 @@ module.exports = {
 
         } else {
 
-            res.render('user/login', {
+            res.render('usuarios/login', {
                 titulo: "Login",
                 errors: errors.mapped(),
                 session: req.session
