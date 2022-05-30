@@ -27,10 +27,10 @@
                   <td><%- producto.categoryId %></td>
                   <td><%- producto.stock %></td>
                   <td>
-                    <a href="/admin/list/editar/<%- producto.id %>" class="btn btn-success">
+                    <a href="../admin/editproduct" class="btn btn-success">
                       <i class="fa-solid fa-pen-to-square"></i>
                     </a>
-                    <form action="/admin/list/eliminar/<%- producto.id %>?_method=DELETE" method="post">
+                    <form action="/admin/eliminar/<%- producto.id %>?_method=DELETE" method="post">
                       <button class="btn btn-danger" type="submit">
                         <i class="fa-solid fa-trash-can"></i>
                       </button>

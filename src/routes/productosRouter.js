@@ -3,11 +3,14 @@ const router = express.Router();
 const productosController = require('../controllers/productosController');
 
 
-//Vista que muestra un listado de todos los productos, con filtros.
+/* Todos los productos */
 router.get('/', productosController.mostrar);
+
+/* Detalle de Productos */
 router.get('/detalle/:id', productosController.detail);
 
-
+/* Carrito de Compra */
+router.get('/cart', productosController.productCart);
 
 
 module.exports = router;
