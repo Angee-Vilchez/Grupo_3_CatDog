@@ -145,7 +145,7 @@ h2 {
 .producto p,
 strong {
   color: #041562;
-  text-align: right;
+  text-align: center;
 }
 
 @media (min-width: 576px) {

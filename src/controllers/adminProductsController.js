@@ -66,12 +66,11 @@ module.exports = {
 
         let idProducto = +req.params.id;
 
-        let producto = getProducts.find(producto => producto.id === idProducto)
+        let producto = products.find(producto => producto.id === idProducto)
 
-        res.render('admin/editproduct', {
+        res.render('/admin/editproduct', {
             titulo: "Edición",
-            producto,
-            session: req.session
+            producto
         })
     },
     //Recibe datos actualizados del form de edicion
@@ -115,24 +114,5 @@ module.exports = {
         /* 4 - Enviar respuesta  */
         res.redirect('/admin/productos')
     },
-
-    productDelete: (req, res) => {     
-
-        let idProducto = +req.params.id;
-
-        products.forEach(producto => {
-            if(producto.id === idProducto){  
-
-                let productToDeleteIndex = getProducts.indexOf(producto); 
-
-                getProducts.splice(productToDeleteIndex, 1)
-            }
-        });
-
-        writeProducts(products);
-
-        res.redirect('/admin/productos')
-
-    },
-}
+};
 

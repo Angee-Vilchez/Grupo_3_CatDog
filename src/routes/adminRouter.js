@@ -17,7 +17,7 @@ router.get('/productos/agregar', adminProductsController.productAdd);
 /* POST - CREAR PRODUCTO */
 router.post('/productos',uploadFile.single('image'), adminProductsController.productCreate);
 /* GET - EDITAR PRODUCTO */
-router.get('/productos/editar/:id',  adminProductsController.productEdit);
+router.get('/productos/editar/id',  adminProductsController.productEdit);
 /* PUT - ACTUALIZAR PRODUCTO */
 router.put('/productos/:id',uploadFile.single('image'), adminProductsController.productUpdate);
 /* DELETE - ELIMIAR UN PRODUCTO */
