@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/headb') %> 
+</head>
+<body>
+    <%- include('../partials/header') %> 
+
+    <main class="adminTab">
+
+        <h1 class="edit">Listado de categorias</h1>
+        <!-- <strong>hola</strong> -->
+        <table class="list">
+            <thead>
+                <tr>
+                    <th class="__id">id</th>
+                    <th>Nombre</th>
+                    <th>Edicion</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <% categorias.forEach(categoria => { %>
+                    <tr class="productInfo"> 
+                      <td> <strong> <%- categoria.id %> </strong> </td>
+                      <td><%- categoria.name %></td>
+                      <td class="editDelete"><!--  -->
+                        <a href="/admin/categorias/editar/<%- categoria.id %>" >
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </a>
+                        <form action="/admin/categorias/eliminar/<%- categoria.id %>?_method=DELETE" method="post">
+                          <button type="submit">
+                            <i class="fa-solid fa-trash-can"></i>
+                          </button>
+                        </form>
+                      </td>
+                    </tr>
+                  <% }) %> 
+                
+            </tbody>
+            
+        </table>
+
+    </main>
+
+
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>

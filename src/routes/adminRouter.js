@@ -1,7 +1,9 @@
 const express = require('express');
+const req = require('express/lib/request');
 const router = express.Router();
 const adminController = require('../controllers/admin/adminController');
 const adminProductsController = require('../controllers/adminProductsController');
+const adminCategoriesController = require('../controllers/admin/adminCategoriesController');
 const adminCheck = require('../middlewares/adminCheck');
 const uploadFile = require('../middlewares/uploadProduct');
 const userSession = require('../middlewares/userSession');
@@ -22,5 +24,21 @@ router.get('/productos/editar/id',  adminProductsController.productEdit);
 router.put('/productos/:id',uploadFile.single('image'), adminProductsController.productUpdate);
 /* DELETE - ELIMIAR UN PRODUCTO */
 router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
+
+
+
+/* CRUD CATEGORIES */
+
+router.get('/categorias/lista', adminCategoriesController.categoryList)
+
+router.get('/categorias/agregar', adminCategoriesController.categoryAdd)
+
+router.post('/categorias/lista', adminCategoriesController.createCategory)
+
+router.get('/categorias/editar/:id', adminCategoriesController.categoryEdit)
+
+router.get('/categorias/:id', adminCategoriesController.categoryUpdate)
+
+router.get('/categorias/eliminar/:id', adminCategoriesController.categoryDelete)
 
 module.exports = router;
