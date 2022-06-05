@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %> 
+</head>
+<body>
+    <%- include('../partials/header') %> 
+
+    <section class="category">
+
+        <form action="/admin/categorias/lista" method="post">
+
+            <div class="input-box">
+                <label for="category"><h4>Agregar nueva categoria</h4></label>
+                <input type="text" name="name" class="input-category" placeholder="Nombre de la categoria" id="category">
+            </div>
+            <div class="btn-box">
+                <button class="add_category" type="submit">Crear</button>
+            </div> 
+
+        </form>
+
+    </section>
+
+
+
+    <%- include('../partials/footer') %>
+    <%- include('../partials/scripts') %>
+</body>
+</html>

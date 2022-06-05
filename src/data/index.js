@@ -10,4 +10,8 @@ module.exports = {
     writeUsers: (data) => {
         fs.writeFileSync(path.join(__dirname, "/users.json"), JSON.stringify(data));
     },  
+    categories: JSON.parse(fs.readFileSync(path.join(__dirname, "/categories.json"), "utf-8")),
+    writeCategories: (data) => {
+        fs.writeFileSync(path.join(__dirname, "/categories.json"), JSON.stringify(data));
+    },
 }

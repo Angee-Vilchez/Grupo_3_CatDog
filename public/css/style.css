@@ -141,6 +141,15 @@ h2 {
   text-align: center;
 }
 
+<<<<<<< HEAD
+=======
+.producto p,
+strong {
+  color: #041562;
+  text-align: center;
+}
+
+>>>>>>> 99dc6b76fa757dbaf2d905f618c5760dd1467602
 @media (min-width: 576px) {
   /* 
 
