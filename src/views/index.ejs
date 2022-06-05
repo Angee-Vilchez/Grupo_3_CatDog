@@ -24,6 +24,7 @@
                                     <div class="imagen">
                                         <img src="../img/productos/<%= product.image  %>" alt="">
                                     </div>
+                                    <div class="texto"> 
                                     <strong>
                                         <%= product.marca %>
                                     </strong>
@@ -40,6 +41,7 @@
                                     <% } else { %>
                                     <%= product.price %>
                                     <% } %>
+                                    <div>
                                 </article>
                             </a>
                             <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
