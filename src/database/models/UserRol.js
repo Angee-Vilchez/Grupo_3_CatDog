@@ -1,5 +1,4 @@
-
-module.exports = (sequelize, DataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "UserRol";
 
     let cols = {

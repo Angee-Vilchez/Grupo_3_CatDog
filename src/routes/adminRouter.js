@@ -29,11 +29,11 @@ router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
 
 /* CRUD CATEGORIES */
 
-router.get('/categorias/lista', adminCategoriesController.categoryList)
+router.get('/categorias', adminCategoriesController.list)
 
-router.get('/categorias/agregar', adminCategoriesController.categoryAdd)
+router.get('/categorias/agregar'/* ,userSessionCheck, adminCheck */, adminCategoriesController.categoryAdd)
 
-router.post('/categorias/lista', adminCategoriesController.createCategory)
+router.post('/categorias', adminCategoriesController.categoryCreate)
 
 router.get('/categorias/editar/:id', adminCategoriesController.categoryEdit)
 

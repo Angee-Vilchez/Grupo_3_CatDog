@@ -34,7 +34,7 @@ module.exports = (sequileze, dataTypes) => {
     };
 
     let config = {
-        tableName: "Users",
+        tableName: "users",
         timetamps: false,
     };
 
@@ -43,13 +43,14 @@ module.exports = (sequileze, dataTypes) => {
     User.associate = (models)  => {
         User.belongsTo(models.UserRol, {
             as: "rol",
-            foreignKey: "User_id",
+            foreignKey: "rol_id",
         })
-        User.hasmany(models.Address, {
+        User.hasMany(models.Address, {
             as: "addresses",
-            foreignKey: "User_id",
+            foreignKey: "user_id",
         });
     };
 
     return User;
 }
+ 

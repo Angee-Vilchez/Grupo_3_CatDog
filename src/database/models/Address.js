@@ -26,7 +26,11 @@ module.exports = (sequelize, dataTypes) => {
         },
         phone: {
             type: dataTypes.STRING(100),
-        }, 
+        },
+        user_id: {
+            type: dataTypes.INTEGER(11),
+            allowNull: false,
+          },
     };
 
     let config = {
@@ -38,8 +42,8 @@ module.exports = (sequelize, dataTypes) => {
 
     Address.associate = (models)  => {
         Address.belongsTo(models.User, {
-            as: "User",
-            foreignKey: "User_id",
+            as: "user",
+            foreignKey: "user_id",
         });
     };
 

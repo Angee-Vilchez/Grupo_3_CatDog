@@ -30,10 +30,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false,
         },
-        image: {
+        /* image: {
             type: dataTypes.STRING,
             allowNull: false,
-        },
+        }, */
     };
     let config = {
         tableName: "products",
