@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.5.62, for Win64 (AMD64)
 --
--- Host: localhost    Database: CatDog
+-- Host: localhost    Database: catdog
 -- ------------------------------------------------------
 -- Server version	5.5.5-10.4.24-MariaDB
 
@@ -31,7 +31,8 @@ CREATE TABLE `addresses` (
   `user_id` int(11) NOT NULL,
   `phone` int(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `addresses_FK` FOREIGN KEY (`id`) REFERENCES `users` (`id`)
+  KEY `addresses_FK` (`user_id`),
+  CONSTRAINT `addresses_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -86,8 +87,9 @@ CREATE TABLE `products` (
   `category_id` int(11) NOT NULL,
   `brands` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `products_FK` FOREIGN KEY (`id`) REFERENCES `categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+  KEY `products_FK` (`category_id`),
+  CONSTRAINT `products_FK` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -111,7 +113,8 @@ CREATE TABLE `products_images` (
   `imageName` varchar(45) NOT NULL,
   `product_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `products_images_FK` FOREIGN KEY (`id`) REFERENCES `products` (`id`)
+  KEY `products_images_FK` (`product_id`),
+  CONSTRAINT `products_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -140,7 +143,8 @@ CREATE TABLE `users` (
   `rol_id` int(11) NOT NULL,
   `userName` varchar(20) NOT NULL,
   PRIMARY KEY (`id`),
-  CONSTRAINT `users_FK` FOREIGN KEY (`id`) REFERENCES `users_rols` (`id`)
+  KEY `users_FK` (`rol_id`),
+  CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `users_rols` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -164,7 +168,7 @@ CREATE TABLE `users_rols` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `rol_name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -173,11 +177,12 @@ CREATE TABLE `users_rols` (
 
 LOCK TABLES `users_rols` WRITE;
 /*!40000 ALTER TABLE `users_rols` DISABLE KEYS */;
+INSERT INTO `users_rols` VALUES (1,'USER'),(2,'ADMIN');
 /*!40000 ALTER TABLE `users_rols` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Dumping routines for database 'CatDog'
+-- Dumping routines for database 'catdog'
 --
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -189,4 +194,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-05  3:12:14
+-- Dump completed on 2022-06-09 18:00:42

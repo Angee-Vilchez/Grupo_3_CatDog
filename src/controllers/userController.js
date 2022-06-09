@@ -1,6 +1,7 @@
-const { users, writeUsers } = require('../data');
+/* const { users, writeUsers } = require('../data'); */
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
+const db = require('../database/models')
 
 module.exports = {
     login: (req, res) => {
@@ -18,44 +19,23 @@ module.exports = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req);    //verifica si hubo errores en el form
-
-        if (errors.isEmpty()) {     //si no hay errores, crea el usuario
-
-            // crea un usuario(Registrar un usuario - Guardarlo en el JSON)
-            //Paso 1 - Crear un objeto User
-
-            let lastId = 0;
-            users.forEach(user => {
-                if (user.id > lastId) {
-                    lastId = user.id
-                }
-            });
-
-            let newUser = {
-                id: lastId + 1,
+        res.send(errors)
+         if (errors.isEmpty()) { 
+            db.User.create({
                 name: req.body.name,
                 surname: req.body.surname,
                 email: req.body.email,
+                rol_id: 1,
                 password: bcrypt.hashSync(req.body.password, 10),
-                avatar: req.file ? req.file.filename : "default.jpg",
-                rol: "USER"
-            }
-
-            // Paso 2 - Guardar el nuevo usuario en el array de usuarios
-
-            users.push(newUser)
-
-            // Paso 3 - Escribir el JSON de usuarios con el array actual
-
-            writeUsers(users)
-
-            // Paso 4 - Devolver respuesta (redirección)
-
-            res.redirect("/usuarios/login")
-
+                avatar: req.file ? req.file.filename : "default.jpg"
+            })
+            .then((user) => {
+                res.redirect("/usuarios/login")
+            })
+            .catch(error => res.send(error))
         } else {
             //codigo que muestra en caso de que encontro errores
-            res.render('usuarios/register', {
+            res.render('user/register', {
                 titulo: "Register ",
                 errors: errors.mapped(),
                 session: req.session
@@ -64,18 +44,21 @@ module.exports = {
     },
     processLogin: (req, res) => {
         let errors = validationResult(req);
-
-        if (errors.isEmpty()) {
-            //levantar sesión
-            let user = users.find(user => user.email === req.body.email)
-
+        if(errors.isEmpty()){
+            //Levantar sesión
+            db.User.findOne({
+                where: {
+                    email: req.body.email
+                }
+            })
+            .then((user) => {
             req.session.user = {
                 id: user.id,
                 name: user.name,
                 surname: user.surname,
                 avatar: user.avatar,
                 email: user.email,
-                rol: user.rol
+                rol: user.rol_id
             }
 
             if (req.body.remember) {
@@ -90,15 +73,84 @@ module.exports = {
             res.locals.user = req.session.user
 
             res.redirect('/')
+        })
+        .catch(error => console.log(error)) 
 
         } else {
-
             res.render('usuarios/login', {
                 titulo: "Login",
                 errors: errors.mapped(),
                 session: req.session
             })
         }
+    },
+    profile: (req, res) => {
+        db.User.findOne({
+            where: {
+                id: req.session.user.id
+            },
+            include: [{ association: "addresses" }],
+        })
+        .then((user) => {
+            res.render("user/userProfile", {
+                session: req.session,
+                user,
+                titulo: req.session.user.name,
+                css: "userProfile.css"
+            })
+        })
+    },
+    profileUpdate: (req, res) => {
+        let errors = validationResult(req);
+
+        if(errors.isEmpty()){
+            db.User.update({
+                ...req.body
+            },{
+                where: {
+                    id: req.session.user.id
+                }
+            })
+            .then(() => 
+                res.redirect("/usuarios/perfil")
+            )
+            .catch(error => res.send(error))
+        }else{
+            db.User.findOne({
+                where: {
+                    id: req.session.user.id
+                },
+                include: [{ association: "addresses" }],
+            })
+            .then((user) => {
+                res.render("user/userProfile", {
+                    session: req.session,
+                    user,
+                    titulo: req.session.user.name,
+                    css: "userProfile.css",
+                    errors: errors.mapped()
+                })
+            })
+        }
+    },
+    addressCreate: (req, res) => {
+        db.Address.create({
+            ...req.body,
+            user_id: req.session.user.id,
+        })
+        .then(() => res.redirect("/usuarios/perfil"))
+        .catch((error) => res.send(error))
+    },
+    addressDestroy: (req, res) => {
+        db.Address.destroy({
+            where: {
+                id: req.params.id,
+            }
+        })
+        .then(() => {
+            res.redirect("/usuarios/perfil")    
+        })
+        .catch((error) => res.send(error))
     },
     logout: (req, res) => {
         req.session.destroy();
