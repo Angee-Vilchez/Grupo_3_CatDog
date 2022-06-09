@@ -27,7 +27,7 @@ let validateRegister = [
         }),
     check("password")
                 .notEmpty().withMessage("Debe ingresar la contraseña")
-                .isLength({min:6}).withMessage("Debe tener como mínimo 6 carácteres"),
+                .isLength({min:3}).withMessage("Debe tener como mínimo 3 carácteres"),
     
     check("password2")
                 .notEmpty().withMessage("Debe reingresar su contraseña"),
