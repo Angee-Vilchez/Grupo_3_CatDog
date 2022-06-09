@@ -29,16 +29,16 @@ router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
 
 /* CRUD CATEGORIES */
 
-router.get('/categorias', adminCategoriesController.list)
+router.get('/categorias', /*userSessionCheck, adminCheck */ adminCategoriesController.list)
 
 router.get('/categorias/agregar'/* ,userSessionCheck, adminCheck */, adminCategoriesController.categoryAdd)
 
 router.post('/categorias', adminCategoriesController.categoryCreate)
 
-router.get('/categorias/editar/:id', adminCategoriesController.categoryEdit)
+router.get('/categorias/editar/:id', /* userSessionCheck, adminCheck, */ adminCategoriesController.categoryEdit)
 
-router.get('/categorias/:id', adminCategoriesController.categoryUpdate)
+router.put('/categorias/:id', adminCategoriesController.categoryUpdate)
 
-router.get('/categorias/eliminar/:id', adminCategoriesController.categoryDelete)
+router.delete('/categorias/eliminar/:id', adminCategoriesController.categoryDelete)
 
 module.exports = router;
