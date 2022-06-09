@@ -70,15 +70,5 @@
         "discount": 5,
         "price": 1579,
         "stock": true
-    },
-    {
-        "name": "purina pro plan adulto caniche ",
-        "price": "2000",
-        "discount": "10",
-        "categoryId": "1",
-        "stock": true,
-        "description": "Comida para perros de edad mayor a 2 años para adelante\r\n",
-        "id": 7,
-        "image": "default-image.png"
     }
 ]
