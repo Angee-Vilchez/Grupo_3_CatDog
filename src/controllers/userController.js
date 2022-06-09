@@ -35,7 +35,7 @@ module.exports = {
             .catch(error => res.send(error))
         } else {
             //codigo que muestra en caso de que encontro errores
-            res.render('user/register', {
+            res.render('usuarios/register', {
                 titulo: "Register ",
                 errors: errors.mapped(),
                 session: req.session

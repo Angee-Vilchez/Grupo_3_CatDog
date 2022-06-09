@@ -24,10 +24,12 @@ router.post("/register", uploadFile.single('avatar'), registerValidator, usersCo
 
 // rutas Perfil de usuario
 router.get('/perfil', userSession, usersControllers.profile);
+/* PUT - Edita datos de usuario */
 router.put('/perfil', profileValidator ,usersControllers.profileUpdate);
 
 
 //rutas Creación de dirección
+/* POST - Creación de dirección */
 router.post('/direcciones', usersControllers.addressCreate);
 router.delete('/direcciones/:id', usersControllers.addressDestroy);
 
