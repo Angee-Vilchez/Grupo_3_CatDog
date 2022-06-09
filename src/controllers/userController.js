@@ -19,7 +19,6 @@ module.exports = {
 
     processRegister: (req, res) => {
         let errors = validationResult(req);    //verifica si hubo errores en el form
-        res.send(errors)
          if (errors.isEmpty()) { 
             db.User.create({
                 name: req.body.name,
@@ -35,7 +34,7 @@ module.exports = {
             .catch(error => res.send(error))
         } else {
             //codigo que muestra en caso de que encontro errores
-            res.render('usuarios/register', {
+            res.render('user/register', {
                 titulo: "Register ",
                 errors: errors.mapped(),
                 session: req.session
