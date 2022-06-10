@@ -1,6 +1,6 @@
 const { check, body } = require('express-validator');
 
-let validateProduct = [
+let validateEditProduct = [
     check("name")
         .notEmpty().withMessage("El nombre es requerido").bail()
         .isAlphanumeric().withMessage("Ingresa un nombre válido")
@@ -22,4 +22,4 @@ let validateProduct = [
     }).withMessage("El descuento tiene que tener un valor entre 0 y 100")        
 ]
 
-module.exports = validateProduct;
+module.exports = validateEditProduct;

@@ -30,10 +30,14 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.TEXT,
             allowNull: false,
         },
-        /* image: {
+        image: {
             type: dataTypes.STRING,
             allowNull: false,
-        }, */
+        },
+        brands: {
+            type: dataTypes.STRING(20),
+            allowNull: false,
+        }, 
     };
     let config = {
         tableName: "products",
@@ -47,10 +51,6 @@ module.exports = (sequelize, dataTypes) => {
         Product.belongsTo(models.Category, {
             as: "category",
             foreignKey: "category_id",
-        })
-        Product.hasMany(models.ProductImage, {
-            as: "productImages",
-            foreignKey: "product_id",
         })
     }
 
