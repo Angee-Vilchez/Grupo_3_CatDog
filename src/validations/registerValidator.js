@@ -6,7 +6,7 @@ let validateRegister = [
         .notEmpty().withMessage("Debe ingresar su nombre").bail()
         .isLength({max: 15}).withMessage("Ingrese el nombre, sin espacios"),
 
-    check("surname")
+    check("userName")
         .notEmpty().withMessage("Debe ingresar su apellido").bail()
         .isLength({max: 15}).withMessage("Ingrese su apellido, sin espacios"),
 

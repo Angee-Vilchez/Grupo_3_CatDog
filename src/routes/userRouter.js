@@ -4,11 +4,12 @@ const usersControllers = require('../controllers/userController');
 //validations
 const loginValidator = require('../validations/loginValidator');
 const registerValidator = require("../validations/registerValidator");
+const profileValidator = require("../validations/profileValidator");
 //middlewares
 const userInSessionCheck = require("../middlewares/userInSessionCheck");
 const userSession = require("../middlewares/userSession");
 const uploadFile = require("../middlewares/uploadAvatar");
-const profileValidator = require("../validations/profileValidator");
+
 
 
 //rutas login

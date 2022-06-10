@@ -13,7 +13,7 @@
                 <ul class="usuario">
                     <% if(typeof session.user !="undefined" ) { %>
                         <% session.user.name %>
-                            <li><a href="/usuarios/Perfil">Mi Perfil</a></li>
+                            <li><a href="/usuarios/perfil">Mi Perfil</a></li>
                             <li><a href="/usuarios/logout">Cerrar Sesión</a></li>
                             <div class="avatar_session">
                             <img src="img/avatar/<%= session.user.avatar %> " alt="">

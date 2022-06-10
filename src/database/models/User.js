@@ -35,7 +35,7 @@ module.exports = (sequileze, dataTypes) => {
 
     let config = {
         tableName: "users",
-        timetamps: false,
+        timestamps: false,
     };
 
     const User = sequileze.define(alias, cols, config);

@@ -22,7 +22,7 @@ module.exports = {
          if (errors.isEmpty()) { 
             db.User.create({
                 name: req.body.name,
-                surname: req.body.surname,
+                userName: req.body.userName,
                 email: req.body.email,
                 rol_id: 1,
                 password: bcrypt.hashSync(req.body.password, 10),
@@ -54,7 +54,7 @@ module.exports = {
             req.session.user = {
                 id: user.id,
                 name: user.name,
-                surname: user.surname,
+                userName: user.userName,
                 avatar: user.avatar,
                 email: user.email,
                 rol: user.rol_id
