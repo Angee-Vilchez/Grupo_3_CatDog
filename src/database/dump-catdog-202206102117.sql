@@ -29,7 +29,6 @@ CREATE TABLE `addresses` (
   `province` varchar(100) NOT NULL,
   `city` varchar(100) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `phone` int(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `addresses_FK` (`user_id`),
   CONSTRAINT `addresses_FK` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
@@ -102,32 +101,6 @@ LOCK TABLES `products` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `products_images`
---
-
-DROP TABLE IF EXISTS `products_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products_images` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `imageName` varchar(45) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `products_images_FK` (`product_id`),
-  CONSTRAINT `products_images_FK` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products_images`
---
-
-LOCK TABLES `products_images` WRITE;
-/*!40000 ALTER TABLE `products_images` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products_images` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `users`
 --
 
@@ -142,10 +115,11 @@ CREATE TABLE `users` (
   `avatar` varchar(45) DEFAULT NULL,
   `rol_id` int(11) NOT NULL,
   `userName` varchar(20) NOT NULL,
+  `phone` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `users_FK` (`rol_id`),
   CONSTRAINT `users_FK` FOREIGN KEY (`rol_id`) REFERENCES `users_rols` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -154,6 +128,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'angee','mail@mail.com','$2a$10$x9PjmjsqopNpRUk3gjSsCu8LZJ/3fWIgpC6h3pVcc1C4cvXctDNkq','default.jpg',1,'vilchez',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,4 +169,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-09 18:00:42
+-- Dump completed on 2022-06-10 21:17:51
