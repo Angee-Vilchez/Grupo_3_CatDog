@@ -24,10 +24,10 @@
                   <td><strong><%- producto.id %></strong></td>
                   <td><%- producto.name %></td>
                   <td><%- producto.price %></td>
-                  <td><%- producto.categoryId %></td>
+                  <td><%- producto.category_id %></td>
                   <td><%- producto.stock %></td>
                   <td>
-                    <a href="/productos/editar/<%- producto.id %> " class="btn btn-success">
+                    <a href="/productos/editar/id<%- producto.id %> " class="btn btn-success">
                       <i class="fa-solid fa-pen-to-square"></i>
                     </a>
                     <form action="/admin/eliminar<%- producto.id %>?_method=DELETE" method="POST">

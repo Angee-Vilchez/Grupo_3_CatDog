@@ -31,17 +31,18 @@ module.exports = {
                 name: req.body.name,
                 price: req.body.price,
                 discount: req.body.discount,
-                category_id: req.body.category_id,
+                category_id: req.body.categoryId,
                 description: req.body.description,
                 image: req.file ? req.file.filename : "default-image.png",
                 brands: req.body.brands,
+                stock: req.body.stock
             })
                 .then(() => {
                     res.redirect('/admin/productos')
                 })
                 .catch((error) => res.send(error))
         } else {
-            res.render('admin/products/addProduct', {
+            res.render('admin/addproduct', {
                 titulo: "Agregar producto",
                 errors: errors.mapped(),
                 old: req.body
@@ -53,13 +54,13 @@ module.exports = {
         let idProducto = +req.params.id;
         db.Product.findByPk(idProducto)
             .then((products) => {
-                res.render('/admin/editproduct', {
+                res.render('admin/editproduct', {
                     titulo: "Edición",
                     producto: products,
                     session: req.session
                 })
             })
-            .catch((error) => res.send(error))
+            .catch((error) => console.log(error))
     },
     //Recibe datos actualizados del form de edicion y guarda en la DB
     productUpdate: (req, res) => {
@@ -69,10 +70,11 @@ module.exports = {
             name: req.body.name,
             price: req.body.price,
             discount: req.body.discount,
-            category_id: req.body.category_id,
+            category_id: req.body.categoryId,
             description: req.body.description,
             image: req.file ? req.file.filename : "default-image.png",
             brands: req.body.brands,
+            stock: req.body.stock
         },
         {
             where:{
@@ -90,7 +92,7 @@ module.exports = {
         }
     })
     .then((producto)=>{
-        res.render('/admin/editProduct', {
+        res.render('admin/editProduct', {
             titulo: "Editar:",
             producto,
             session: req.session,

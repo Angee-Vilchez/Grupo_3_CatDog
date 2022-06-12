@@ -18,17 +18,17 @@ const productEditValidator = require('../validations/productEditValidator');
 router.get('/', adminController.index);
 
 /* CRUD DE PRODUCTOS */
-/* LISTADO DE PRODUCTOS */
+// Vista lista de productos
 router.get('/productos', /* userSession, adminCheck, */ adminProductsController.list);
-/* CREACION DE PRODUCTO */
+// Vista creacion de producto
 router.get('/productos/agregar', /* userSession, adminCheck, */ adminProductsController.productAdd);
-/* CREAR PRODUCTO DB*/
-router.post('/productos',uploadFile.single('img'), productCreateValidator, adminProductsController.productCreate);
-/* EDITAR PRODUCTO */
+// CREAR PRODUCTO y guardar en DB
+router.post('/productos',uploadFile.single('image'), productCreateValidator, adminProductsController.productCreate);
+// Vista editar producto
 router.get('/productos/editar/id', /* userSession, adminCheck, */  adminProductsController.productEdit);
-/* ACTUALIZAR PRODUCTO DB */
+// Editar producto y guardar en la DB
 router.put('/productos/:id',uploadFile.single('image'), productEditValidator, adminProductsController.productUpdate);
-/* ELIMIAR UN PRODUCTO */
+// Eliminar producto
 router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
 
 
