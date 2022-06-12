@@ -25,7 +25,7 @@ router.get('/productos/agregar', /* userSession, adminCheck, */ adminProductsCon
 // CREAR PRODUCTO y guardar en DB
 router.post('/productos',uploadFile.single('image'), productCreateValidator, adminProductsController.productCreate);
 // Vista editar producto
-router.get('/productos/editar/id', /* userSession, adminCheck, */  adminProductsController.productEdit);
+router.get('/productos/editar/:id', /* userSession, adminCheck, */  adminProductsController.productEdit);
 // Editar producto y guardar en la DB
 router.put('/productos/:id',uploadFile.single('image'), productEditValidator, adminProductsController.productUpdate);
 // Eliminar producto

@@ -60,11 +60,12 @@ module.exports = {
                     session: req.session
                 })
             })
-            .catch((error) => console.log(error))
+            .catch((error) => res.send(error))
     },
     //Recibe datos actualizados del form de edicion y guarda en la DB
     productUpdate: (req, res) => {
         let errors = validationResult(req);
+        
     if(errors.isEmpty ()){
         db.Product.update({
             name: req.body.name,
@@ -92,7 +93,7 @@ module.exports = {
         }
     })
     .then((producto)=>{
-        res.render('admin/editProduct', {
+        res.render('admin/editproduct', {
             titulo: "Editar:",
             producto,
             session: req.session,
