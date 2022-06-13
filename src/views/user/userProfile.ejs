@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('../partials/head')%>
-<link rel="stylesheet" href="css/userProfile.css">
-  <body>
-    <%- include('../partials/header')%>
+
+<%- include("../partials/head") %>
+
+    <body> 
+
+        <%- include("../partials/header") %>
+
       <main class="userProfile mt-5">
         <div class="avatar">
           <img src="/img/avatar/<%= user.avatar %>" alt="" />
@@ -148,6 +151,7 @@
         </div>
       </main>
       <%- include('../partials/footer')%>
+      <%- include("../partials/script") %>
   </body>
 
 </html>
