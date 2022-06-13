@@ -9,6 +9,7 @@ module.exports = {
                 res.render('admin/categories/listCategory', {
                     titulo: "Categorías",
                     categorias,
+                    session: req.session
                 });
             })
             .catch((error) => res.send(error));

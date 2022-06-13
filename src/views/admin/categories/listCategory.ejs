@@ -9,7 +9,6 @@
     <main class="adminTab">
 
         <h1 class="edit">Listado de categorias</h1>
-        <!-- <strong>hola</strong> -->
         <table class="list">
             <thead>
                 <tr>
@@ -24,11 +23,11 @@
                     <tr class="productInfo"> 
                       <td> <strong> <%- categoria.id %> </strong> </td>
                       <td><%- categoria.name %></td>
-                      <td class="editDelete"><!--  -->
+                      <td class="editDelete">
                         <a href="/admin/categorias/editar/<%- categoria.id %>" >
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
-                        <form action="/admin/categorias/eliminar/<%- categoria.id %>?_method=DELETE" method="post">
+                        <form action="/admin/categorias/eliminar/<%- categoria.id %>?_method=DELETE" method="POST">
                           <button type="submit">
                             <i class="fa-solid fa-trash-can"></i>
                           </button>
@@ -43,9 +42,7 @@
 
     </main>
 
-
-
     <%- include('../partials/footer') %>
-    <%- include('../partials/scripts') %>
+    <%- include('../partials/script') %>
 </body>
 </html>
