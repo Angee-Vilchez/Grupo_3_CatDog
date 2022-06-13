@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <%- include('../partials/head') %> 
-</head>
+<%- include('../partials/head') %> 
 <body>
-    <%- include('../partials/header') %> 
+  <%- include('../partials/header') %>  
 
     <section class="category">
 
-        <form action="/admin/categorias/lista" method="post">
+        <form action="/admin/categorias" method="post">
 
             <div class="input-box">
                 <label for="category"><h4>Agregar nueva categoria</h4></label>
@@ -21,10 +19,10 @@
         </form>
 
     </section>
+    
 
-
-
-    <%- include('../partials/footer') %>
-    <%- include('../partials/scripts') %>
+    <%- include('../partials/footer') %> 
+      
+    <%- include('../partials/script') %> 
 </body>
 </html>
