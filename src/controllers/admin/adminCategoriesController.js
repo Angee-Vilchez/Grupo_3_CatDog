@@ -4,7 +4,7 @@ const db = require('../../database/models');
 module.exports = {
     /* Envia la vista de listado de las categorias */
     list: (req, res) => {
-        db.category.findAll()
+        db.Category.findAll()
             .then((categorias) => {
                 res.render('admin/categories/listCategory', {
                     titulo: "Categorías",
@@ -12,7 +12,7 @@ module.exports = {
                     session: req.session
                 });
             })
-            .catch((error) => res.send(error));
+            .catch((error) => console.log(error));
     },
     /* Envia la vista del formulario de creación de categorias */
     categoryAdd: (req, res) => {
@@ -30,10 +30,10 @@ module.exports = {
     },
     /* Envia la vista del formulario de edición de categorias */
     categoryEdit: (req, res) => {
-        let idCategory = +req.params.id;
+      let categoryId = +req.params.id;
 
-        db.Category.findByPK(idCategory)
-            .then((categoria) => {
+      db.Category.findByPk(categoryId)
+        .then((categoria) => {
                 res.render('admin/categories/editCategory', {
                     titulo: "Editar categoria",
                     categoria
@@ -84,4 +84,4 @@ module.exports = {
     },
      /* Recibe los datos de la categoria a buscar
     categorySearch: (req, res) => {},*/
-}
+};
