@@ -9,8 +9,5 @@ router.get('/', productosController.mostrar);
 /* Detalle de Productos */
 router.get('/detalle/:id', productosController.detail);
 
-/* Carrito de Compra */
-router.get('/cart', productosController.productCart);
-
 
 module.exports = router;
