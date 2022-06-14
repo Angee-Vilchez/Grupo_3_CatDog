@@ -17,10 +17,15 @@ module.exports = {
     },
     //Envia la vista de formulario de la creacion de producto
     productAdd: (req, res) => {
+        db.Category.findAll()
+        .then((categories) => {
         res.render('admin/addproduct', {
             titulo: "Agregar producto",
-            session: req.session
+            session: req.session,
+            categories
         })
+      })
+      /* .catch(err => res.send) */.catch((error) => res.send(error))
     },
     //Recibe los datos del form de la creacion y lo guarda en la DB
     productCreate: (req, res) => {

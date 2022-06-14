@@ -28,10 +28,10 @@
           <div class="mb-3 col-md-6">
             <label for="category" class="form-label">Categorias</label>
             <select name="categoryId" class="form-select" id="category" aria-label="Default select example">
-              <option selected hidden>...</option>
-              <option value="1">Perros</option>
-              <option value="2">Gatos</option>
-              <option value="3">Accesorios</option>
+              <option selected hidden>Elegí la categoria</option>
+              <% categories.forEach(category => { %>
+              <option value="<%- category.id %>"><%- category.name %></option>
+              <% }) %> 
             </select>
           </div>
           <div class="mb-3 col-md-6">
