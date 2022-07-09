@@ -1,4 +1,5 @@
 const { check, body } = require('express-validator');
+const db = require('../database/models');
 
 let validateProduct = [
     check("name")
@@ -10,7 +11,8 @@ let validateProduct = [
     check("categoryId")
         .notEmpty().withMessage("Selecciona una categoría"),
     check("description")
-        .notEmpty().withMessage("Agrega una descripcion"),
+        .notEmpty().withMessage("Agrega una descripcion").bail()
+        .isLength({min:20}).withMessage("Debe tener al menos 5 caracteres"),
     check("brands")
         .notEmpty().withMessage("Agrega una marca"),
     body("discount").custom(value => {
@@ -18,7 +20,19 @@ let validateProduct = [
             return true;
         }
         return false;
-    }).withMessage("El descuento tiene que tener un valor entre 0 y 100")        
+    }).withMessage("El descuento tiene que tener un valor entre 0 y 100"),
+    
+    check("image")
+        .custom((value, {req}) => {
+            let extencionesPermitidas = /(.jpg|.jpeg|.png|.gif)$/i;
+            if(!req.file){
+                return true
+            }if(!extencionesPermitidas.exec(req.file.filename)){
+                return Promise.reject('Solo archivos con estas extensiones .jpeg/.jpg/.png/.gif')
+            }else{
+                return true
+            }
+        })
 ]
 
 module.exports = validateProduct;

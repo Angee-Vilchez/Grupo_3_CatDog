@@ -4,11 +4,11 @@ const db = require('../database/models');
 let validateRegister = [
     check("name")
         .notEmpty().withMessage("Debe ingresar su nombre").bail()
-        .isLength({max: 15}).withMessage("Ingrese el nombre, sin espacios"),
+        .isLength({min: 2}).withMessage("Ingrese un nombre válido"),
 
     check("userName")
         .notEmpty().withMessage("Debe ingresar su apellido").bail()
-        .isLength({max: 15}).withMessage("Ingrese su apellido, sin espacios"),
+        .isLength({min: 2}).withMessage("Ingrese un apellido válido"),
 
     check("email")
         .notEmpty().withMessage("El email es requerido").bail()
@@ -27,7 +27,8 @@ let validateRegister = [
         }),
     check("password")
                 .notEmpty().withMessage("Debe ingresar la contraseña")
-                .isLength({min:3}).withMessage("Debe tener como mínimo 3 carácteres"),
+                .isLength({min:8}).withMessage("Debe tener como mínimo 8 carácteres")
+                .isAlphanumeric().withMessage("La contraseña debe tener números y letras"),
     
     check("password2")
                 .notEmpty().withMessage("Debe reingresar su contraseña"),
