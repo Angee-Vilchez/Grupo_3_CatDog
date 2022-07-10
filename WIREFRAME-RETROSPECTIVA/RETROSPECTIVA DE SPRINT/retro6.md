@@ -3,9 +3,9 @@
 ### **Seguir haciendo**
 * Distribución de tareas.
 * Compromiso con el proyecto de los dos integrantes que al final quedamos.
+* Hacer las tarjetas de las tareas de cada uno.
 
 ### **Hacer mas**
-* Hacer las tarjetas de las tareas de cada uno.
 * Mantener actualizado trello.
 * Comenzar el sprint lo mas antes posible.
 
@@ -14,10 +14,8 @@
 * Realizar dailys.
 * Definir fechas de entrega para la revision grupal.
 * Cumplir con las fechas definidas.
-* Exponer nuestras dudas a los profesores para llegar a tiempo con el srint.
+* Exponer nuestras dudas a los profesores para llegar a tiempo con el sprint.
 
 ### **Hacer menos**
-* Tardar con la distribucion de tareas.
-* No comunicar si tenemos problemas personales a tiempo.
 
 ### **Dejar de hacer**

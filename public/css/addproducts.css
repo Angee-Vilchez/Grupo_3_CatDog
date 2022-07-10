@@ -1,0 +1,11 @@
+
+.agregar1{
+    text-align: center;
+    margin: 1rem;
+}
+
+.row .error-msg,
+.stockErrors,
+.submitErrors{
+    color: red;
+}

@@ -1,54 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('partials/head') %> 
+<%- include('partials/head') %>
 <body>
   <%- include('partials/header') %> 
 
   
     <main class="container min-vh-100">
       <fieldset class="creation_product">
-        <legend class="agregar">AGREGAR PRODUCTO</legend>
-        <form class="row " action="/admin/productos" method="POST">
+        <legend class="agregar1">AGREGAR PRODUCTO</legend>
+        <form class="row " action="/admin/productos" method="POST" id="formProduct">
           <div class="mb-3 col-md-6">
             <label for="name" class="nombre_product">Nombre del producto</label>
             <input type="text" name="name" class="form-control" id="name" placeholder="Nombre de producto">
+            <span class="error-msg" id="nameError"></span>
           </div>
           <div class="mb-3 col-md-6">
             <label for="brands" class="marca_product">Marca</label>
             <input type="text" name="brands" class="form-control" id="brands" placeholder="Marca del producto">
+            <span class="error-msg" id="marcaError"></span>
           </div>
           <div class="mb-3 col-md-6">
             <label for="price" class="prices">Precio</label>
             <input type="number" name="price" class="form-control" id="price" placeholder="Precio">
+            <span class="error-msg" id="priceError"></span>
           </div>
           <div class="mb-3 col-md-6">
             <label for="discount" class="discount">Descuento</label>
             <input type="number" name="discount" class="form-control" id="discount" placeholder="Descuento">
+            <span class="error-msg" id="discountError"></span>
           </div>
           <div class="mb-3 col-md-6">
             <label for="category" class="form-label">Categorias</label>
-            <select name="categoryId" class="form-select" id="category">
+            <select name="categoryId" class="form-select" id="categoryId">
               <option selected hidden>Elegí la categoria</option>
               <% categories.forEach(category => { %>
               <option value="<%- category.id %>"><%- category.name %></option>
               <% }) %> 
             </select>
+            <span class="error-msg" id="categoryNameError"></span>
           </div>
           <div class="mb-3 col-md-6">
             <label for="image">Imagen</label>
             <input type="file" name="image" class="form-control" placeholder="seleccione una imagen" id="image">
+            <span class="error-msg" id="imageError"></span>
         </div>
           <div class="form-check">
             <input class="form-check-input" name="stock" type="checkbox" role="switch" id="stock">
             <label class="form-check-label" for="stock">Stock disponible</label>
+            <span id="stockErrors"></span>
           </div>
           <div class="mb-3 ">
             <label for="description" class="form-label">Descripción</label>
             <textarea name="description" class="form-control" id="description" rows="3"></textarea>
+            <span class="error-msg" id="descriptionError"></span>
           </div>
           <div class="buttom-crear">
             <button class="btn btn-primary" type="submit">Crear</button>
-            <button class="btn btn-secundary" type="reset">Borrar</button>
+            <span id="submitErrors"></span>
           </div>
          </form>
       </fieldset>
@@ -60,6 +68,7 @@
       <%- include('partials/footer') %> 
       
       <%- include('partials/script') %> 
+      <script src="../../../js/addProductValidator.js"></script>
 
 </body>
 </html>
