@@ -4,15 +4,15 @@ window.addEventListener("load", ()=>{
     let $formulario = QS("#form")
     let $inputName = QS("#name")
     let $inputEmail = QS("#email")
-    let $inputPasswd = QS("#passwd")
-    let $inputPasswd2 = QS("#passwd2")
+    let $inputPasswd = QS("#password")
+    let $inputPasswd2 = QS("#password2")
     let $inputFile = QS("#avatar")
     let $inputTerms = QS("#terms")
 
     let $errorBackName = QS("#errorBackName")
     let $errorBackEmail = QS("#errorBackEmail")
-    let $errorBackPasswd = QS("#errorBackPasswd")
-    let $errorBackPasswd2 = QS("#errorBackPasswd2")
+    let $errorBackPasswd = QS("#errorBackPassword")
+    let $errorBackPasswd2 = QS("#errorBackPassword2")
     let $errorBackTerms = QS("#errorBackTerms")
 
     
@@ -31,9 +31,9 @@ window.addEventListener("load", ()=>{
     /* errors */
     let $errorName = QS("#errorName")
     let $errorEmail = QS("#errorEmail")
-    let $errorPasswd = QS("#errorPasswd")
+    let $errorPasswd = QS("#errorPassword")
     let $errorFile = QS("#errorFile")
-    let $errorPassswd2 = QS("#errorPasswd2")
+    let $errorPassswd2 = QS("#errorPassword2")
     let $errorCaptcha = QS("#errorCaptcha")
     let $errorTerms = QS("#errorTerms")
     let $errorSubmit=QS("#errorSubmit") 
@@ -41,8 +41,8 @@ window.addEventListener("load", ()=>{
     let errors = {
         name:true,
         email:true,
-        passwd: true,
-        passwd2: true,
+        password: true,
+        password2: true,
         file: true,
         terms: true,
     }
@@ -91,49 +91,49 @@ window.addEventListener("load", ()=>{
         }
     })
 
-    $inputPasswd.addEventListener("blur", e => {
+    $inputPassword.addEventListener("blur", e => {
         switch(true){
-            case !$inputPasswd.value.trim():
-                $errorPasswd.innerHTML = "Ingrese una contraseña"
-                if ($errorBackPasswd) {
-                    $errorBackPasswd.innerHTML = ""
+            case !$inputPassword.value.trim():
+                $errorPassword.innerHTML = "Ingrese una contraseña"
+                if ($errorBackPassword) {
+                    $errorBackPassword.innerHTML = ""
                 }
-                errors.passwd = true
+                errors.password = true
                 break;
-            case $inputPasswd.value.length < 8/*!validation.valiPasswd.test($inputPasswd.value)*/:
+            case $inputPassword.value.length < 8/*!validation.valiPasswd.test($inputPasswd.value)*/:
                 //$errorPasswd.innerHTML = "La contraseña debe tener:<br> Entre 8 a 16 digitos <br>Una mayuscula<br>Una minuscula<br>Un numero<br>"   
-                $errorPasswd.innerHTML = "La contraseña debe tener<br> por lo menos 8 caracteres"
-                if ($errorBackPasswd) {
-                    $errorBackPasswd.innerHTML = ""
+                $errorPassword.innerHTML = "La contraseña debe tener<br> por lo menos 8 caracteres"
+                if ($errorBackPassword) {
+                    $errorBackPassword.innerHTML = ""
                 }
-                errors.passwd = true
+                errors.password = true
                 break;
             default:
-                $errorPasswd.innerHTML = ""
-                errors.passwd = false
+                $errorPassword.innerHTML = ""
+                errors.password = false
         }
 
     })
 
-    $inputPasswd2.addEventListener('blur', function () {
+    $inputPassword2.addEventListener('blur', function () {
         switch (true) {
-            case !$inputPasswd2.value.trim():
-                $errorPassswd2.innerHTML = 'Reingrese su contraseña'
-                if ($errorBackPasswd2) {
-                    $errorBackPasswd2.innerHTML = ""
+            case !$inputPassword2.value.trim():
+                $errorPasssword2.innerHTML = 'Reingrese su contraseña'
+                if ($errorBackPassword2) {
+                    $errorBackPassword2.innerHTML = ""
                 }
-                errors.passwd2 = true
+                errors.password2 = true
                 break;
-            case $inputPasswd2.value !== $inputPasswd.value:
-                $errorPassswd2.innerHTML = 'Las contraseñas no coinciden';
-                if ($errorBackPasswd2) {
-                    $errorBackPasswd2.innerHTML = ""
+            case $inputPassword2.value !== $inputPassword.value:
+                $errorPasssword2.innerHTML = 'Las contraseñas no coinciden';
+                if ($errorBackPassword2) {
+                    $errorBackPassword2.innerHTML = ""
                 }
-                errors.passwd2 = true
+                errors.password2 = true
                 break;
             default:
-                $errorPassswd2.innerHTML = ""
-                errors.passwd2 = false
+                $errorPasssword2.innerHTML = ""
+                errors.password2 = false
                 break;
         }
     })
@@ -168,12 +168,12 @@ window.addEventListener("load", ()=>{
             //$errorBackTerms.innerHTML = "";
         }
 
-        if(errors.name == true || errors.email == true || errors.passwd == true || errors.passwd2 == true || errors.file == true || errors.terms == true){
+        if(errors.name == true || errors.email == true || errors.password == true || errors.password2 == true || errors.file == true || errors.terms == true){
             $errorSubmit.innerHTML = "Complete el formulario correctamente"
             
         } 
 
-        if(errors.name == false && errors.email == false && errors.passwd == false && errors.passwd2 == false && errors.file == false && errors.terms == false){
+        if(errors.name == false && errors.email == false && errors.password == false && errors.password2 == false && errors.file == false && errors.terms == false){
 
             $errorSubmit.innerHTML = ""
             $formulario.submit()

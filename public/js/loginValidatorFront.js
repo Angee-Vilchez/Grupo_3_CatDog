@@ -3,25 +3,25 @@ window.addEventListener("load",() => {
 
     let $formulario = QS("#form")
     let $inputEmail = QS("#email")
-    let $inputPasswd = QS("#passwd")
+    let $inputPassword = QS("#password")
     
 
     const validation = {
-        valiPasswd:/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
+        valiPassword:/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
         valiEmail:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/
     }
 
     let $errorEmail = QS("#errorEmail")
-    let $errorPasswd = QS("#errorPasswd")
+    let $errorPassword = QS("#errorPassword")
     let $errorComparacion = QS("#errorComparacion")
     let $errorSubmit=QS("#errorSubmit")
 
     let $errorBackEmail = QS("#errorBackEmail")
-    let $errorBackPasswd = QS("#errorBackPasswd")
+    let $errorBackPassword = QS("#errorBackPassword")
 
     let errors = {
         email:true,
-        passwd: true,
+        password: true,
     }
 
     $inputEmail.addEventListener("blur", e => {
@@ -46,19 +46,19 @@ window.addEventListener("load",() => {
         }
     })
 
-    $inputPasswd.addEventListener("blur", e => {
+    $inputPassword.addEventListener("blur", e => {
         switch(true){
-            case !$inputPasswd.value.trim():
-                $errorPasswd.innerHTML = "Ingrese una contraseña"
-                if ($errorBackPasswd) {
-                    $errorBackPasswd.innerHTML = ""
+            case !$inputPassword.value.trim():
+                $errorPassword.innerHTML = "Ingrese una contraseña"
+                if ($errorBackPassword) {
+                    $errorBackPassword.innerHTML = ""
                 }
-                errors.passwd = true
+                errors.password = true
                 break;
-                case $inputPasswd.value.length != 0:
-                    $errorPasswd.innerHTML = ""
-                    if ($errorBackPasswd) {
-                        $errorBackPasswd.innerHTML = ""
+                case $inputPassword.value.length != 0:
+                    $errorPassword.innerHTML = ""
+                    if ($errorBackPassword) {
+                        $errorBackPassword.innerHTML = ""
                     }
                     errors.passwd = false
                 break
@@ -71,8 +71,8 @@ window.addEventListener("load",() => {
                 errors.passwd = true
                 break;*/
             default:
-                $errorPasswd.innerHTML = ""
-                errors.passwd = false
+                $errorPassword.innerHTML = ""
+                errors.password = false
         }
 
     })
@@ -81,14 +81,14 @@ window.addEventListener("load",() => {
         event.preventDefault()
 
 
-        if(errors.passwd == true || errors.email == true ){
+        if(errors.password == true || errors.email == true ){
             $errorSubmit.innerHTML = "Complete el formulario correctamente"
             if($errorComparacion){
                 $errorComparacion.innerHTML = ""
             }
         } 
 
-        if(errors.passwd == false && errors.email == false ){
+        if(errors.password == false && errors.email == false ){
 
             $errorSubmit.innerHTML = ""
             $formulario.submit()
