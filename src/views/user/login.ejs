@@ -20,6 +20,7 @@
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %></small>
                     <% } %>
+                    <span class="error" id="emailErrors" style="color: red"></span>
                 </div>
                 <div class="input-container">
                     <label for="password">Contraseña</label>
@@ -27,6 +28,7 @@
                     <% if (locals.errors && errors.password) { %>
                         <small class="text-danger"><%= errors.password.msg %></small>
                     <% } %>
+                    <span class="error" id="passwordErrors" style="color: red"></span>
                 </div>
                 <div class="input-check-container">
                     <label for="remember">Recordar 
