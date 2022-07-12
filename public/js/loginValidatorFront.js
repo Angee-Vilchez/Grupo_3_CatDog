@@ -11,9 +11,7 @@ window.addEventListener("load", ()=>{
 
     /* Expresiones */
     const validation = {
-        valiPasswd:/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
-        //^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&#.$($)$-$_])[A-Za-z\d$@$!%?&#.$($)$-$_]{8,16}$/
-        /* /^(?=(?:.\d))(?=(?:.[A-Z]))(?=(?:.*[a-z]))\S{8,}$/ */,
+        valiPasswd:/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
         valiEmail:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
     }
     /* errors */
@@ -58,8 +56,7 @@ window.addEventListener("load", ()=>{
                 }
                 errors.password = true
                 break;
-            case $inputPassword.value.length < 8/*!validation.valiPasswd.test($inputPasswd.value)*/:
-                //$errorPasswd.innerHTML = "La contraseña debe tener:<br> Entre 8 a 16 digitos <br>Una mayuscula<br>Una minuscula<br>Un numero<br>"   
+            case $inputPassword.value.length < 8: 
                 $passwordErrors.innerHTML = "La contraseña debe tener<br> por lo menos 8 caracteres"
                 if ($errorBackPassword) {
                     $errorBackPassword.innerHTML = ""
