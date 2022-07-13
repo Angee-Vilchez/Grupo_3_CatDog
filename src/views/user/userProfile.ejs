@@ -38,6 +38,16 @@
                     <% } %>
                 </div>
                 <div class="mb-3">
+                  <label for="userName" class="form-label">Apellido:</label>
+                  <input type="text" class="form-control" name="userName" placeholder="Ingrese su apellido" id="userName"
+                    value="<%= locals.old && old.userName %>" />
+                  <% if (locals.errors && errors.userName) { %>
+                    <small class="text-danger">
+                      <%= errors.name.msg %>
+                    </small>
+                    <% } %>
+                </div>
+                <div class="mb-3">
                   <label for="phone" class="form-label">Teléfono:</label>
                   <input type="text" class="form-control" name="phone" placeholder="Ingrese su telefono" id="phone"
                     value="<%= locals.old && old.phone %>" />

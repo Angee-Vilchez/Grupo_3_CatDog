@@ -6,16 +6,13 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #1fa9e7; 
+  background-color: #1fa9e7;
 }
 
 
 .contenedor-footer {
   padding: 5px;
   margin: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .contenedor-footer p {
@@ -23,15 +20,24 @@ footer {
   margin: 10px;
   font-size: 20px;
   align-items: center;
-  color: white
 }
 
 .uno {
   text-align: center;
 }
 
-a {
+a{
   text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a#left{
+  transition: all 0.3s ease;
+}
+
+a#left:hover {
+  color: #b6b4f3;
+  padding-left: 8px;
 }
 
 .footer_socialMedia-container {
