@@ -46,5 +46,5 @@ https://www.timoteopetshop.com
 https://okhosting.com/blog/los-datos-en-una-tienda-on-line/
 
 ### **Tablero de Trabajo**
-Url Trello: https://trello.com/b/XFJHAOCl/grupo3-catdog
+Url Trello: https://trello.com/b/XVwU0PZi/grupo3-catdog
 
