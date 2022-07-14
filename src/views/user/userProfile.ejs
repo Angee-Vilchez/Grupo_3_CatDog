@@ -11,6 +11,7 @@
         <div class="avatar">
           <img src="/img/avatar/<%= user.avatar %>" alt="" />
         </div>
+        
         <div class="container1">
           <h3 class="text-center mt-3 mb-3">Datos personales</h3>
           <div class="row">
@@ -26,40 +27,43 @@
               </p>
             </div>
             <div class="col-md-6">
-              <form action="/usuarios/perfil?_method=PUT" method="post">
+              <form action="/usuarios/perfil?_method=PUT" method="post" id="formProfile">
                 <div class="mb-3">
                   <label for="name" class="form-label">Nombre:</label>
                   <input type="text" class="form-control" name="name" placeholder="Ingrese su nombre" id="name"
                     value="<%= locals.old && old.name %>" />
                   <% if (locals.errors && errors.name) { %>
-                    <small class="text-danger">
-                      <%= errors.name.msg %>
-                    </small>
-                    <% } %>
+                    <small class="text-danger"><%= errors.name.msg %></small>
+                  <% } %>
+                    <span class="error-message" id="nameError"></span>
                 </div>
                 <div class="mb-3">
                   <label for="userName" class="form-label">Apellido:</label>
                   <input type="text" class="form-control" name="userName" placeholder="Ingrese su apellido" id="userName"
                     value="<%= locals.old && old.userName %>" />
                   <% if (locals.errors && errors.userName) { %>
-                    <small class="text-danger">
-                      <%= errors.name.msg %>
-                    </small>
-                    <% } %>
+                    <small class="text-danger"><%= errors.name.msg %></small>
+                  <% } %>
+                    <span class="error-message" id="userNameError"></span>
                 </div>
                 <div class="mb-3">
                   <label for="phone" class="form-label">Teléfono:</label>
                   <input type="text" class="form-control" name="phone" placeholder="Ingrese su telefono" id="phone"
                     value="<%= locals.old && old.phone %>" />
                   <% if (locals.errors && errors.phone) { %>
-                    <small class="text-danger">
-                      <%= errors.phone.msg %>
-                    </small>
-                    <% } %>
+                    <small class="text-danger"><%= errors.phone.msg %></small>
+                  <% } %>
+                  <span class="error-message" id="phoneError"></span>
+                </div>
+                <div class="mb-3">
+                  <label for="image" class="form-label">EDITAR IMAGEN</label>
+                  <input class="avatar2" type="file" name="image" id="image">
+                  <span class="error-msg" id="imageError"></span>
                 </div>
                 <button class="btn-outline-success" type="submit">
                   Editar datos
                 </button>
+                <span id="submitProfileError"></span>
               </form>
             </div>
           </div>
@@ -86,6 +90,7 @@
                       <tr class="titulos">
                         <td>
                           <%- address.id %>
+                        </td>
                         <td>
                           <%- address.street %>
                         </td>
@@ -106,63 +111,62 @@
                           </form>
                         </td>
                       </tr>
-                      <% }) %>
+                    <% }) %>
                   </tbody>
                 </table>
               </div>
+            <% } %>
 
-              <% } %>
-                <form action="/usuarios/direcciones" class="roww" method="post">
+                <form action="/usuarios/direcciones" class="roww" method="post" id="formDirection">
                   <div class="col-md6">
                     <label for="street" class="form-label">Calle:</label>
                     <input type="text" class="form-control" name="street" placeholder="Ingrese la calle" id="street"
                       value="<%= locals.old && old.street %>" />
                     <% if (locals.errors && errors.street) { %>
-                      <small class="text-danger">
-                        <%= errors.street.msg %>
-                      </small>
-                      <% } %>
+                      <small class="text-danger"><%= errors.street.msg %></small>
+                    <% } %>
+                    <span id="streetError"></span>
                   </div>
                   <div class="col-md6" class="form-group">
                     <label for="number" class="form-label">Número:</label>
                     <input type="text" class="form-control" name="number" placeholder="Ingrese el número" id="number"
                       value="<%= locals.old && old.number %>" />
                     <% if (locals.errors && errors.number) { %>
-                      <small class="text-danger">
-                        <%= errors.number.msg %>
-                      </small>
-                      <% } %>
+                      <small class="text-danger"><%= errors.number.msg %></small>
+                    <% } %>
+                    <span id="numberError"></span>
                   </div>
                   <div class="col-md6">
-                    <select class="form-select" name="province">
+                    <select class="form-select" name="province" id="province">
                       <option value="" hidden selected>Provincia</option>
                     </select>
                     <% if (locals.errors && errors.province) { %>
-                      <small class="text-danger">
-                        <%= errors.province.msg %>
-                      </small>
-                      <% } %>
+                      <small class="text-danger"><%= errors.province.msg %></small>
+                    <% } %>
+                    <span id="provinceError"></span>
                   </div>
                   <div class="col-md6">
-                    <select class="form-select" name="city">
+                    <select class="form-select" name="city" id="city">
                       <option value="" hidden selected>Ciudad</option>
                     </select>
                     <% if (locals.errors && errors.city) { %>
-                      <small class="text-danger">
-                        <%= errors.city.msg %>
-                      </small>
-                      <% } %>
+                      <small class="text-danger"><%= errors.city.msg %></small>
+                    <% } %>
+                    <span id="cityError"></span>
                   </div>
                   <div>
                     <button class="agregar" type="submit">
                       Agregar
                     </button>
+                    <span id="formDirectionError"></span>
                   </div>
                 </form>
         </div>
       </main>
       <%- include('../partials/footer')%>
-        <%- include("../partials/script") %>
+      <%- include("../partials/script") %>
+        <script src="../../../js/profileValidator.js"></script>
+        <script src="../../../js/directionValidator.js"></script>
   </body>
 
 </html>
