@@ -12,6 +12,7 @@ const userSession = require('../middlewares/userSession');
 //validations
 const productCreateValidator = require('../validations/productCreateValidator');
 const productEditValidator = require('../validations/productEditValidator');
+const categoryValidator = require('../validations/categoryValidator');
 
 
 /* Session */
@@ -39,11 +40,11 @@ router.get('/categorias', /*userSessionCheck, adminCheck */ adminCategoriesContr
 
 router.get('/categorias/agregar', /* ,userSessionCheck, adminCheck */ adminCategoriesController.categoryAdd)
 
-router.post('/categorias', adminCategoriesController.categoryCreate)
+router.post('/categorias',categoryValidator, adminCategoriesController.categoryCreate)
 
 router.get('/categorias/editar/:id', /* userSessionCheck, adminCheck, */ adminCategoriesController.categoryEdit)
 
-router.put('/categorias/:id', adminCategoriesController.categoryUpdate)
+router.put('/categorias/:id',categoryValidator, adminCategoriesController.categoryUpdate)
 
 router.delete('/categorias/eliminar/:id', adminCategoriesController.categoryDelete)
 

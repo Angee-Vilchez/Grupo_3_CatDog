@@ -6,14 +6,19 @@
 
     <section class="category">
 
-        <form action="/admin/categorias/<%= categoria.id %>?_method=PUT" method="POST">
+        <form action="/admin/categorias/<%= categoria.id %>?_method=PUT" method="POST" id="formCategoryEdit">
 
             <div class="input-box">
                 <label for="category"><h4>Editar categoria</h4></label>
                 <input type="text" name="name" class="input-category" id="category" placeholder="Nombre de la categoria"  value="<%= categoria.name %>">
+                <% if (locals.errors && errors.name) { %>
+                    <span class="error-msg"><%= errors.name.msg  %></span>
+                <% } %>
+                <span class="error-msg" id="categoryEditError"></span>
             </div>
             <div class="btn-box">
                 <button class="add_category" type="submit">Editar</button>
+                <span id="submitCategoryeditError"></span>
             </div> 
 
         </form>
@@ -24,5 +29,6 @@
 
     <%- include('../partials/footer') %>
     <%- include('../partials/script') %>
+    <script src="../../../../js/editCategoryValidator.js"></script>
 </body>
 </html>
