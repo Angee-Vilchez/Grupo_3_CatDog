@@ -1,92 +1,71 @@
-const QS = (element)=>document.querySelector(element)
+function qs(element) {
+    return document.querySelector(element)
+}
 
-window.addEventListener("load", ()=>{
-    let $formulario = QS("#form")
-    let $inputEmail = QS("#email")
-    let $inputPasswd = QS("#password")
-
-    let $errorBackEmail = QS("#errorBackEmail")
-    let $errorBackPasswd = QS("#errorBackPassword")
-
-
-    /* Expresiones */
-    const validation = {
-        valiPasswd:/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/,
-        valiEmail:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-    }
-    /* errors */
-    let $errorEmail = QS("#emailErrors")
-    let $errorPasswd = QS("#passwordErrors")
-    let $errorSubmit=QS("#errorSubmit") 
-
-    let errors = {
-        email:true,
-        password: true,
-    }
+window.addEventListener('load', () => {
+    let $email = qs('#email'),
+    $emailErrors = qs('#emailErrors'),
+    $password = qs('#password'),
+    $passwordErrors = qs('#passwordErrors'),
+    $form = qs('#form'),
+    regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
+    regExPass = /^(?=.*\d).{8,100}$/;
 
 
-    $inputEmail.addEventListener("blur", e => {
-        switch(true){
-            case !$inputEmail.value.trim():
-                $emailErrors.innerHTML = "Debe ingresar un email"
-                if ($errorBackEmail) {
-                    $errorBackEmail.innerHTML = ""
-                }
-                errors.email = true
+    $email.addEventListener('blur', () => {
+        switch (true) {
+            case !$email.value.trim():
+                $emailErrors.innerHTML = "Email requerido";
+                $email.classList.add('error-message');
                 break;
-            case !validation.valiEmail.test($inputEmail.value):
-                $emailErrors.innerHTML = "Ingrese un email válido"   
-                if ($errorBackEmail) {
-                    $errorBackEmail.innerHTML = ""
-                }
-                errors.email = true
+            case !regExEmail.test($email.value):
+                $emailErrors.innerHTML = "Email inválido";
+                $email.classList.add('error-message');
                 break;
-            default:
-                $emailErrors.innerHTML = ""
-                errors.email = false
+            default: 
+                $email.classList.remove('error-message');
+                $emailErrors.innerHTML = "";
+                break;
         }
     })
-
-    $inputPassword.addEventListener("blur", e => {
-        switch(true){
-            case !$inputPassword.value.trim():
-                $passwordErrors.innerHTML = "Ingrese una contraseña"
-                if ($errorBackPassword) {
-                    $errorBackPassword.innerHTML = ""
-                }
-                errors.password = true
+    $password.addEventListener('blur', function(){
+        switch (true) {
+            case !$password.value.trim():
+                $passwordErrors.innerHTML = 'Ingrese una contraseña'
+                $password.classList.add('error-message')
                 break;
-            case $inputPassword.value.length < 8: 
-                $passwordErrors.innerHTML = "La contraseña debe tener<br> por lo menos 8 caracteres"
-                if ($errorBackPassword) {
-                    $errorBackPassword.innerHTML = ""
-                }
-                errors.password = true
-                break;
+            case !regExPass.test($password.value):
+                $passwordErrors.innerHTML = 'La contraseña debe tener un mínimo de 8 caracteres';
+                $password.classList.add('error-message')
+                break;    
             default:
+                $password.classList.remove('error-message');
                 $passwordErrors.innerHTML = ""
-                errors.password = false
+                break;
         }
-
     })
 
-    $formulario.addEventListener("submit", function(event){
-        event.preventDefault()
+    $form.addEventListener('submit', function(e){
+        e.preventDefault()
 
-        if(errors.email == true || errors.password == true){
-            $errorSubmit.innerHTML = "Complete el formulario correctamente"
-            
-        } 
+       let elementosFormulario = this.elements;
+       let errores = false;
+       console.log(elementosFormulario)
 
-        if(errors.email == false && errors.password == false){
-
-            $errorSubmit.innerHTML = ""
-            $formulario.submit()
-            
-        }
-
-        
-    })
+       for (let index = 0; index < elementosFormulario.length -1; index++) {
+           if(elementosFormulario[index].value == ""
+           && elementosFormulario[index].type !== "checkbox"
+           || elementosFormulario[index].classList.contains('error-message')){
+               elementosFormulario[index].classList.add('error-message');
+               submitErrors.innerHTML = "Hay errores en el formulario"
+               errores = true;
+           }
+       }
+       
+       if(!errores){
+           $form.submit()
+       }
+   })
 
 
 })

@@ -1,187 +1,161 @@
-const QS = (element)=>document.querySelector(element)
+function qs(element) {
+    return document.querySelector(element)
+}
 
-window.addEventListener("load", ()=>{
-    let $formulario = QS("#form")
-    let $inputName = QS("#name")
-    let $inputEmail = QS("#email")
-    let $inputPasswd = QS("#password")
-    let $inputPasswd2 = QS("#password2")
-    let $inputFile = QS("#avatar")
-    let $inputTerms = QS("#terms")
+window.addEventListener("load", () => {
+    let $inputName = qs("#name")
+    let $userName = qs("#userName")
+    let $inputEmail = qs("#email")
+    let $inputPasswd = qs("#password")
+    let $inputPasswd2 = qs("#password2")
+    let $inputFile = qs("#avatar")
+    let $inputTerms = qs("#terms")
 
-    let $errorBackName = QS("#errorBackName")
-    let $errorBackEmail = QS("#errorBackEmail")
-    let $errorBackPasswd = QS("#errorBackPassword")
-    let $errorBackPasswd2 = QS("#errorBackPassword2")
-    let $errorBackTerms = QS("#errorBackTerms")
-
+    let $errorBackName = qs("#errorBackName")
+    let $userNameError = qs("#userNameError")
+    let $errorBackEmail = qs("#errorBackEmail")
+    let $errorBackPasswd = qs("#errorBackPassword")
+    let $errorBackPasswd2 = qs("#errorBackPassword2")
+    let $avatarError = qs('#avatarError')
+    let $errorBackTerms = qs("#errorBackTerms")
+    let $form = qs('#form')
+    let regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/
+    let regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
+    let regExPass = /^(?=.*\d).{8,100}$/;
     
 
-    /* Expresiones */
-    const validation = {
-        valiName :/^[a-zA-ZÀ-ÿ\s]{2,40}$/,
-        valiPasswd:/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
-        
-
-        //^(?=.[a-z])(?=.[A-Z])(?=.\d)(?=.[$@$!%?&#.$($)$-$_])[A-Za-z\d$@$!%?&#.$($)$-$_]{8,16}$/
-        /* /^(?=(?:.\d))(?=(?:.[A-Z]))(?=(?:.*[a-z]))\S{8,}$/ */,
-        valiEmail:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-        valiTelefono:/^\d{7,14}$/
-    }
-    /* errors */
-    let $errorName = QS("#errorName")
-    let $errorEmail = QS("#errorEmail")
-    let $errorPasswd = QS("#errorPassword")
-    let $errorFile = QS("#errorFile")
-    let $errorPassswd2 = QS("#errorPassword2")
-    let $errorCaptcha = QS("#errorCaptcha")
-    let $errorTerms = QS("#errorTerms")
-    let $errorSubmit=QS("#errorSubmit") 
-
-    let errors = {
-        name:true,
-        email:true,
-        password: true,
-        password2: true,
-        file: true,
-        terms: true,
-    }
-
-    $inputName.addEventListener("blur", e => {
-        switch(true){
-            case !$inputName.value.trim():
-                $errorName.innerHTML = "Debe ingresar un nombre"
-                if ($errorBackName) {
-                    $errorBackName.innerHTML = ""
-                }
-                errors.name = true
-                break;
-            case (!validation.valiName.test($inputName.value) || $inputName.value.length < 3):
-                $errorName.innerHTML = "Ingrese un nombre válido"  
-                if ($errorBackName) {
-                    $errorBackName.innerHTML = ""
-                }
-                errors.name = true
-                break;
-            default:
-                $errorName.innerHTML = ""
-                errors.name = false
-        }
-    })
-
-    $inputEmail.addEventListener("blur", e => {
-        switch(true){
-            case !$inputEmail.value.trim():
-                $errorEmail.innerHTML = "Debe ingresar un email"
-                if ($errorBackEmail) {
-                    $errorBackEmail.innerHTML = ""
-                }
-                errors.email = true
-                break;
-            case !validation.valiEmail.test($inputEmail.value):
-                $errorEmail.innerHTML = "Ingrese un email válido"   
-                if ($errorBackEmail) {
-                    $errorBackEmail.innerHTML = ""
-                }
-                errors.email = true
-                break;
-            default:
-                $errorEmail.innerHTML = ""
-                errors.email = false
-        }
-    })
-
-    $inputPassword.addEventListener("blur", e => {
-        switch(true){
-            case !$inputPassword.value.trim():
-                $errorPassword.innerHTML = "Ingrese una contraseña"
-                if ($errorBackPassword) {
-                    $errorBackPassword.innerHTML = ""
-                }
-                errors.password = true
-                break;
-            case $inputPassword.value.length < 8/*!validation.valiPasswd.test($inputPasswd.value)*/:
-                //$errorPasswd.innerHTML = "La contraseña debe tener:<br> Entre 8 a 16 digitos <br>Una mayuscula<br>Una minuscula<br>Un numero<br>"   
-                $errorPassword.innerHTML = "La contraseña debe tener<br> por lo menos 8 caracteres"
-                if ($errorBackPassword) {
-                    $errorBackPassword.innerHTML = ""
-                }
-                errors.password = true
-                break;
-            default:
-                $errorPassword.innerHTML = ""
-                errors.password = false
-        }
-
-    })
-
-    $inputPassword2.addEventListener('blur', function () {
+    $inputName.addEventListener("blur", () => {
         switch (true) {
-            case !$inputPassword2.value.trim():
-                $errorPasssword2.innerHTML = 'Reingrese su contraseña'
-                if ($errorBackPassword2) {
-                    $errorBackPassword2.innerHTML = ""
-                }
-                errors.password2 = true
+            case !$inputName.value.trim():
+                $errorBackName.innerHTML = "Nombre requerido";
+                $inputName.classList.add('error-message');
                 break;
-            case $inputPassword2.value !== $inputPassword.value:
-                $errorPasssword2.innerHTML = 'Las contraseñas no coinciden';
-                if ($errorBackPassword2) {
-                    $errorBackPassword2.innerHTML = ""
-                }
-                errors.password2 = true
+            case !regExAlpha.test($inputName.value):
+                $errorBackName.innerHTML = "Nombre inválido";
+                $inputName.classList.add('error-message');
                 break;
-            default:
-                $errorPasssword2.innerHTML = ""
-                errors.password2 = false
+            case $inputName.value.length<2:
+                $errorBackName.innerHTML = "El nombre tiene que tener 2 caracteres o mas";
+                $inputName.classList.add('error-message');
+                break;
+            default: 
+                $inputName.classList.remove('error-message');
+                $errorBackName.innerHTML = "";
                 break;
         }
     })
-
+    $userName.addEventListener('blur', () => {
+        switch(true){
+            case !$userName.value.trim():
+                $userNameError.innerHTML = "Requerido";
+                $userName.classList.add('error-message');
+                break;
+            case !regExAlpha.test($userName.value):
+                $userNameError.innerHTML = "Apellido no válido";
+                $userName.classList.add('error-message');
+                break;
+            default:
+                $userName.classList.remove('error-message');
+                $userNameError.innerHTML = "";
+                break;
+        }
+    })
+    $inputEmail.addEventListener('blur', () => {
+        switch (true) {
+            case !$inputEmail.value.trim():
+                $errorBackEmail.innerHTML = "Email requerido";
+                $inputEmail.classList.add('error-message');
+                break;
+            case !regExEmail.test($inputEmail.value):
+                $errorBackEmail.innerHTML = "Email inválido";
+                $inputEmail.classList.add('error-message');
+                break;
+            default: 
+                $inputEmail.classList.remove('error-message');
+                $errorBackEmail.innerHTML = "";
+                break;
+        }
+    })
+    $inputPasswd.addEventListener('blur', function(){
+        switch (true) {
+            case !$inputPasswd.value.trim():
+                $errorBackPasswd.innerHTML = 'Ingrese una contraseña'
+                $inputPasswd.classList.add('error-message')
+                break;
+            case !regExPass.test($inputPasswd.value):
+                $errorBackPasswd.innerHTML = 'La contraseña debe tener un mínimo de 8 caracteres';
+                $inputPasswd.classList.add('error-message')
+                break;    
+            default:
+                $inputPasswd.classList.remove('error-message');
+                $errorBackPasswd.innerHTML = ""
+                break;
+        }
+    })
+    $inputPasswd2.addEventListener('blur', function(){
+        switch (true) {
+            case !$inputPasswd2.value.trim():
+                $errorBackPasswd2.innerHTML = 'Reingresa tu contraseña'
+                $inputPasswd2.classList.add('error-message')
+                break;
+            case $inputPasswd2.value !== $password.value:
+                $errorBackPasswd2.innerHTML = 'Las contraseñas no coinciden';
+                $inputPasswd2.classList.add('error-message')
+                break;    
+            default:
+                $inputPasswd2.classList.remove('error-message');
+                $errorBackPasswd2.innerHTML = ""
+                break;
+        }
+    })
+    $inputFile.addEventListener('change', 
+    function fileValidation(){
+        let filePath = $inputFile.value, 
+            allowefExtensions = /(.jpg|.jpeg|.png|.gif|.web)$/i //exReg, valida extensiones permitidas
+            let extension = filePath.substring(filePath.lastIndexOf('.') + 1).toLowerCase();
+        if(!allowefExtensions.exec(filePath)){ 
+            $avatarError.innerHTML = `Las extension válidas son '.jpg .jpeg .png .gif' El Archivo: ${extension} no es valido`;
+            $inputFile.value = '';
+            return false;
+        }else{
+            $inputFile.classList.remove('error-message')
+            $avatarError.innerHTML = ""
+        }
+    })
     $inputTerms.addEventListener("click", function(){
         $inputTerms.value = "on"
-        $inputTerms.innerHTML = ""
-        errors.terms = false
-    })
-
-    $inputFile.addEventListener("change", function fileValidation(){
-        let fileCapturado = $inputFile.value, extensionesPermitidas = /(.jpg|.jpeg|.png|.gif)$/i
-        if(!extensionesPermitidas.exec(fileCapturado)){
-            $errorFile.innerHTML = "Carga un archivo valido con extension<br>.jpg | .jpeg | .png | .gif"
-            $inputFile.value = ""
-            //$viewFile.innerHTML = ""
-            errors.file = true
-            return false
-        } else {
-            errors.file = false
-        }
-    })
-
-    $formulario.addEventListener("submit", function(event){
-        event.preventDefault()
-
-        if (!$inputTerms.checked) {
-            $errorTerms.innerHTML = "Debes aceptar los términos y condiciones";
-            //$errorBackTerms.innerHTML = "";
-        } else {
-            $errorTerms.innerHTML = "";
-            //$errorBackTerms.innerHTML = "";
-        }
-
-        if(errors.name == true || errors.email == true || errors.password == true || errors.password2 == true || errors.file == true || errors.terms == true){
-            $errorSubmit.innerHTML = "Complete el formulario correctamente"
-            
-        } 
-
-        if(errors.name == false && errors.email == false && errors.password == false && errors.password2 == false && errors.file == false && errors.terms == false){
-
-            $errorSubmit.innerHTML = ""
-            $formulario.submit()
-            
-        }
-
-        
+        $inputTerms.classList.toggle('')
+        $inputTerms.classList.remove('error-message')
+        $errorBackTerms.innerHTML = ""
     })
 
 
+    $form.addEventListener("submit", function(event) {
+        event.preventDefault()  //para el comportamiento predeterminado del submit
+
+        let elementsForm = this.elements; //para capturar todos los elementos que estan adentro del formulario
+        let errores = false;
+
+        console.log(elementsForm)
+
+        for (let index = 0; index < elementsForm.length - 1; index++) { /* obviamos el boton */
+            if(elementsForm[index].value == ""  
+            && elementsForm[index].type !== "file"   //para que estos campos no sean requeridos
+            || elementsForm[index].classList.contains('error-message')){
+                elementsForm[index].classList.add('error-message');
+                submitErrors.innerHTML = "Hay errores en el formulario"  //no esta capturado en una variable esto se puede hacer cuando es un id unico
+                errores = true;
+            }
+        }
+
+        if(!$inputTerms.checked){   //si el checked no esta ejecuta lo siguiente
+            $inputTerms.classList.add('error-message');
+            $errorBackTerms.innerHTML = "Debes aceptar los terminos";
+        }
+
+        if(!errores){  //si no hay errores ejecutame lo siguiente
+            $form.submit()
+        }
+
+    })
 })

@@ -12,11 +12,11 @@
             <div class="formulario_logo">
                 <img src="/img/logo.png">
             </div>
-            <form method="post" action="/usuarios/login"  >  
+            <form method="post" action="/usuarios/login"  id="form">  
                 <h2>Login</h2>
                 <div class="input-container">
                     <label for="email">Email</label>
-                    <input type="email" class="input-style" name="email" placeholder="Ingrese su email">
+                    <input type="email" class="input-style" name="email" placeholder="Ingrese su email" id="email">
                     <% if (locals.errors && errors.email) { %>
                         <small class="text-danger"><%= errors.email.msg %></small>
                     <% } %>
@@ -24,7 +24,7 @@
                 </div>
                 <div class="input-container">
                     <label for="password">Contraseña</label>
-                    <input type="password" class="input-style" name="password" placeholder="Ingrese una contraseña">
+                    <input type="password" class="input-style" name="password" placeholder="Ingrese una contraseña" id="password">
                     <% if (locals.errors && errors.password) { %>
                         <small class="text-danger"><%= errors.password.msg %></small>
                     <% } %>
@@ -39,6 +39,7 @@
                 </div>
                 <div class="btn-container">
                     <button type="submit" class="btn-login">Iniciar sesión</button>
+                    <span class="error" id="submitErrors" style="color: red"></span>
                 </div>
                 <span><a href="/usuarios/register">No tengo cuenta</a></span>
             </form>
@@ -49,7 +50,8 @@
     <%- include("../partials/footer") %>
 
     <%- include("../partials/script") %>
-    <script src="../../../public/js/loginValidatorFront.js"></script>
+    <script src="../../../js/loginValidatorFront.js"></script>
+    
 </body>
 
 </html>

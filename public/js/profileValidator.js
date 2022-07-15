@@ -77,7 +77,7 @@ window.addEventListener('load', function(){
             $image.value = '';
             return false;
         }else{
-            $image.classList.remove('error-msg')
+            $image.classList.remove('error-message')
             $imageError.innerHTML = ""
         }
     })
