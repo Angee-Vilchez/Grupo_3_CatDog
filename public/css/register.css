@@ -96,6 +96,7 @@ button.btn-register{
     background-color: white;
     border-radius: 10px;
     font-size: 17px;
+    transition: all 0.3s;
 }
 
 button.btn-register:hover{

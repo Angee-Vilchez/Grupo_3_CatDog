@@ -1,12 +1,14 @@
-.userProfile{
-    height: 63rem;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 .userProfile .avatar {
     border-radius: 50%;
     width: 150px;
     height: 150px;
-    margin: 3rem auto 0;
+    margin: 0 auto 1rem;
 
 }
 
@@ -16,149 +18,178 @@
     border-radius: 50%;
 }
 
-.container1{
+main.userProfile {
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: var(--font-roboto);
-    padding: 3rem 1rem;
+    flex-direction: column;
+    margin: 3rem ;
 }
 
-.container1 .row{
+h3 {
+    color: #3BC4B0
+}
+
+.container-profile{
+    border-radius: 2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    flex-direction: row;
-    border-radius: 20px;
+    justify-content: center;
+    flex-direction: column;
     border:solid 1px #3BC4B0;
     background-color: white;
+    padding: 1rem;
 }
 
-.container1 .row .col-md-6{
+.row {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+div.datos1 {
+    width: 420px;
+    display: flex;
     flex-direction: column;
-    padding: 5rem;
-    font-size: 20px;
+    align-items: center;
+    font-size: 25px;
     line-height: 30px;
+    color: rgb(56, 52, 52);
 }
 
-.container1  .row .col-md-6 .form-label {
-    margin-bottom: 0.3rem;
-    color: rgb(32, 30, 30);
+div.datos1 strong {
     text-transform: uppercase;
+    font-size: 18px;
+    padding-right: 0.3rem;
+    color: rgb(58, 57, 57);
 }
 
-.container1  .row .col-md-6 .form-control{
-    border:solid 1px #3BC4B0;
-    border-radius: 1rem;
-    height: 2.5rem;
-    padding: 0.5rem;
-    margin-bottom: 0.2rem;
+div.datos2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 30px;
+    box-shadow: 10px 5px 10px rgba(204, 253, 247, 0.311);
 }
 
-.container1  .row .col-md-6 .btn-outline-success{
-        margin: 1rem;
-        padding: 0;
-        width: 50%;
-        height: 2rem;
-        border-color: #0d6efd;
-        background-color: white;
-        border-radius: 10px;
-        font-size: 17px;   
+.datos2 h4{
+    padding-top: 1rem;
 }
 
-.container1  .row .col-md-6 .btn-outline-success:hover{
+.datos2 .table-direcciones strong{
+    color: rgb(58, 57, 57);
+    text-decoration: underline;
+}
+
+.datos2 .mis-direcciones{
+    display: flex;
+    flex-direction: row;
+}
+
+.datos2 .mis-direcciones strong{
+    color: rgb(56, 52, 52);
+}
+
+.btn-eliminar{
+    width: 3.3rem;
+    border-color: rgb(56, 52, 52);
+    background-color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: all 0.3s;
+} 
+.btn-eliminar:hover{
+    border-color: #0d6efd;
     background-color: #0d6efd;
     color: white;
 }
 
-.container1 .row2 {
-    width: 52rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    border-radius: 20px;
-    border:solid 1px #3BC4B0;
-    background-color: white;
+.datos2 strong.id {
+    display: inline-block;
+    width: 2rem;
 }
 
-.container1 .row2 .col-md6{
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem 0.5rem 0.5rem 5rem;
+.datos2 strong.dir {
+    display: inline-block;
+    width: 5rem;
+}
+
+h3.h3-editar{
+    text-align: center;
+    color: black;
     font-size: 20px;
-    line-height: 30px;
+    padding-top: 3rem;
 }
 
-.container1 .row2 .form-label{
-    margin-bottom: 0.3rem;
-    color: rgb(32, 30, 30);
+hr{
+    height: 2px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.container-profile .row2{
+    display: flex;
+    flex-direction: row;
+}
+
+.row2 .formProfile{
+    text-align: center;
+    width: 420px;
+    padding: 2rem;
+}
+
+.row2 .formDirection{
+    width: 420px;
+    padding: 2rem;
+}
+
+
+
+.mb-3 .form-label {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
     text-transform: uppercase;
+    color: black;
 }
 
-.container1 .row2 .form-control{
-    border:solid 1px #3BC4B0;
+input.form-control,
+select.form-select {
+    border: none;
     border-radius: 1rem;
     height: 2.5rem;
-    padding: 0.5rem;
-    margin-bottom: 0.2rem;
+    width: 100%;
+    padding: 0.7rem;
+    margin-bottom: 0.5rem;
+    background-color:rgb(217, 221, 243);
 }
 
-.container1 .row2 .roww .agregar{
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+div.btn-editar {
+    display: flex;
+    justify-content: center;
+}
+
+button.btn-outline-success {
     margin: 1rem;
-    padding: 0;
     width: 50%;
     height: 2rem;
     border-color: #0d6efd;
     background-color: white;
-    color: black;
     border-radius: 10px;
     font-size: 17px;
+    transition: all 0.3s;
 }
 
-.container1 .row2 .roww .agregar:hover{
+button.btn-outline-success:hover {
     background-color: #0d6efd;
-    color: white;
-    text-align: center;
-}
-
-.userProfile h2{
-    padding: 2rem 0 0 0.5rem;
-    color: #3BC4B0;
-}
-
-.container1 .row2 .table-direcciones{
-    display: flex;
-    flex-direction: column;
-    padding-right: 3rem;
-    font-size: 18px;
-}
-
-.container1 .row2 .titulos th{
-    padding: 0.3rem;
-    color: #3BC4B0;
-}
-.container1 .row2 .titulos td{
-    padding: 0.3rem;
-}
-
-.container1 .row2 .btn-eliminar{
-    margin: 1rem;
-    padding: 0;
-    width: 80%;
-    height: 1.3rem;
-    border-color: #3BC4B0;
-    background-color: white;
-    color: black;
-    border-radius: 10px;
-    font-size: 12px;
-}
-
-.container1 .row2 .btn-eliminar:hover{
-    background-color: #3BC4B0;
     color: white;
 }
