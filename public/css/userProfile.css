@@ -40,12 +40,12 @@ h3 {
     border:solid 1px #3BC4B0;
     background-color: white;
     padding: 1rem;
+    background: linear-gradient(90deg, #edf8f6, white);
 }
 
 .row {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
 }
 
 div.datos1 {
@@ -192,4 +192,48 @@ button.btn-outline-success {
 button.btn-outline-success:hover {
     background-color: #0d6efd;
     color: white;
+}
+
+@media  (max-width: 950px){
+    
+    .row {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-profile .row2{
+        display: flex;
+        flex-direction: column;
+    }
+
+    div.datos1 {
+        font-size: 20px;
+    }
+    
+    div.datos1 strong {
+        font-size: 16px;
+    }
+    
+    div.datos2 {
+        font-size: 13px;
+    }
+
+    .datos2 strong.id {
+        width: 1rem;
+    }
+    
+    .datos2 strong.dir {
+        width: 4.5rem;
+    }
+
+    .row2 .formProfile{
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .row2 .formDirection{
+        padding: 2rem;
+    }
 }
