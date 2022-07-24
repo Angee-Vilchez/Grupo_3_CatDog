@@ -3,43 +3,49 @@
 
 <%- include("../partials/head") %>
 
-  <body>
+  <body class="detalleDelProducto">
     <%- include("../partials/header") %>
       <main class="container-everything">
         <div class="escritorio">
           <div class="container-imagen">
             <img src="/img/productos/<%= product.image %> " alt="">
-            <strong class="agregar"><%= product.discount %>%OFF</strong>
           </div>
-          <div class="creation_product"> 
+          <h1>
+            <%= product.name %>
+          </h1>
+          <div class="descuento-precio-cantidad">
             <div class="container-product">
-               <h1><%= product.name %> </h1>
-               <div class="container-precio">
-                 <span class="precio">$<%= product.price %> </span>
-                 <span class="precio_descuento"> $ 7000 </span>
-               </div>
-               <div class="cantidad">
-                 <button type="button" class="boton_cantidad">-</button>
-                 <span id="">1</span> 
-                 <button type="button" class="boton_cantidad">+</button>
-                 <button class="agregar"><i class="fa-solid fa-cart-plus"></i><a href="/"></a> AGREGAR</button>
-               </div>
+              <strong class="agregar">
+                <%= product.discount %>%OFF
+              </strong>
+            </div>
+            <div class="container-precio">
+              <span class="precio">$<%= product.price %></span>
+              <span class="precio_descuento"> $ <%= product.price - product.discount * product.price / 100 %></span>
+            </div>
+            <div class="cantidad">
+              <button type="button" class="boton_cantidad">-</button>
+              <span id="">1</span>
+              <button type="button" class="boton_cantidad">+</button>
+              <button class="agregar"><i class="fa-solid fa-cart-plus"></i><a href="/"></a> AGREGAR</button>
             </div>
           </div>
         </div>
-          <hr>
+
+        <h2>DESCRIPCIÓN</h2>
+        <hr>
+        <div class="creation_product">
           <div class="container-descripcion">
-            <h2>DESCRIPCIÓN</h2> 
             <p>
-              <%= product.description %> 
+              <%= product.description %>
             </p>
-            SKU: <%= product.codigo %> 
           </div>
           <div class="envio">
             <p>ENVIO GRATIS CABA y zonas de GBA</p>
             <p>Retira sin cargo por tu sucursal preferida</p>
             <p><a href="">Ver sucursales</a></p>
           </div>
+        </div>
       </main>
 
       <%- include("../partials/footer") %>

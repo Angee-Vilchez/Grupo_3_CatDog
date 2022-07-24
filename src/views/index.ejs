@@ -30,35 +30,35 @@
 
                 <section class="contenedor">
                     <% products.forEach( product=> { %>
-                    <div class="producto">
+                        <div class="producto">
                             <a href="/productos/detalle/<%- product.id %>">
                                 <article>
                                     <div class="imagen">
                                         <img src="../img/productos/<%= product.image  %>" alt="">
                                     </div>
-                                    <div class="texto"> 
-                                    <strong>
-                                        <%= product.marca %>
-                                    </strong>
-                                    <strong>
-                                        <%= product.name %>
-                                    </strong>
-                                    <% if (product.discount> 0) { %>
-                                    <strong>
-                                        $ <%= product.price - product.discount * product.price / 100 %>
-                                    </strong>
-                                    <p class="oferta">
-                                        <%= product.discount + '% 0FF' %>
-                                    </p>
-                                    <% } else { %>
-                                    $ <%= product.price %>
-                                    <% } %>
-                                    <div>
+                                    <div class="texto">
+                                        <strong>
+                                            <%= product.marca %>
+                                        </strong>
+                                        <strong>
+                                            <%= product.name %>
+                                        </strong>
+                                        <% if (product.discount> 0) { %>
+                                            <strong>
+                                                $ <%= product.price - product.discount * product.price / 100 %>
+                                            </strong>
+                                            <p class="oferta">
+                                                <%= product.discount + '% 0FF' %>
+                                            </p>
+                                            <% } else { %>
+                                                $ <%= product.price %>
+                                                    <% } %>
+                                                        <div>
                                 </article>
                             </a>
                             <button class="agregar">Añadir al carrito <i class="fa-solid fa-cart-plus"></i></button>
-                    </div>
-                    <% }) %>
+                        </div>
+                        <% }) %>
                 </section>
 
 
