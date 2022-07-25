@@ -21,7 +21,7 @@ module.exports = {
         res.render('products/listperros', {
             css: "listPerros.css",
             titulo: "Perros",
-            product,
+            products,
             session: req.session
         })
     },

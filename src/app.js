@@ -18,13 +18,13 @@ app.set('views', path.join(__dirname, 'views'));
 
 /* Middlewares de aplicacion */
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.urlencoded({ extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(methodoverride('_method'));
 /* session */
 app.set('trust proxy', 1);
 app.use(session({
-    secret:"catdog!!",
+    secret: "catdog!!",
     resave: false,
     saveUninitialized: true,
     cookie: {}
@@ -38,7 +38,7 @@ const carritoRouter = require('./routes/carritoRouter')
 const productosRouter = require('./routes/productosRouter');
 const userRouter = require('./routes/userRouter');
 const adminRouter = require('./routes/adminRouter');
- 
+
 
 /*Rutas*/
 app.use('/', indexRouter);

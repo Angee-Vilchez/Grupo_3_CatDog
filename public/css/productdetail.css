@@ -1,69 +1,95 @@
-.container-everything{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 74rem;
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.container-everything .escritorio {
+body.detalleDelProducto{
+  background-image: url('../img/portada.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+main.container-everything{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+  min-height: 100vh;
+}
+
+.escritorio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .container-everything .escritorio .container-imagen img {
   margin-top: 1rem;
-  width: 300px;
-  height: 350px;
+  width: 270px;
+  height: 270px;
+  border-radius: 7px;
+  border: dashed 3px lightblue;
 }
 
-.container-everything .escritorio .container-imagen .agregar {
-  background: #f129a3;
-  color: var(--blanco);
+.container-everything .escritorio h1{
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 19px;
+  color: rgb(51, 49, 49);
+  }
+
+  .container-everything .container-product{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+.container-everything .container-product strong{
+  background-color: #f129a3;
+  color: white;
   font-size: 15px;
+  font-weight: bold;
   border-radius: 15px;
-  width: 100px;
-}
+} 
 
-.container-everything .escritorio .creation_product{
-  margin-top: 2rem;
+.escritorio .container-precio{
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 14rem;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 19px;
+  margin: 0.5rem 0;
+  color: black;
 }
 
-.container-everything .escritorio .creation_product .container-product h1{
-font-size: 23px;
-color: rgb(51, 49, 49);
-margin: 00.5rem;
+.escritorio .container-precio .precio{
+  font-weight: lighter;
+  text-decoration: line-through;
+  margin-right: 0.7rem;
+  color: gray;
 }
 
-.container-everything .escritorio .creation_product .container-product .container-precio{
+.container-everything .escritorio .cantidad {
   display: flex;
-  margin-top: 2rem;
-  margin-left: 00.5rem;
-  color: rgb(68, 66, 66);
+  flex-direction: row;
+  margin: 1rem 0 4rem;
 }
 
-.container-everything .escritorio .creation_product .container-product .container-precio .precio{
- text-decoration: line-through;
+.container-everything .escritorio .cantidad .boton_cantidad{
+  transition: all 0.5s ease-in;
 }
 
-.container-everything .escritorio .creation_product .container-product .container-precio .precio_descuento{
-color: rgb(51, 49, 49);
-font-size: 23px;
-margin-left: 1rem;
-font-weight: bold;
+.container-everything .escritorio .cantidad .boton_cantidad:hover{
+  transform: scale(1.1);
 }
 
-.container-everything .escritorio .creation_product .container-product .cantidad {
-  display: flex;
-  flex-direction:row;
-  margin-top: 1rem; 
-}
-
-.container-everything .escritorio .creation_product .container-product .cantidad .agregar{
+.container-everything .escritorio .cantidad .agregar{
   margin-left: 1rem;
   background-color: #8480ef;
+  border: #8480ef;
   color: white;
   height: 2rem;
   width: 8rem;
@@ -72,16 +98,15 @@ font-weight: bold;
   display: flex;
   align-items: center;
 }
-
-.container-everything .escritorio .creation_product .container-product .cantidad .agregar:hover {
+.container-everything .escritorio .cantidad .agregar:hover {
   background-color: #535097;
 }
 
 .boton_cantidad{
   margin: 0 0.5rem;
-  height: 2rem;
-  width: 2rem;
-  background-color: none;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: white;
   color: #8480ef;
   border-radius: 0.5rem;
   border: solid 1px black;
@@ -89,36 +114,38 @@ font-weight: bold;
   font-size: 20px;
 }
 
-.container-everything .container-descripcion{
-  margin: 0.5rem;
-}
-
-.container-everything .container-descripcion h2{
+.container-everything h2{
   color: #45B1CE;
   font-weight: bolder;
   font-size: 23px;
-  text-align: left;
-  margin-left: 0.5rem;
-  margin: 1rem;
+  text-align: center;
 }
 
-.container-everything .container-descripcion p{
+.container-everything hr{
+  height: 2px;
+  margin-bottom: 1rem;
+  width: 95%;
+  box-shadow: 10px 5px 10px rgba(3, 3, 3, 0.311);
+}
+
+.creation_product .container-descripcion{
 margin: 1rem;
-color: rgb(109, 105, 105);
+color: rgb(63, 60, 60);
 line-height: 20px;
+font-size: 15px;
 }
 
 .container-everything .envio{
-  color: white;
-  background-color: #8480ef;
-  width: 100%;
-  font-size: 15px;
-  line-height: 20px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  box-shadow: 0 5px 10px rgba(35, 179, 232, 0.3);
-  border-radius: 5px;
+  color: white;
+  background-color: #8480ef;
+  margin: 0.5rem 1rem;
+  font-size: 15px;
+  line-height: 20px;
+  border-radius: 10px;
 }
 
 .container-everything .envio p{
@@ -127,117 +154,79 @@ line-height: 20px;
 
   /* MEDIAQUERIES */
 
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 950px){
 
-  .container-everything{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 52rem;
+  body.detalleDelProducto{
+    background-image: url('../img/portada.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
-  
-  .container-everything .escritorio {
-    width: 100%;
+
+  .escritorio{
     display: flex;
     flex-direction: row;
-    height: 28rem;
-    
+    width: 100%;
+    padding-top: 2rem;
+  }
+  
+  .container-everything .escritorio .container-imagen img{
+    width: 310px;
+    height: 310px;
   }
 
-  .container-everything .escritorio .container-imagen img {
-    margin-top: 2rem;
-    width: 360px;
-    height: 360px;
-    margin-left: 80px;
-    margin-right: 10px;
-  }
+  .container-everything .escritorio h1{
+    display: flex;
+    padding-bottom: 14rem;
+    padding-left: 3rem;
+    margin: 0.5rem 0;
+    font-size: 19px;
+    text-transform: uppercase;
+    color: rgb(51, 49, 49);
+    }
 
-  .container-everything .escritorio .container-imagen .agregar {
-    background: #f129a3;
-    color: var(--blanco);
-    font-size: 20px;
-    border-radius: 15px;
-    width: 157px;
-    height: 4rem;
-    margin-left:120px;
-  }
-
-  .container-everything .escritorio .creation_product{
-    margin-top: 2rem;
+    .descuento-precio-cantidad{
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 14rem;
+    justify-content: flex-end;
+    margin: 0 0 0 4rem;
+    padding-top: 8rem;
+    padding-bottom: 0;
   }
-  
-  .container-everything .escritorio .creation_product .container-product h1{
-  font-size: 25px;
-  color: rgb(51, 49, 49);
-  margin-top: 4rem;
-  margin-left: 1.5rem;
-  }
-  
-  .container-everything .escritorio .creation_product .container-product .container-precio{
-    display: flex;
-    color: rgb(68, 66, 66);
-    margin: 2.5rem;
-    font-size: 23px;
-  }
-  
-  .container-everything .escritorio .creation_product .container-product .cantidad {
-    display: flex;
-    flex-direction:row;
-    margin-top: 6rem; 
-    margin-left: 2rem;
-  }
-  
-  .container-everything .escritorio .creation_product .container-product .cantidad .agregar{
-    margin-left: 1rem;
-    background-color: #8480ef;
+
+  .container-everything .container-product strong{
+    background-color: #f129a3;
     color: white;
-    height: 3rem;
-    width: 8rem;
-    border-radius: 0.5rem;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-  }
-
-  .container-everything .escritorio .creation_product .container-product .cantidad .agregar:hover {
-    background-color: #535097;
-  }
-  
-  .boton_cantidad{
-    margin: 0 0.5rem;
-    height: 3rem;
-    width: 2rem;
-    background-color: none;
-    color: #8480ef;
-    border-radius: 0.5rem;
-    border: solid 1px black;
+    font-size: 15px;
     font-weight: bold;
-    font-size: 20px;
+    border-radius: 15px;
+  } 
+  
+  .container-everything h2{
+    margin-top: 2rem;
+    font-size: 28px;
   }
 
-  .container-everything .container-descripcion{
-    margin-left: 4rem;
-    margin-top: 1rem;
-  }
-  
-  .container-everything .container-descripcion h2{
-    color: #45B1CE;
-    font-weight: bolder;
-    font-size: 30px;
-    text-align: left;
-    margin-left: 1.5rem;
-    margin: 1rem;
-  }
-  
-  .container-everything .container-descripcion p{
-  margin-left: 2rem;
-  margin-right: 6rem;
-  color: rgb(109, 105, 105);
-  line-height: 28px;
+  .creation_product{
+    display: flex;
+    flex-direction: row;
   }
 
+  .creation_product .container-descripcion{
+    line-height: 22px;
+    font-size: 17px;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .container-everything .envio{
+    font-size: 17px;
+    line-height: 35px;
+  }
+  
+  .container-everything .envio p{
+    margin: 0;
+    width: 30rem;
+    text-align: center;
+  }
 }

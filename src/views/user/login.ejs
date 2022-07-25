@@ -3,57 +3,63 @@
 
 <%- include("../partials/head") %>
 
-    <body> 
+    <body>
 
         <%- include("../partials/header") %>
-        
-    <main class="login">
-        <div class="container">
-            <div class="formulario_logo">
-                <img src="/img/logo.png">
-            </div>
-            <form method="post" action="/usuarios/login"  id="form">  
-                <h2>Login</h2>
-                <div class="input-container">
-                    <label for="email">Email</label>
-                    <input type="email" class="input-style" name="email" placeholder="Ingrese su email" id="email">
-                    <% if (locals.errors && errors.email) { %>
-                        <small class="text-danger"><%= errors.email.msg %></small>
-                    <% } %>
-                    <span class="error" id="emailErrors" style="color: red"></span>
-                </div>
-                <div class="input-container">
-                    <label for="password">Contraseña</label>
-                    <input type="password" class="input-style" name="password" placeholder="Ingrese una contraseña" id="password">
-                    <% if (locals.errors && errors.password) { %>
-                        <small class="text-danger"><%= errors.password.msg %></small>
-                    <% } %>
-                    <span class="error" id="passwordErrors" style="color: red"></span>
-                </div>
-                <div class="input-check-container">
-                    <label for="remember">Recordar 
-                    <input type="checkbox" name="remember" id="remember"></label>
-                    <% if (locals.errors && errors.custom) { %>
-                        <small class="text-danger"><%= errors.custom.msg %></small>
-                    <% } %>
-                </div>
-                <div class="btn-container">
-                    <button type="submit" class="btn-login">Iniciar sesión</button>
-                    <span class="error" id="submitErrors" style="color: red"></span>
-                </div>
-                <span><a href="/usuarios/register">No tengo cuenta</a></span>
-            </form>
-    
-        </div>
-    </main> 
 
-    <%- include("../partials/footer") %>
+            <main class="login">
+                <div class="container">
+                    <div class="formulario_logo">
+                        <img src="/img/logo.png">
+                    </div>
+                    <form method="post" action="/usuarios/login" id="form">
+                        <h2>Login</h2>
+                        <div class="input-container">
+                            <label for="email">Email</label>
+                            <input type="email" class="input-style" name="email" placeholder="Ingrese su email"
+                                id="email">
+                            <% if (locals.errors && errors.email) { %>
+                                <small class="text-danger">
+                                    <%= errors.email.msg %>
+                                </small>
+                                <% } %>
+                                    <span class="error" id="emailErrors" style="color: red"></span>
+                        </div>
+                        <div class="input-container">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="input-style" name="password"
+                                placeholder="Ingrese una contraseña" id="password">
+                            <% if (locals.errors && errors.password) { %>
+                                <small class="text-danger">
+                                    <%= errors.password.msg %>
+                                </small>
+                                <% } %>
+                                    <span class="error" id="passwordErrors" style="color: red"></span>
+                        </div>
+                        <div class="input-check-container">
+                            <label for="remember">Recordar
+                                <input type="checkbox" name="remember" id="remember"></label>
+                            <% if (locals.errors && errors.custom) { %>
+                                <small class="text-danger">
+                                    <%= errors.custom.msg %>
+                                </small>
+                                <% } %>
+                        </div>
+                        <div class="btn-container">
+                            <button type="submit" class="btn-login">Iniciar sesión</button>
+                            <span class="error" id="submitErrors" style="color: red"></span>
+                        </div>
+                        <span><a href="/usuarios/register">No tengo cuenta</a></span>
+                    </form>
 
-    <%- include("../partials/script") %>
-    <script src="../../../js/loginValidatorFront.js"></script>
-    
-</body>
+                </div>
+            </main>
+
+            <%- include("../partials/footer") %>
+
+                <%- include("../partials/script") %>
+                    <script src="../../../js/loginValidatorFront.js"></script>
+
+    </body>
 
 </html>
-
-

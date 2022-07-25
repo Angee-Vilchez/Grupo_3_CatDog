@@ -8,7 +8,7 @@
     <%- include("../partials/header") %>
 
       <main class="userProfile">
-        
+
         <div class="container-profile">
           <div class="avatar">
             <img src="/img/avatar/<%= user.avatar %>" alt="" />
@@ -69,7 +69,7 @@
           <h3 class="h3-editar">Editar mi perfil</h3>
           <hr>
           <div class="row2">
-            <form  class="formProfile" action="/usuarios/perfil?_method=PUT" method="post" id="formProfile">
+            <form class="formProfile" action="/usuarios/perfil?_method=PUT" method="post" id="formProfile">
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="name" placeholder="Ingrese su nombre" id="name"
