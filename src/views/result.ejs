@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<%- include('./partials/headb') %> 
-<body>
-  <%- include('./partials/header') %> 
-  
-  <main>
-    <section class="section-main">   
-        <h2>Mostrando resultado de: <%= keyword %></h2>
-        <section class="section-ofertas">
+<%- include('./partials/head') %>
+
+  <body>
+    <%- include('./partials/header') %>
+
+      <main>
+        <section class="section-main">
+          <h2>Mostrando resultado de: <%= keyword %>
+          </h2>
+          <section class="section-ofertas">
             <div class="product-final">
-                <% if(searchResult.length > 0){ %>
+              <% if(products.length> 0){ %>
 
-                    <% searchResult.forEach(product => { %>
-                        
-                        <article class="article-final">
-                            <a href="/productos/detail/<%- product.id %>">
-                              <div class="cont-imagen">
-                                  <img src="images/<%- product.image %>" alt="ARNES">
-                              </div>
-                              <div class="detail-product">
-                                  <h3><%- product.name %></h3>
-                                  <p class="price-product">$<%- product.price %></p>
-                                  <% if (product.discount > 0) { %>
-                                    <p> Ahora a <span> $<%= product.price - product.discount * product.price / 100 %></span></p>
-                                  <% } else { %>
-                                    Producto 100% Argentino 
-                                  <% } %>
-                              </div>
-                              <div class="boton-press">
-                                  <div class="boton-one">
-                                      <button type="submit"><i class="fas fa-truck"></i>
-                                          Agregar al carrito
-                                      </button>
-                                  </div>
-                              </div>
-                          </a>
-                        </article>
-                        <% }) %>
+                <% products.forEach(product=> { %>
 
-                
+                  <article class="article-final">
+                    <a href="/productos/detalle/<%- product.id %>">
+                      <div class="cont-imagen">
+                        <img src="img/productos/<%- product.image %>" alt="ARNES">
+                      </div>
+                      <div class="detail-product">
+                        <h3>
+                          <%- product.name %>
+                        </h3>
+                        <p class="price-product">$<%- product.price %>
+                        </p>
+                        <% if (product.discount> 0) { %>
+                          <p> Ahora a <span> $<%= product.price - product.discount * product.price / 100 %></span></p>
+                          <% } else { %>
+                            Producto 100% Argentino
+                            <% } %>
+                      </div>
+                      <div class="boton-press">
+                        <div class="boton-one">
+                          <button type="submit"><i class="fas fa-truck"></i>
+                            Agregar al carrito
+                          </button>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                  <% }) %>
 
-                <% } else { %> 
-			
-                    <div>
+                    <% } else { %>
+
+                      <div>
                         <h2>No hay productos que coincidan con esa búsqueda</h2>
-                    </div>
-        
-                <% } %>
+                      </div>
+
+                      <% } %>
             </div>
+          </section>
         </section>
-    </section>
-    
-    </main>
 
-      <%- include('./partials/footer') %> 
-      
-      <%- include('./partials/scripts') %> 
+      </main>
 
-</body>
+      <%- include('./partials/footer') %>
+
+        <%- include('./partials/script') %>
+
+  </body>
+
 </html>

@@ -11,10 +11,18 @@ module.exports = {
         let product = products.find(product => product.id === productId);
         res.render("products/productdetail", {
             css: "productdetail.css",
-            titulo:"Detalle de producto",
+            titulo: "Detalle de producto",
             product,
             session: req.session
-            
+
         })
-       },
+    },
+    listPerro: (req, res) => {
+        res.render('products/listperros', {
+            css: "listPerros.css",
+            titulo: "Perros",
+            product,
+            session: req.session
+        })
+    },
 };
