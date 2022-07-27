@@ -5,5 +5,10 @@ const indexController = require('../controllers/indexController');
 router.get('/', indexController.index);
 router.get('/contacto', indexController.contacto);
 router.get('/search', indexController.search);
+router.get('/TerminosyCondiciones', indexController.terminosycondiciones);
+router.get('/CambiosyDevoluciones', indexController.cambiosydevoluciones);
+router.get('/QuienesSomos', indexController.quienessomos);
+router.get('/ComoComprar', indexController.comocomprar);
+router.get('/ZonasdeEntrega', indexController.zonasdeentrega);
 
 module.exports = router;
