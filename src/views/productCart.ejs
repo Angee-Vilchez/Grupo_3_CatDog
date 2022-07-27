@@ -2,149 +2,150 @@
 <html lang="en">
 
 <%- include("./partials/head") %>
+
     <body>
 
         <%- include("./partials/header") %>
 
-        <main class="main">
-            <h2>Carrito De Compras</h2>
-            <hr>
-            <div class="main_producto">
-                <section class="mi">
-                    <div class="main_boton_eliminar">
-                        <button type="reset">Eliminar</button>
-                    </div>
-                <div class="main_foto">
-                    <a href="">
-                    <img width="" src="../img/productos/carrito1.png" alt="">
-                    </a>
-                </div>
-                <div class="main_detalle">
-                    <strong>Royal Canin Mini Puppy  x 10kg </strong>
-                    <p><a href="">x 10 unidades</a></p>
-                </div>
-                </section>
-    
-                <section class="mi2">
-                <div class="main_boton_cantidad">
-                    <button type="button" class="boton">-</button>
-                    <span id="">1</span>
-                    <button type="button" class="boton">+</button>
-                </div>
-                <ul>
-                    <p><a href="">$2350</a></p>
-                </ul>
-                </section>
-            </div>
-            
-            <div class="main_producto">
-                <section class="mi">
-                    <div class="main_boton_eliminar">
-                        <button type="reset">Eliminar</button>
-                    </div>
-                <div class="main_foto">
-                    <a href="">
-                    <img width="" src="../img/productos/carrito2.png" alt="">
-                    </a>
-                </div>
-                <div class="main_detalle">
-                    <strong>Purina Excellent Puppy Medium/Large Breed</strong>
-                    <p><a href="">x 20kg + 2kg</a></p>
-                </div>
-                </section>
-    
-                <section class="mi2">
-                <div class="main_boton_cantidad">
-                    <button type="button" class="boton">-</button>
-                    <span id="">1</span>
-                    <button type="button" class="boton">+</button>
-                </div>
-                <ul>
-                    <p><a href="">$8265</a></p>
-                </ul>
-                </section>
-            </div>
-            
-            <div class="main_producto">
-                <section class="mi">
-                    <div class="main_boton_eliminar">
-                        <button type="reset">Eliminar</button>
-                    </div>
-                <div class="main_foto">
-                    <a href="">
-                    <img width="" src="../img/productos/carrito3.png" alt="">
-                    </a>
-                </div>
-                <div class="main_detalle">
-                    <strong>Pro Plan Adult Cat</strong>
-                    <p><a href="">x 3 kgs</a></p>
-                </div>
-                </section>
-    
-                <section class="mi2">
-                <div class="main_boton_cantidad">
-                    <button type="button" class="boton">-</button>
-                    <span id="">1</span>
-                    <button type="button" class="boton">+</button>
-                </div>
-                <ul>
-                    <p><a href="">$3749</a></p>
-                </ul>
-                </section>
-            </div>
-            <hr>
-             
-        
-            <div class="main_códigoPostal">
-                <label for="">Código:</label> 
-                <input type="text" class="input-text" placeholder="Código Postal"> 
-                <button type="submit" class="button" >Calcular</button>
-            </div>
-            <hr>
-    
-            <div class="main_totalCarrito">
-                <h3>Total del carrito</h3>
-            
-                <table cellspacing="0" class="main_suma">
-                    <table contenteditable="" class=" ">
-                    </table>
-            
-                    <tbody>
-                        <tr class="main_subtotal">
-                        <th>Subtotal</th>
-                        <td data-title="Subtotal"><span class=""><bdi><span class="">$</span>14,364.00
-                        </bdi></span></td>
-                        </tr>
-                        <table></table>
-                        
-                        <tr class="main_envio">
-                        <th>Envio</th>
-                        <td ><span class=""><bdi><span class="">$</span>500.00
-                        </bdi></span></td>
-                        </tr>
-                        <table></table>
-                    
-                        <tr class="main_total">
-                        <th>Total</th>
-                        <td data-title="Total"><strong><span class=""><bdi><span class="">$</span>14,864.00
-                        </bdi></span></strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            
-                <div class="main_boton_finalizar">
-                <a href="" class="">Finalizar compra</a>
-                </div>
-            
-            </div>
-            
+        <h2 class="h2-carrito">Carrito De Compras</h2>
+            <main class="main">
+                <div class="carrito"> 
+                    <div class="main_producto">
+                        <div class="main_boton_eliminar">
+                            <button class="tachito" type="reset"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                        <section class="mi">
+                            <div class="main_foto">
+                                <a href="">
+                                    <img width="" src="../img/productos/carrito1.png" alt="">
+                                </a>
+                            </div>
+                            <div class="main_detalle">
+                                <strong>Royal Canin Mini Puppy x 10kg </strong>
+                                <p>x 10 unidades</p>
+                            </div>
+                        </section>
 
-        </main>
+                        <section class="mi2">
+                            <div class="main_boton_cantidad">
+                                <button type="button" class="boton">-</button>
+                                <span id="">1</span>
+                                <button type="button" class="boton">+</button>
+                            </div>
+                            <ul>
+                                <p><a href="">$2350</a></p>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <div class="main_producto">
+                        <div class="main_boton_eliminar">
+                            <button class="tachito" type="reset"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                        <section class="mi">
+                            <div class="main_foto">
+                                <a href="">
+                                    <img width="" src="../img/productos/carrito2.png" alt="">
+                                </a>
+                            </div>
+                            <div class="main_detalle">
+                                <strong>Purina Excellent Puppy Medium/Large Breed</strong>
+                                <p>x 20kg + 2kg</p>
+                            </div>
+                        </section>
+
+                        <section class="mi2">
+                            <div class="main_boton_cantidad">
+                                <button type="button" class="boton">-</button>
+                                <span id="">1</span>
+                                <button type="button" class="boton">+</button>
+                            </div>
+                            <ul>
+                                <p><a href="">$8265</a></p>
+                            </ul>
+                        </section>
+                    </div>
+
+                    <div class="main_producto">
+                        <div class="main_boton_eliminar">
+                            <button class="tachito" type="reset"><i class="fa-solid fa-trash-can"></i></button>
+                        </div>
+                        <section class="mi">
+                            <div class="main_foto">
+                                <a href="">
+                                    <img width="" src="../img/productos/carrito3.png" alt="">
+                                </a>
+                            </div>
+                            <div class="main_detalle">
+                                <strong>Pro Plan Adult Cat</strong>
+                                <p>x 3 kgs</p>
+                            </div>
+                        </section>
+
+                        <section class="mi2">
+                            <div class="main_boton_cantidad">
+                                <button type="button" class="boton">-</button>
+                                <span id="">1</span>
+                                <button type="button" class="boton">+</button>
+                            </div>
+                            <ul>
+                                <p><a href="">$3749</a></p>
+                            </ul>
+                        </section>
+                    </div>
+                </div>    
+
+                <section class="container-productos-total">
+                    <div class="main_códigoPostal">
+                        <label for="codigoPostal">Calcular Envío:</label>
+                        <input type="text" class="input-text" placeholder="Código Postal" id="codigoPostal">
+                        <button type="submit" class="button">Calcular</button>
+                    </div>
+                    <hr>
+
+                    <div class="main_totalCarrito">
+                        <h3>Total del carrito</h3>
+
+                        <table class="main_suma">
+                            <table contenteditable="" class=" ">
+                            </table>
+
+                            <tbody>
+                                <tr class="main_subtotal">
+                                    <th>Subtotal</th>
+                                    <td data-title="Subtotal"><span class=""><bdi><span class="">$</span>14,364.00
+                                            </bdi></span></td>
+                                </tr>
+                                <table></table>
+
+                                <tr class="main_envio">
+                                    <th>Envio</th>
+                                    <td><span class=""><bdi><span class="">$</span>500.00
+                                            </bdi></span></td>
+                                </tr>
+                                <table></table>
+
+                                <tr class="main_total">
+                                    <th>Total</th>
+                                    <td data-title="Total"><strong><span class=""><bdi><span class="">$</span>14,864.00
+                                                </bdi></span></strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="main_boton_finalizar">
+                            <button type="submit">Finalizar compra</button>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
 
 
             <%- include("./partials/footer") %>
 
-            <%- include("./partials/script") %>
+                <%- include("./partials/script") %>
     </body>
 
 </html>

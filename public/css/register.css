@@ -5,6 +5,10 @@
 }
 
 /* main */
+.registro .container span{
+    color: red;
+}
+
 .formulario_logo img{
     width: 7rem;
     height: 7rem;
@@ -54,7 +58,7 @@
 }
 
 .registro .container .input-container{
-    width: 350px;
+    width: 250px;
 }
 
 .registro .container .input-check-container label {
@@ -102,4 +106,15 @@ button.btn-register{
 button.btn-register:hover{
     background-color: #0d6efd;
     color: white;;
+}
+
+.registro .text-danger{
+    color: rgba(255, 0, 0, 0.596);
+}
+
+@media(min-width: 950px){
+
+    .registro .container .input-container{
+        width: 350px;
+    }
 }

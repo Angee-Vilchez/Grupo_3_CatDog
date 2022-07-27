@@ -48,7 +48,7 @@
 }
 
 .login .container .input-container{
-    width: 300px;
+    width: 250px;
 }
 
 .login .container .input-check-container label {
@@ -100,5 +100,16 @@ button.btn-login{
 
 button.btn-login:hover{
     background-color: #0d6efd;
-    color: white;;
+    color: white;
+}
+
+.login .text-danger{
+    color: rgba(255, 0, 0, 0.596);
+}
+
+@media(min-width: 950px){
+
+    .login .container .input-container{
+        width: 300px;
+    }
 }

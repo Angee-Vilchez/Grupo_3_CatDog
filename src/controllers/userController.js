@@ -75,7 +75,7 @@ module.exports = {
         .catch(error => console.log(error)) 
 
         } else {
-            res.render('usuarios/login', {
+            res.render('user/login', {
                 titulo: "Login",
                 errors: errors.mapped(),
                 session: req.session
