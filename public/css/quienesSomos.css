@@ -1,0 +1,49 @@
+html {
+    -webkit-text-size-adjust: 100%;
+}
+div .quienes-somos {
+    width: auto;
+    height: auto;
+}
+
+h1 {
+    color: #3BC4B0;
+    font-family: fantasy;
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: -1px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    display: block;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+h4 {
+    font-weight: 1000;
+    font-size: 21px;
+    color: aqua;
+}
+
+h4, p {
+    clear: both;
+    margin: 0 0 0.5407911001em;
+    line-height: 6;
+    
+}
+
+h1, h4 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+p {
+    letter-spacing: 0.5px;
+    line-height: 1.8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
