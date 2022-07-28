@@ -98,7 +98,7 @@ window.addEventListener("load", () => {
                 $errorBackPasswd2.innerHTML = 'Reingresa tu contraseña'
                 $inputPasswd2.classList.add('error-message')
                 break;
-            case $inputPasswd2.value !== $password.value:
+            case $inputPasswd2.value !== $inputPasswd.value:
                 $errorBackPasswd2.innerHTML = 'Las contraseñas no coinciden';
                 $inputPasswd2.classList.add('error-message')
                 break;    
