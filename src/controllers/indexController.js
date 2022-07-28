@@ -10,20 +10,16 @@ module.exports = {
 },
     contacto: (req, res) => res.send("CONTACTO"),
      
-    search: (req, res) => {
-        let searchResult = [];
-
-        products.forEach(product => {
-            if(removeAccents(products.name.toLowerCase()).includes(req.query.keywords.toLowerCase())){
-                searcResult.push(products)
-            }
-        });
-
-        res.render('result', {
-            searchResult,
-            keyword: req.query.keywords,
-            products,
-            session: req.session,
-        });
-    }
-};
+    search: (req,res)  => {
+		let search = req.query.keywords;
+        let searchProduct = search;
+    
+            res.render('result',{
+                products,
+				keyword: req.query.keywords,
+                session:req.session
+                })
+                
+        .catch((error) => { res.send(error)})
+},
+}

@@ -5,8 +5,10 @@
             <img src="/img/LogoNombre.png " alt="LogoCatDog">
             </a>
             <div class="conteiner-buscador">
-                <input type="search" name="barra-de-busqueda" id="buscador" placeholder="Buscar">
-                <i id="lupa" class="fas fa-search"></i>
+                <form class="search-busqueda" action="/search" method="get">
+                    <input type="search" id="buscador" placeholder="Buscar">
+                    <span class="icon"><i id="lupa" class="fas fa-search"></i></span>
+                </form>
             </div>
 
             <div class="section-bottom">
@@ -30,7 +32,7 @@
     <div>
         <nav id="nav">
             <ul class="opciones">
-                <li><a href="">Perros</a></li>
+                <li><a href="../listPerros">Perros</a></li>
                 <li><a href="">Gatos</a></li>
                 <li><a href="">Otros</a></li>
                 <li><a href="">Accesorios</a></li>
