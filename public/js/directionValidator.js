@@ -17,19 +17,19 @@ window.addEventListener('load', function(){
 
     $street.addEventListener('blur', () => {
         switch(true){
-            case !$street.value.trim:
+            case !$street.value.trim():
                 $streetError.innerHTML = "Ingresa la calle";
                 $street.classList.add('error-message');
                 break;
             default:
                 $street.classList.remove('error-message');
-                $streetError.innerHTML = "";
+                 $streetError.innerHTML = ""; 
                 break;
         }
     })
     $number.addEventListener('blur', () => {
         switch(true){
-            case !$number.value.trim:
+            case !$number.value.trim():
                 $numberError.innerHTML = "Ingresa la altura";
                 $number.classList.add('error-message');
                 break;

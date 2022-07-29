@@ -1,8 +1,9 @@
 const adminCheck = (req, res, next) => {
-    if (req.session.user.rol === "admin"){
+    if (req.session.user.rol === 2){
         next()
     }else{
-        res.send("No tenes permiso de administrador")
+        res.send("restriccion")
+        /* res.send("No tenes permiso de administrador") */
     }
 }
 
