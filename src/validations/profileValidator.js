@@ -18,11 +18,7 @@ let validateProfile = [
             } else {
                 return true
             }
-        }),
-    check("street")
-        .notEmpty().withMessage('Ingrese dirección'),
-    check("number")
-        .notEmpty().withMessage('Ingrese numero de calle')
+        })
 ];
 
 module.exports = validateProfile;
