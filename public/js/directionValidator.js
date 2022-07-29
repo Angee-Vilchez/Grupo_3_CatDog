@@ -17,7 +17,7 @@ window.addEventListener('load', function(){
 
     $street.addEventListener('blur', () => {
         switch(true){
-            case !$street.value.trim:
+            case !$street.value.trim():
                 $streetError.innerHTML = "Ingresa la calle";
                 $street.classList.add('error-message');
                 break;
@@ -29,7 +29,7 @@ window.addEventListener('load', function(){
     })
     $number.addEventListener('blur', () => {
         switch(true){
-            case !$number.value.trim:
+            case !$number.value.trim():
                 $numberError.innerHTML = "Ingresa la altura";
                 $number.classList.add('error-message');
                 break;
@@ -67,9 +67,9 @@ window.addEventListener('load', function(){
        console.log(elementForm)
 
        for (let index = 0; index < elementForm.length -1; index++) { /* obviamos el boton */
-           if(elementForm[index].value == ""
+           if(/* elementForm[index].value == ""
            && elementosFormulario[index].type !== "file"
-           || elementForm[index].classList.contains('error-message')){
+           || */ elementForm[index].classList.contains('error-message')){
                elementForm[index].classList.add('error-message');
                formDirectionError.innerHTML = "Hay errores en el formulario"
                error = true;

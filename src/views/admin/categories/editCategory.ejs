@@ -1,31 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <%- include('../partials/head') %> 
+<style>
+    .category{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 4rem auto 1rem;
+        height: 70vh;
+    }
+    .error{
+        color: red;
+    }
+    .input-box{
+        display: flex;
+        flex-direction: column;
+        margin: 0.7rem auto;
+    }
+    .input-box label{
+        font-weight: bold;
+        padding-bottom: 0.3rem;
+    }
+    h4{
+        font-size: 30px;
+        padding-bottom: 2rem;
+    }
+    .input-box .input-category{
+        border: none;
+        border-radius: 0.5rem;
+        height: 2.5rem;
+        width: 100%;
+        padding: 0.7rem;
+        margin-bottom: 0.5rem;
+        background-color: rgb(217, 221, 243);
+    }
+    .btn-box{
+        padding-left: 4rem;
+    }
+    .btn-box button{
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        border-radius: 5px;
+        border: none;
+        width: 5rem;
+        height: 2rem;
+        transition: all 0.5s;
+    }
+    .btn-box button:hover{
+        background-color: #083a85;
+        border-color: #083a85;
+    }
+</style>
 <body>
   <%- include('../partials/header') %>
 
     <section class="category">
 
         <form action="/admin/categorias/<%= categoria.id %>?_method=PUT" method="POST" id="formCategoryEdit">
-
+            <h4>Editar categoria</h4>
             <div class="input-box">
-                <label for="category"><h4>Editar categoria</h4></label>
+                <label for="category">NOMBRE:</label>
                 <input type="text" name="name" class="input-category" id="category" placeholder="Nombre de la categoria"  value="<%= categoria.name %>">
                 <% if (locals.errors && errors.name) { %>
-                    <span class="error-msg"><%= errors.name.msg  %></span>
+                    <span class="error error-msg"><%= errors.name.msg  %></span>
                 <% } %>
-                <span class="error-msg" id="categoryEditError"></span>
+                <span class="error error-msg" id="categoryEditError"></span>
             </div>
             <div class="btn-box">
                 <button class="add_category" type="submit">Editar</button>
-                <span id="submitCategoryeditError"></span>
+                <span class="error" id="submitCategoryeditError"></span>
             </div> 
 
         </form>
 
     </section>
-
-
 
     <%- include('../partials/footer') %>
     <%- include('../partials/script') %>

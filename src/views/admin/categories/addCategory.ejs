@@ -4,23 +4,74 @@
     <%- include('../partials/head') %> 
 
 <body>
-  <%- include('../partials/header') %>  
+  <%- include('../partials/header') %>
+  <style>
+    .category{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 4rem auto 1rem;
+        height: 70vh;
+    }
+    .error{
+        color: red;
+    }
+    .input-box{
+        display: flex;
+        flex-direction: column;
+        margin: 0.7rem auto;
+    }
+    .input-box label{
+        font-weight: bold;
+        padding-bottom: 0.3rem;
+    }
+    h4{
+        font-size: 30px;
+        padding-bottom: 2rem;
+    }
+    .input-box .input-category{
+        border: none;
+        border-radius: 0.5rem;
+        height: 2.5rem;
+        width: 100%;
+        padding: 0.7rem;
+        margin-bottom: 0.5rem;
+        background-color: rgb(217, 221, 243);
+    }
+    .btn-box{
+        padding-left: 8rem;
+    }
+    .btn-box button{
+        color: #fff;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+        border-radius: 5px;
+        border: none;
+        width: 5rem;
+        height: 2rem;
+        transition: all 0.5s;
+    }
+    .btn-box button:hover{
+        background-color: #083a85;
+        border-color: #083a85;
+    }
+</style>
 
     <section class="category">
 
         <form action="/admin/categorias" method="post" id="formCategory">
-
+            <h4>Agregar nueva categoria</h4>
             <div class="input-box">
-                <label for="category"><h4>Agregar nueva categoria</h4></label>
+                <label for="category">Nombre:</label>
                 <input type="text" name="name" class="input-category" placeholder="Nombre de la categoria" id="category">
                 <% if (locals.errors && errors.name) { %>
-                    <span class="error-msg" ><%= errors.name.msg  %></span>
+                    <span class="error error-msg" ><%= errors.name.msg  %></span>
                 <% } %>
-                <span id="categoryError"></span>
+                <span class="error" id="categoryError"></span>
             </div>
             <div class="btn-box">
                 <button class="add_category" type="submit">Crear</button>
-                <span id="submitErrorcategory"></span>
+                <span class="error" id="submitErrorcategory"></span>
             </div> 
 
         </form>
