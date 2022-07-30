@@ -3,30 +3,67 @@
 <%- include('../partials/head') %> 
 <body>
   <%- include('../partials/header') %>
+  <style>
+    h1.edit{
+      text-align: center;
+      margin: 2rem;
+    }
+    main.adminTab{
+      display: flex;
+      justify-content: center;
+      height: 80vh;
+    }
+    .titulos-listado{
+      font-size: 22px;
+      display: flex;
+      justify-content: space-between;
+      width: 16rem;
 
+    }
+    .titulos-nombres .productInfo{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: center;
+      font-size: 20px;
+      width: 14.5rem;
+      margin-top: 1rem;
+    }
+    .editDelete{
+      display: flex;
+      flex-direction: row;
+      width: 2.5rem;
+      justify-content: space-between;
+    }
+    .titulos-nombres .productInfo .a,
+    .titulos-nombres .productInfo .button{
+      font-size: 16px;
+    }
+  </style>
+
+<h1 class="edit">Listado de categorias</h1>
     <main class="adminTab"> 
 
-        <h1 class="edit">Listado de categorias</h1>
         <table class="list">
             <thead>
-                <tr>
+                <tr class="titulos-listado">
                     <th class="__id">id</th>
                     <th>Nombre</th>
                     <th>Edicion</th>
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody class="titulos-nombres">
                 <% categorias.forEach(categoria => { %>
                     <tr class="productInfo"> 
                       <td> <strong> <%- categoria.id %> </strong> </td>
                       <td><%- categoria.name %></td>
                       <td class="editDelete">
-                        <a href="/admin/categorias/editar/<%- categoria.id %>" >
+                        <a class="a" href="/admin/categorias/editar/<%- categoria.id %>" >
                             <i class="fa-solid fa-pen-to-square"></i>
                         </a>
                         <form action="/admin/categorias/eliminar/<%- categoria.id %>?_method=DELETE" method="POST">
-                          <button type="submit">
+                          <button class="button" type="submit">
                             <i class="fa-solid fa-trash-can"></i>
                           </button>
                         </form>

@@ -3,7 +3,7 @@ const adminCheck = (req, res, next) => {
         next()
     }else{
         res.send("restriccion")
-        /* res.send("No tenes permiso de administrador") */
+        res.send("No tenes permiso de administrador") 
     }
 }
 

@@ -67,9 +67,9 @@ window.addEventListener('load', function(){
        console.log(elementForm)
 
        for (let index = 0; index < elementForm.length -1; index++) { /* obviamos el boton */
-           if(elementForm[index].value == ""
+           if(/* elementForm[index].value == ""
            && elementosFormulario[index].type !== "file"
-           || elementForm[index].classList.contains('error-message')){
+           || */ elementForm[index].classList.contains('error-message')){
                elementForm[index].classList.add('error-message');
                formDirectionError.innerHTML = "Hay errores en el formulario"
                error = true;

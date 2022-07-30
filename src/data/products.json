@@ -25,12 +25,12 @@
     },
     {
         "id": 3,
-        "name": "Dog Chow Cachorros Minis y Pequeños (Con Colorante)",
+        "name": "Dog Chow Cachorros Minis y Pequeños ",
         "codigo": 33422,
         "marca": "DOG CHOW",
         "description": "Alimento balanceado completo para cachorros de tamaño pequeño de 1,5 a 12 meses, hembras gestantes y lactantes. Nutrición específicamente diseñada para tu cachorro mini y pequeño que ayuda a mejorar su calidad de vida desde adentro hacia afuera de forma visible.",
         "image": "14.jpg",
-        "category": "gatos",
+        "category": "perros",
         "discount": 18,
         "price": 2500,
         "stock": true

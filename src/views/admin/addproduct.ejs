@@ -44,19 +44,20 @@
             <input type="file" name="image" class="form-control" placeholder="seleccione una imagen" id="image">
             <span class="error-msg" id="imageError"></span>
         </div>
-          <div class="form-check">
+          <div class="form-check" style="padding: 0 0 1rem 2rem;">
             <input class="form-check-input" name="stock" type="checkbox" role="switch" id="stock">
             <label class="form-check-label" for="stock">Stock disponible</label>
-            <span id="stockErrors"></span>
+            <span style="color: red;" id="stockErrors"></span>
           </div>
           <div class="mb-3 ">
             <label for="description" class="form-label">Descripción</label>
             <textarea name="description" class="form-control" id="description" rows="3"></textarea>
             <span class="error-msg" id="descriptionError"></span>
           </div>
+          <span style="color: rgb(10, 10, 224); padding: 0.5rem;">campos obligatorios</span>
           <div class="buttom-crear">
             <button class="btn btn-primary" type="submit">Crear</button>
-            <span id="submitErrors"></span>
+            <span style="color: red;" id="submitErrors"></span>
           </div>
          </form>
       </fieldset>

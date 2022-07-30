@@ -8,8 +8,6 @@ let validateProfile = [
     check("userName")
         .notEmpty().withMessage("Debe ingresar su apellido").bail()
         .isLength({ min: 2 }).withMessage("Ingrese un apellido válido"),
-    check("phone")
-        .notEmpty().withMessage("Ingrese un teléfono"),
     check("image")
         .custom((value, { req }) => {
             let allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
@@ -20,7 +18,7 @@ let validateProfile = [
             } else {
                 return true
             }
-        }),
+        })
 ];
 
 module.exports = validateProfile;
