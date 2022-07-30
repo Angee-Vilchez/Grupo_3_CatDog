@@ -23,7 +23,7 @@ window.addEventListener('load', function(){
                 break;
             default:
                 $street.classList.remove('error-message');
-                $streetError.innerHTML = "";
+                 $streetError.innerHTML = ""; 
                 break;
         }
     })

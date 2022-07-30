@@ -1,4 +1,4 @@
-const userSession = (req, res, next) => {
+const userSessionCheck = (req, res, next) => {
     if(req.session.user){
         next()
     }else{
@@ -6,4 +6,4 @@ const userSession = (req, res, next) => {
     }
 }
 
-module.exports = userSession;
+module.exports = userSessionCheck;

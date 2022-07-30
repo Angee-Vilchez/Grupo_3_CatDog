@@ -75,7 +75,7 @@ width: 100%;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
   color: rgb(104, 104, 104);
   width: 180px;
-  height: 320px;
+  /* height: 320px; */
   border: thin solid grey;
   background-color: white;
   transition: all 0.5s ease-in;

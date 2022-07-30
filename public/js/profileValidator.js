@@ -53,6 +53,10 @@ window.addEventListener('load', function(){
     })
     $phone.addEventListener('blur', () => {
         switch(true){
+            case !$phone.value.trim():
+                $phoneError.innerHTML = "Ingresa teléfono";
+                /* $phone.classList.add('error-message'); */
+                break;
             case !regExPhone.test($phone.value):    
                 $phoneError.innerHTML = "Teléfono inválido";
                 $phone.classList.add('error-message');
@@ -88,18 +92,21 @@ window.addEventListener('load', function(){
        for (let index = 0; index < elementosFormulario.length -1; index++) { /* obviamos el boton */
            if(elementosFormulario[index].value == ""
            && elementosFormulario[index].type !== "file" && elementosFormulario[index] == !$phone
-           || elementosFormulario[index].classList.contains('error-message')) {
-               elementosFormulario[index].classList.add('error-message');
+
+           || elementosFormulario[index].classList.contains('error-message')){
+
+            elementosFormulario[index].classList.contains('error-message'); {
+              elementosFormulario[index].classList.add('error-message');
                submitProfileError.innerHTML = "Hay errores en el formulario"
                errores = true;
            }
        }
-       
        if(!errores){
            $formProfile.submit()
        }
-   })
+
+   }
 
 })
 
-
+})

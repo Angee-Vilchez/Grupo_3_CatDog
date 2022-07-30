@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <%- include("../partials/head") %>
@@ -49,6 +49,71 @@
       <%- include("../partials/footer") %>
 
         <%- include("../partials/script") %>
+  </body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="es">
+<%- include('../partials/head') %>
+
+  <body>
+    <%- include('../partials/header') %>
+
+      <main class="productDetail-container">
+        <section class="productDetail">
+          <div class="images-container">
+            <div class="mainImage">
+              <img src="/img/productos/<%= product.image %>" alt="">
+            </div>
+          </div>
+          <div class="productData-container">
+            <h3 class="productName">
+              <%= product.name %>
+            </h3>
+            <div class="productPrice">$<%= product.price - product.price * product.discount / 100 %>
+            </div>
+            <div class="productNumber">
+              <label for="cantidad">Cantidad</label>
+              <div class="counter">
+                <button type="button" class="btn-subtract" onclick="subtract();">
+                  -
+                </button>
+
+                <div id="count">1</div>
+
+                <button type="button" id="btn-add" onclick="add();">
+                  +
+                </button>
+              </div>
+
+            </div>
+
+            <div class="button-addToCart">
+              <div class="btn-primary">
+                <button type="button">
+                  <a href="/productCart">Añadir al Carrito</a>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+        <section class="productDescription">
+          <div class="description">
+            <h5>Descripción del producto</h5>
+            <p>
+              <%= product.description %>
+            </p>
+          </div>
+        </section>
+
+
+      </main>
+
+      <%- include('../partials/footer') %>
+
+        <%- include('../partials/script') %>
   </body>
 
 </html>

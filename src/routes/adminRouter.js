@@ -16,17 +16,17 @@ const categoryValidator = require('../validations/categoryValidator');
 
 
 /* Session */
-router.get('/', adminController.index);
+router.get('/', userSession, /* adminCheck, */ adminController.index);
 
 /* CRUD DE PRODUCTOS */
 // Vista lista de productos
-router.get('/productos', /* userSession, adminCheck, */ adminProductsController.list);
+router.get('/productos', userSession, adminCheck, adminProductsController.list);
 // Vista creacion de producto
-router.get('/productos/agregar', /* userSession, adminCheck, */ adminProductsController.productAdd);
+router.get('/productos/agregar', userSession, adminCheck, adminProductsController.productAdd);
 // CREAR PRODUCTO y guardar en DB
 router.post('/productos',uploadFile.single('image'), productCreateValidator, adminProductsController.productCreate);
 // Vista editar producto
-router.get('/productos/editar/:id', /* userSession, adminCheck, */  adminProductsController.productEdit);
+router.get('/productos/editar/:id', userSession, adminCheck,  adminProductsController.productEdit);
 // Editar producto y guardar en la DB
 router.put('/productos/:id',uploadFile.single('image'), productEditValidator, adminProductsController.productUpdate);
 // Eliminar producto
@@ -36,13 +36,13 @@ router.delete('/productos/eliminar/:id', adminProductsController.productDelete);
 
 /* CRUD CATEGORIES */
 
-router.get('/categorias', /*userSessionCheck, adminCheck */ adminCategoriesController.list)
+router.get('/categorias', userSession, adminCheck, adminCategoriesController.list)
 
-router.get('/categorias/agregar', /* ,userSessionCheck, adminCheck */ adminCategoriesController.categoryAdd)
+router.get('/categorias/agregar',userSession, adminCheck,  adminCategoriesController.categoryAdd)
 
 router.post('/categorias',categoryValidator, adminCategoriesController.categoryCreate)
 
-router.get('/categorias/editar/:id', /* userSessionCheck, adminCheck, */ adminCategoriesController.categoryEdit)
+router.get('/categorias/editar/:id', userSession, adminCheck, adminCategoriesController.categoryEdit)
 
 router.put('/categorias/:id',categoryValidator, adminCategoriesController.categoryUpdate)
 
