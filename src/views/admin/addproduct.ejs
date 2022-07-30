@@ -8,7 +8,7 @@
     <main class="container min-vh-100">
       <fieldset class="creation_product">
         <legend class="agregar1">AGREGAR PRODUCTO</legend>
-        <form class="row " action="/admin/productos" method="POST" id="formProduct">
+        <form class="row " action="/admin/productos" method="POST" id="formProduct" enctype="multipart/form-data">
           <div class="mb-3 col-md-6">
             <label for="name" class="nombre_product">*  Nombre del producto</label>
             <input type="text" name="name" class="form-control" id="name" placeholder="Nombre de producto">
@@ -43,7 +43,7 @@
             <label for="image">* Imagen</label>
             <input type="file" name="image" class="form-control" placeholder="seleccione una imagen" id="image">
             <span class="error-msg" id="imageError"></span>
-        </div>
+          </div>
           <div class="form-check" style="padding: 0 0 1rem 2rem;">
             <input class="form-check-input" name="stock" type="checkbox" role="switch" id="stock">
             <label class="form-check-label" for="stock">Stock disponible</label>
@@ -59,7 +59,7 @@
             <button class="btn btn-primary" type="submit">Crear</button>
             <span style="color: red;" id="submitErrors"></span>
           </div>
-         </form>
+        </form>
       </fieldset>
   
     </main>

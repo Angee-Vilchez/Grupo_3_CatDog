@@ -69,7 +69,7 @@
           <h3 class="h3-editar">Editar mi perfil</h3>
           <hr>
           <div class="row2">
-            <form class="formProfile" action="/usuarios/perfil?_method=PUT" method="post" id="formProfile">
+            <form class="formProfile" action="/usuarios/perfil?_method=PUT" method="post" id="formProfile" enctype="multipart/form-data">
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
                 <input type="text" class="form-control" name="name" placeholder="Ingrese su nombre" id="name" value="<%= user.name %>"
@@ -104,8 +104,8 @@
                     <span class="error-message" id="phoneError"></span>
               </div>
               <div class="mb-3">
-                <label for="image" class="form-label">Editar </label>
-                <input class="form-control" type="file" name="image" id="image">
+                <label for="avatar" class="form-label">Editar </label>
+                <input class="form-control" type="file" name="avatar" id="image">
                 <span class="error-message" id="imageError"></span>
               </div>
               <div class="btn-editar">
@@ -115,6 +115,7 @@
               </div>
               <span class="error-message" id="submitProfileError"></span>
             </form>
+
             <form action="/usuarios/direcciones" class="formDirection" method="post" id="formDirection">
               <div class="mb-3">
                 <label for="street" class="form-label">Calle</label>

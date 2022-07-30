@@ -100,10 +100,11 @@ module.exports = {
     },
     profileUpdate: (req, res) => {
         let errors = validationResult(req);
-
+        let userActivo = db.User.findByPk(req.session.user.id)
         if(errors.isEmpty()){
             db.User.update({
-                ...req.body
+                ...req.body,
+                avatar: req.file ? req.file.filename : userActivo.avatar
             },{
                 where: {
                     id: req.session.user.id

@@ -8,7 +8,7 @@
         <main class="container min-vh-100">
           <fieldset class="editor_product">
             <legend class="agregar">EDITAR PRODUCTO: <%= producto.name %> </legend>
-            <form class="row " action="/admin/productos/<%= producto.id %>?_method=PUT" method="POST" id="formProduct">
+            <form class="row " action="/admin/productos/<%= producto.id %>?_method=PUT" method="POST" id="formProduct" enctype="multipart/form-data">
               <div class="mb-3 col-md-6">
                 <label for="name" class="nombre_product">Nombre del producto</label>
                 <input type="text" name="name" class="form-control" id="name" placeholder="Nombre de producto" value="<%= producto.name %>">
