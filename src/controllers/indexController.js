@@ -1,9 +1,6 @@
 const { products, categories } = require('../data'); 
 const db = require('../database/models');
-const { Op } = db.Sequelize; 
-
-
-
+const { Op } = db.Sequelize.Op; 
 
 module.exports = {
     index: (req, res) => {
@@ -16,64 +13,6 @@ module.exports = {
     contacto: (req, res) => res.send("CONTACTO"),
 
     /* search: (req, res) => {
-        let search = req.query.keywords;
-        let searchProduct = search;
-
-        db.Products.findAll({
-            where: {
-                name: { [Op.substring]: `%${searchProduct}%` }
-            }
-        })
-            .then(products => {
-                res.render('result', {
-                    products,
-                    keyword: req.query.keywords,
-                    session: req.session
-                })
-            })
-            .catch((error) => { res.send(error) })
-    } */
-    /* search: (req, res) => {
-        db.products.findAll({
-            where: {
-                name: {
-                    [Op.substring]: req.query.keywords
-                }
-            },
-            include: [{association: 'productImages'}]
-        })
-        .then((result) => {
-            res.render('result', {
-                result,
-                search: req.query.keywords,
-                session: req.session
-            })
-        })
-    } */
-    /* search: (req, res) => {
-        let products = [];
-        db.Product.findAll({
-            include : [{association : 'images'}],
-            where: {name: {[Op.like]: '%' + req.query.keywords + '%'}}
-        })
-        .then((productos) => {
-            db.Category.findAll()
-            .then(categorias => {
-                res.render('search',{
-                    productos,
-                    keyword: req.query.keywords,
-                    title: 'Resultados',
-                    session: req.session,
-                    categorias,
-                    products
-                });
-            })
-            .catch(error => res.send(error));
-        })
-        .catch((error) => {res.send(error)});
-    }, */
-
-    search: (req, res) => {
 		    res.render('result', {
 			titulo: 'Resultados',
             products,
@@ -81,7 +20,29 @@ module.exports = {
 			keyword: req.query.keywords,
             session: req.session
 		})
-	},
+	}, */
+
+    search: (req, res) => { 
+
+        let buscado = req.query.Busqueda;
+
+        db.Product.findAll({
+            where: {
+                name: {
+                    [Op.substring]: buscado
+                }
+            },
+            include: [{ association: "productImages" }]
+        })
+        .then(productos => {
+            res.render('search', {
+                products, 
+                busqueda: req.query.Busqueda,
+                session: req.session
+            })
+        })
+        .catch(error => res.send(error));
+    },
 
     terminosycondiciones: (req, res) => {
         res.render('terminosycondiciones', {

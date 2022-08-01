@@ -23,7 +23,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false,
         },
         stock: {
-            type: dataTypes.BOOLEAN,
+            type: dataTypes.TINYINT(4),
             allowNull: false,
         },
         description: {

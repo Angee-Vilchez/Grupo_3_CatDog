@@ -16,7 +16,7 @@ const categoryValidator = require('../validations/categoryValidator');
 
 
 /* Session */
-router.get('/', userSession, /* adminCheck, */ adminController.index);
+router.get('/', userSession, adminCheck, adminController.index);
 
 /* CRUD DE PRODUCTOS */
 // Vista lista de productos
