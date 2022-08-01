@@ -84,3 +84,8 @@ p {
     margin-inline-end: 0px;
     font-size: 30px;
 }
+
+iframe {
+    border: 0;
+    width: 520px;
+}

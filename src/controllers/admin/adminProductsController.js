@@ -40,7 +40,7 @@ module.exports = {
                 description: req.body.description,
                 image: req.file ? req.file.filename : "default-image.png",
                 brands: req.body.brands,
-                stock: req.body.stock
+                stock: req.body.stock,
             })
                 .then(() => {
                     res.redirect('/admin/productos')

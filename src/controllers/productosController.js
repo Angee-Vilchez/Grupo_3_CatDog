@@ -1,6 +1,6 @@
 const { decodeBase64 } = require('bcryptjs');
 const { products } = require('../data');
-/* const db = require("../database/models") */
+const db = require('../database/models');
 
 module.exports = {
     mostrar: (req, res) => res.render('products/productdetail', {
@@ -17,20 +17,5 @@ module.exports = {
             session: req.session
 
         })
-    },
-    listPerro: (req, res) => {
-        db.products.findAll({
-            include: [
-                {association: "categorias"}
-            ] 
-        })
-        .then(products => {
-            res.render('products/listperros', {
-                css: "listPerros.css",
-                titulo: "Perros",
-                products,
-                session: req.session,
-            })
-        })
-    },
-}
+    },    
+};
