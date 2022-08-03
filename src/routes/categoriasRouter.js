@@ -3,7 +3,9 @@ const router = express.Router();
 const categoriasController = require('../controllers/categoriasController');
 
 
-/* Categorias Perros */
-router.get('/listperros', categoriasController.listPerros);
+/* Categorias */
+router.get('/category/:id', categoriasController.category);
+
+router.get('/subcategory/:subcategory/:categoryId', categoriasController.subcategory)
 
 module.exports = router;

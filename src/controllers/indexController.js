@@ -12,17 +12,17 @@ module.exports = {
     },
     contacto: (req, res) => res.send("CONTACTO"),
 
-    /* search: (req, res) => {
+    search: (req, res) => {
 		    res.render('result', {
 			titulo: 'Resultados',
             products,
             css: 'result.css',
-			keyword: req.query.keywords,
+			search: req.query.keywords,
             session: req.session
 		})
-	}, */
+	}, 
 
-    search: (req, res) => { 
+    /* search: (req, res) => { 
 
         let buscado = req.query.Busqueda;
 
@@ -42,7 +42,7 @@ module.exports = {
             })
         })
         .catch(error => res.send(error));
-    },
+    }, */
 
     terminosycondiciones: (req, res) => {
         res.render('terminosycondiciones', {
@@ -75,6 +75,12 @@ module.exports = {
     zonasdeentrega: (req, res) => {
         res.render('zonasdeentrega', {
             titulo: "Zona-De-Entrega",
+            session: req.session
+        })
+    },
+    formasdepago: (req, res) => {
+        res.render('formasdepago', {
+            titulo: "Formas-de-pago",
             session: req.session
         })
     },

@@ -13,6 +13,11 @@
 
             <div class="section-bottom">
                 <ul class="usuario">
+                    <% if (typeof session.user != "undefined") { %>
+                        <% if (session.user.rol === 2) { %>
+                            <li><a href="/admin">Admin</a></li>
+                        <% } %>
+                    <% } %> 
                     <% if(typeof session.user !="undefined" ) { %>
                         <% session.user.name %>
                             <li><a href="/usuarios/perfil">Mi Perfil</a></li>
@@ -24,6 +29,7 @@
                             <li><a href="/usuarios/register">Creá tu cuenta</a></li>
                             <li><a href="/usuarios/login">Ingresá</a></li>
                     <% } %>
+    
                         <li><a href="/carrito"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 </ul>
             </div>
@@ -32,7 +38,7 @@
     <div>
         <nav id="nav">
             <ul class="opciones">
-                <li><a href="/products/listperros">Perros</a></li>
+                <li><a href="../Categories/listperros">Perros</a></li>
                 <li><a href="">Gatos</a></li>
                 <li><a href="">Otros</a></li>
                 <li><a href="">Accesorios</a></li>

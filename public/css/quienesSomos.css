@@ -89,3 +89,8 @@ iframe {
     border: 0;
     width: 520px;
 }
+
+ul li {
+    line-height: 1.8rem;
+}
+
