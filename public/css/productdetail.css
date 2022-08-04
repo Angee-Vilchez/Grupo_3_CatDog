@@ -98,7 +98,7 @@
   justify-content: center;
   border-radius: 20px;
 }
-.btn-primary button{
+/* .btn-primary button{
   border: 1px solid #2e518b;
   color: white;
   border-radius: 15px;
@@ -107,7 +107,15 @@
   text-decoration: none;
   text-transform: uppercase;
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+.productDetail  .productData-container .productNumber {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
 }
+
 .productDetail-container .productDescription {
   display: flex;
   color: var(--dark-blue);
