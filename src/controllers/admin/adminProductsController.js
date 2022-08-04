@@ -34,6 +34,7 @@ module.exports = {
         if (errors.isEmpty()) {
             db.Product.create({
                 name: req.body.name,
+                marca: req.params.marca,
                 price: req.body.price,
                 discount: req.body.discount,
                 category_id: req.body.categoryId,
@@ -74,6 +75,7 @@ module.exports = {
     if(errors.isEmpty ()){
         db.Product.update({
             name: req.body.name,
+            marca: req.body.marca,
             price: req.body.price,
             discount: req.body.discount,
             category_id: req.body.categoryId,

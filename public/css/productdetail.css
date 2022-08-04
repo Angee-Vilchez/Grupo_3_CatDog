@@ -66,13 +66,16 @@
   border-radius: 15px;
 }
 
- .productDetail  .productData-container  .counter button {
-  background-color: white;
-  border: none;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--dark-blue);
-} 
+ div.añadir-carrito .addCart {
+  border-radius: 10px;
+  text-decoration: none;
+  padding: 0.5rem 0.5rem;
+  height: 2.5rem;
+  background-color: #1fa9e7;
+  color: white;
+  font-size: 15px;
+  border-style: none;
+}
 
 .productDetail  .productData-container .productNumber {
   display: flex;

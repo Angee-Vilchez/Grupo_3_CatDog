@@ -18,7 +18,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 /* Middlewares de aplicacion */
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(methodoverride('_method'));
 /* session */
@@ -38,7 +38,7 @@ const carritoRouter = require('./routes/carritoRouter')
 const productosRouter = require('./routes/productosRouter');
 const userRouter = require('./routes/userRouter');
 const adminRouter = require('./routes/adminRouter');
-const categoriasRouter = require('./routes/categoriasRouter');
+
 
 
 /*Rutas*/
@@ -47,7 +47,7 @@ app.use('/carrito', carritoRouter);
 app.use('/productos', productosRouter);
 app.use('/usuarios', userRouter);
 app.use('/admin', adminRouter);
-app.use('/categorias', adminRouter);
+
 
 app.listen(PORT, () => console.log(`
 Servidor escuchando en el puerto ${PORT}

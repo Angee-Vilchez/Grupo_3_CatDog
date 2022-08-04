@@ -7,39 +7,45 @@
 
       <main>
         <section class="section-main">
-          <h2>Mostrando resultado de: <%= search %>
+          <h2 class="h2Result">Mostrando resultado de: <%= keyword %>
           </h2>
           <section class="section-ofertas">
             <div class="product-final">
               <% if(products.length> 0){ %>
-
                 <% products.forEach(product=> { %>
 
                   <article class="article-final">
-                    <a href="/productos/detalle/<%- product.id %>">
-                      <div class="cont-imagen">
-                        <img src="img/productos/<%- product.image %>" alt="ARNES">
-                      </div>
-                      <div class="detail-product">
-                        <h3>
-                          <%- product.name %>
-                        </h3>
-                        <p class="price-product">$<%- product.price %>
-                        </p>
-                        <% if (product.discount> 0) { %>
-                          <p> Ahora a <span> $<%= product.price - product.discount * product.price / 100 %></span></p>
-                          <% } else { %>
-                            Producto 100% Argentino
-                            <% } %>
-                      </div>
-                      <div class="boton-press">
-                        <div class="boton-one">
-                          <button type="submit"><i class="fas fa-truck"></i>
-                            Agregar al carrito
-                          </button>
-                        </div>
-                      </div>
-                    </a>
+                    <% if (products.discount> 0) { %>
+                      <span class="ifdiscount">
+                        <%= product.discount %> %
+                      </span>
+                      <% } %>
+                        <a href="/productos/detalle/<%- product.id %>">
+                          <div class="cont-imagen">
+                            <img src="../img/productos/<%= product.image  %>" alt="">
+                          </div>
+                          <div class="detail-product">
+                            <h3>
+                              <%- product.name %>
+                            </h3>
+                            <% if (product.discount> 0) { %>
+                              <span class="card__priceSale--original">$ <%= product.price %> </span>
+                              <span class="actualPrice"> Ahora $ <%= product.price - product.discount * product.price /
+                                  100 %> </span>
+                              <% } else { %>
+                                <span class="default-msg">Producto 100% Argentino </span>
+                                <span class="simplePrice">$ <%- product.price %></span>
+                                <% } %>
+                          </div>
+                          <div class="boton-press">
+                            <div class="boton-one">
+                              <button type="submit"><i class="fas fa-truck"></i>
+                                <a href="/carrito">Agregar al carrito</a>
+                                
+                              </button>
+                            </div>
+                          </div>
+                        </a>
                   </article>
                   <% }) %>
 
