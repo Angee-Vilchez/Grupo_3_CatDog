@@ -1,6 +1,7 @@
 /* JS HEADER */
 let menuButton = document.querySelector('.header_menuButton');
 let menu = document.querySelector('.header_menu');
+let searchBar = document.querySelector("#search");
 let menuCloseButton = document.querySelector('.header_menuClose');
 
 menuButton.addEventListener('click', () => {

@@ -1,6 +1,12 @@
-const { products, categories } = require('../data'); 
+const fs = require('fs');
+const path = require('path');
+const { products } = require('../data');
+
 const db = require('../database/models');
-const { Op } = db.Sequelize.Op; 
+const {Op} = require("sequelize");
+const removeAccents = (str) => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+}
 
 module.exports = {
     index: (req, res) => {
@@ -12,37 +18,32 @@ module.exports = {
     },
     contacto: (req, res) => res.send("CONTACTO"),
 
+    /*  search: (req, res) => {
+             res.render('result', {
+             titulo: 'Resultados',
+             products,
+             css: 'result.css',
+             search: req.query.keywords,
+             session: req.session
+         })
+     },  */
+
     search: (req, res) => {
-		    res.render('result', {
-			titulo: 'Resultados',
-            products,
-            css: 'result.css',
-			search: req.query.keywords,
-            session: req.session
-		})
-	}, 
-
-    /* search: (req, res) => { 
-
-        let buscado = req.query.Busqueda;
-
+        let searchResult = req.query.keywords;
+        let search = removeAccents(searchResult.toLowerCase())
         db.Product.findAll({
             where: {
-                name: {
-                    [Op.substring]: buscado
-                }
-            },
-            include: [{ association: "productImages" }]
+                name: { [Op.like]: `%${search}%` }
+            }
         })
-        .then(productos => {
-            res.render('search', {
-                products, 
-                busqueda: req.query.Busqueda,
-                session: req.session
+            .then(products => {
+                res.render('result', {
+                    products,
+                    keyword: req.query.keywords,
+                    session: req.session
+                })
             })
-        })
-        .catch(error => res.send(error));
-    }, */
+    },
 
     terminosycondiciones: (req, res) => {
         res.render('terminosycondiciones', {
@@ -84,4 +85,77 @@ module.exports = {
             session: req.session
         })
     },
+
+    vistaPerros: (req,res)  => {
+        db.Product.findAll({
+             include: [
+               {association: "categories" },
+             ],
+             where: [
+                  {category_id: 1}
+             ]
+            })
+             .then(products => {
+                  res.render('products/vistaperros', {
+                       products,
+                       session: req.session,
+                  })
+            })
+            .catch((error) => { res.send(error)})
+        
+       },
+       vistaGatos: (req,res)  => {
+        db.Product.findAll({
+             include: [
+               {association: "categories" },
+             ],
+             where: [
+                  {category_id: 2}
+             ]
+            })
+             .then(products => {
+                  res.render('products/vistaGatos', {
+                       products,
+                       session: req.session,
+                  })
+            })
+            .catch((error) => { res.send(error)})
+        
+       },
+       vistaAccesorios: (req,res)  => {
+        db.Product.findAll({
+             include: [
+               {association: "categories" },
+             ],
+             where: [
+                  {category_id: 3}
+             ]
+            })
+             .then(products => {
+                  res.render('products/vistaAccesorios', {
+                       products,
+                       session: req.session,
+                  })
+            })
+            .catch((error) => { res.send(error)})
+        
+       },
+       vistaOtros: (req,res)  => {
+        db.Product.findAll({
+             include: [
+               {association: "categories" },
+             ],
+             where: [
+                  {category_id: 4}
+             ]
+            })
+             .then(products => {
+                  res.render('products/vistaOtros', {
+                       products,
+                       session: req.session,
+                  })
+            })
+            .catch((error) => { res.send(error)})
+        
+       },
 }

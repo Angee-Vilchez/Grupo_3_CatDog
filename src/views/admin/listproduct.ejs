@@ -15,6 +15,7 @@
                 <th>Precio</th>
                 <th>Categoría</th>
                 <th>Stock</th>
+                <th>imagen</th>
                 <th></th>
               </tr>
             </thead>
@@ -24,9 +25,10 @@
                   <td><strong><%- producto.id %></strong></td>
                   <td><%- producto.name %></td>
                   <td><%- producto.description %></td>
-                  <td><%- producto.price %></td>
+                  <td>$<%- producto.price %></td>
                   <td><%- producto.category_id %></td>
                   <td><%- producto.stock %></td>
+                  <td><%- producto.image %></td>
                   <td>
                     <a href="/admin/productos/editar/<%- producto.id %> " class="btn btn-success">
                       <i class="fa-solid fa-pen-to-square"></i>

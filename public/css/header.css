@@ -59,7 +59,7 @@ header img {
 
 }
 
-header #buscador {
+header #search {
   background-color: white;
   padding-left: 10px;
   border-radius: 5px;
@@ -73,7 +73,7 @@ header #buscador {
 
 }
 
-header #lupa {
+header i #lupa {
   background: none;
   padding: 12px 5px;
   border: none;
@@ -127,7 +127,7 @@ header #lupa {
   width: 28rem;
 
 }
-  header #buscador {
+  header #search {
     background-color: white;
     padding-left: 10px;
     border-radius: 5px;

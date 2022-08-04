@@ -1,13 +1,16 @@
-const { decodeBase64 } = require('bcryptjs');
-const { products } = require('../data');
+/* const { decodeBase64 } = require('bcryptjs'); */
+const { products, categories } = require('../data'); 
 const db = require('../database/models');
 
+const Products = db.Product;
+const Categories = db.Category;
+
 module.exports = {
-    mostrar: (req, res) => res.render('products/productdetail', {
+   /*  mostrar: (req, res) => res.render('products/productdetail', {
         titulo: "Detalle de Producto",
         session: req.session
-    }),
-    detail: (req, res) => {
+    }), */
+    /* detail: (req, res) => {
         let productId = +req.params.id;
         let product = products.find(product => product.id === productId);
         res.render("products/productdetail", {
@@ -17,5 +20,20 @@ module.exports = {
             session: req.session
 
         })
-    },    
-};
+    },   */
+    detail:  (req, res) => {
+        db.Product.findByPk(req.params.id)
+        .then(product => {
+            res.render("products/productdetail", {
+                title: "detalle",
+                product,
+                session: req.session
+            })
+        })
+        .catch((error)=> res.send(error))
+    },
+
+   
+
+    
+}

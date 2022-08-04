@@ -11,5 +11,14 @@ router.get('/QuienesSomos', indexController.quienessomos);
 router.get('/ComoComprar', indexController.comocomprar);
 router.get('/ZonasdeEntrega', indexController.zonasdeentrega);
 router.get('/FormasdePago', indexController.formasdepago);
-
+/* Buscador de productos */
+router.get('/search', indexController.search);
+/* Vista de Perros */
+router.get('/perros', indexController.vistaPerros);
+/* Vista de Gatos */
+router.get('/gatos', indexController.vistaGatos);
+/* Vista de Accesorios */
+router.get('/accesorios', indexController.vistaAccesorios);
+/* Vista de Otros */
+router.get('/otros', indexController.vistaOtros);
 module.exports = router;
